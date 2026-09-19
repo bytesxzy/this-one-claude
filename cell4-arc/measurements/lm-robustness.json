@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-19T21:15:57.761Z",
+ "generated": "2026-09-19T21:18:19.958Z",
  "passed": 43,
  "total": 43,
  "results": [
@@ -156,7 +156,7 @@
   {
    "name": "repeat is not slower",
    "ok": true,
-   "detail": "1 -> 2"
+   "detail": "2 -> 2"
   },
   {
    "name": "offline: local computation unaffected",
