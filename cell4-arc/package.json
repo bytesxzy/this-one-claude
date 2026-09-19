@@ -1,0 +1,22 @@
+{
+  "name": "cell4-arc-local",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Offline CELL4 ARC portfolio plus the local language stack (QueryFrame, reasoning graph, evidence federation, realiser)",
+  "scripts": {
+    "build": "node c4-arc/build.js",
+    "test": "node c4-arc/test.js && node c4-arc/integration-test.js && node c4-gates-test.js",
+    "bench": "node c4-arc/bench.js",
+    "lm:eval": "node tools/lm-eval.js --out measurements/lm-after.json --label after",
+    "lm:baseline": "node tools/lm-eval.js --out measurements/lm-baseline.json --label baseline",
+    "lm:paraphrase": "node tools/lm-paraphrase.js",
+    "lm:ablate": "node tools/lm-ablate.js",
+    "lm:bench": "node tools/lm-bench.js --n 1200",
+    "lm:web": "node tools/lm-web-bench.js",
+    "lm:robust": "node tools/lm-robustness.js",
+    "lm:test": "node tools/lm-robustness.js && node tools/lm-eval.js --out measurements/lm-after.json --label after"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

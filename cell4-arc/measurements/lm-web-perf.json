@@ -1,0 +1,82 @@
+{
+ "generated": "2026-09-19T21:06:00.398Z",
+ "base": "http://127.0.0.1:8781",
+ "questions": [
+  "What is the current stable version of Node.js?",
+  "What is the latest stable Python release?",
+  "What is the current Bitcoin price?",
+  "What is the current exchange rate for the dollar?",
+  "What is the newest release of npm?"
+ ],
+ "results": [
+  {
+   "label": "early-completion (shipping)",
+   "n": 5,
+   "p50": 174,
+   "p95": 2521.8,
+   "max": 2533.8,
+   "mean": 1089.2,
+   "avg_sources": 1,
+   "completion_reasons": [
+    "quorum",
+    "quorum",
+    "exhausted",
+    "exhausted",
+    "quorum"
+   ],
+   "samples": [
+    "The current version of node.js is 22.9.0.",
+    "The current version of python is 22.9.0.",
+    "Bitcoin is trading at US$64,215.30.",
+    "Bitcoin is trading at US$64,215.30.",
+    "The current version of npm is 22.9.0."
+   ]
+  },
+  {
+   "label": "early-completion disabled (deadline only)",
+   "n": 5,
+   "p50": 2517.4,
+   "p95": 2517.8,
+   "max": 2518.2,
+   "mean": 2513.9,
+   "avg_sources": 1.4,
+   "completion_reasons": [
+    "exhausted",
+    "exhausted",
+    "exhausted",
+    "exhausted",
+    "exhausted"
+   ],
+   "samples": [
+    "The current version of node.js is 22.9.0.",
+    "The current version of python is 22.9.0.",
+    "Bitcoin is trading at US$64,215.30.",
+    "Bitcoin is trading at US$64,215.30.",
+    "The current version of npm is 22.9.0."
+   ]
+  },
+  {
+   "label": "old-style 7s per-source, 10s deadline",
+   "n": 5,
+   "p50": 2621.2,
+   "p95": 3219.5,
+   "max": 3223.1,
+   "mean": 2858,
+   "avg_sources": 2.4,
+   "completion_reasons": [
+    "exhausted",
+    "exhausted",
+    "exhausted",
+    "exhausted",
+    "exhausted"
+   ],
+   "samples": [
+    "The current version of node.js is 22.9.0.",
+    "The current version of python is 22.9.0. Sources disagree on this, so treat it a",
+    "Bitcoin is trading at US$64,215.30.",
+    "Bitcoin is trading at US$64,215.30.",
+    "The current version of npm is 22.9.0."
+   ]
+  }
+ ]
+}

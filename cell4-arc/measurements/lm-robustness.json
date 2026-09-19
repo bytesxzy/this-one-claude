@@ -1,0 +1,222 @@
+{
+ "generated": "2026-09-19T21:15:57.761Z",
+ "passed": 43,
+ "total": 43,
+ "results": [
+  {
+   "name": "syntax: c4-lm-code.js",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "syntax: c4-lm-core.js",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "syntax: c4-lm-evidence.js",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "syntax: c4-lm-kb.js",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "syntax: c4-lm-realize.js",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "syntax: c4-lm-reason.js",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "syntax: c4-lm-retrieve.js",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "syntax: c4-lm.js",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "page boots with no load errors",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "robots API present",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "language stack ready",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "knowledge base built",
+   "ok": true,
+   "detail": "359"
+  },
+  {
+   "name": "no artificial delay in page source",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "in-page self test (no new failures)",
+   "ok": true,
+   "detail": "23/24; pre-existing: reason modules loaded"
+  },
+  {
+   "name": "edge input: empty string",
+   "ok": true,
+   "detail": "Ask me anything — a fact, a calculation,"
+  },
+  {
+   "name": "edge input: whitespace only",
+   "ok": true,
+   "detail": "Ask me anything — a fact, a calculation,"
+  },
+  {
+   "name": "edge input: punctuation only",
+   "ok": true,
+   "detail": "Ask me anything — a fact, a calculation,"
+  },
+  {
+   "name": "edge input: single character",
+   "ok": true,
+   "detail": "I don't have anything reliable on x. I c"
+  },
+  {
+   "name": "edge input: emoji only",
+   "ok": true,
+   "detail": "Ask me anything — a fact, a calculation,"
+  },
+  {
+   "name": "edge input: control characters",
+   "ok": true,
+   "detail": "Got it. What would you like me to work o"
+  },
+  {
+   "name": "edge input: html injection",
+   "ok": true,
+   "detail": "The capital of France is Paris."
+  },
+  {
+   "name": "edge input: sql-ish input",
+   "ok": true,
+   "detail": "Table salt is sodium chloride, NaCl, an "
+  },
+  {
+   "name": "edge input: regex metacharacters",
+   "ok": true,
+   "detail": "I don't have anything reliable on (a|b)*"
+  },
+  {
+   "name": "edge input: very long input",
+   "ok": true,
+   "detail": "Chlorophyll absorbs photons, which drive"
+  },
+  {
+   "name": "edge input: repeated word",
+   "ok": true,
+   "detail": "Understood — say more and I'll dig in."
+  },
+  {
+   "name": "edge input: non-latin script",
+   "ok": true,
+   "detail": "Ask me anything — a fact, a calculation,"
+  },
+  {
+   "name": "edge input: mixed script",
+   "ok": true,
+   "detail": "I don't have anything reliable on π and "
+  },
+  {
+   "name": "edge input: numbers only",
+   "ok": true,
+   "detail": "Photosynthesis is the process by which p"
+  },
+  {
+   "name": "edge input: newlines",
+   "ok": true,
+   "detail": "The capital of France is Paris. It is in"
+  },
+  {
+   "name": "repeated question is stable",
+   "ok": true,
+   "detail": "The capital of France is Paris / The capital of France is Paris"
+  },
+  {
+   "name": "repeat is not slower",
+   "ok": true,
+   "detail": "1 -> 2"
+  },
+  {
+   "name": "offline: local computation unaffected",
+   "ok": true,
+   "detail": "17 * 23 = 391."
+  },
+  {
+   "name": "offline: local knowledge unaffected",
+   "ok": true,
+   "detail": "The capital of France is Paris. It is in"
+  },
+  {
+   "name": "offline: current question degrades honestly",
+   "ok": true,
+   "detail": "Bitcoin is a decentralised digital currency recorded on a pu"
+  },
+  {
+   "name": "hanging source does not hang the answer",
+   "ok": true,
+   "detail": "2518 ms"
+  },
+  {
+   "name": "garbage source response handled",
+   "ok": true,
+   "detail": "Python is a high-level, dynamically typed programm"
+  },
+  {
+   "name": "partially unavailable sources handled",
+   "ok": true,
+   "detail": "Node.js is a runtime that executes JavaScript outs"
+  },
+  {
+   "name": "corrupted cached artifacts tolerated",
+   "ok": true,
+   "detail": "The capital of France is Paris. It is in"
+  },
+  {
+   "name": "missing conversation pack tolerated",
+   "ok": true,
+   "detail": "Hi — what would you like to know?"
+  },
+  {
+   "name": "dialogue sequence",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "code construction returns verified code",
+   "ok": true,
+   "detail": "```javascript\nfunction unique(items) {\n "
+  },
+  {
+   "name": "emitted program was executed against its example",
+   "ok": true,
+   "detail": "true"
+  },
+  {
+   "name": "SQL construction",
+   "ok": true,
+   "detail": "```sql\nSELECT country, COUNT(*) AS user_count\nFROM"
+  }
+ ]
+}

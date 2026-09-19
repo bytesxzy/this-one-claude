@@ -1,0 +1,44 @@
+{
+  "source_modules": 63,
+  "task_identifier_occurrences": [
+    {
+      "file": "48c-objtree.js",
+      "line": 436,
+      "text": "charges for depth, and on arc1_44d8ac46 -- the task the guard was built",
+      "classification": "Reviewed: inherited explanatory comment, no executable task-ID branch"
+    }
+  ],
+  "network_api_calls": [],
+  "protectedFiles": [
+    {
+      "file": "c4-arc-tasks.js",
+      "unchanged": true
+    },
+    {
+      "file": "c4-arc-policy.js",
+      "unchanged": true
+    },
+    {
+      "file": "c4-mini.html",
+      "unchanged": true
+    },
+    {
+      "file": "c4-chat-corpus.js",
+      "unchanged": true
+    },
+    {
+      "file": "c4-site-pages.js",
+      "unchanged": true
+    },
+    {
+      "file": "README-DEPLOY.txt",
+      "unchanged": true
+    },
+    {
+      "file": "c4-gates-test.js",
+      "unchanged": true
+    }
+  ],
+  "engine_sha256": "6f25b2645ece32bcdeba538a20f54f961a3b9a80b039488c2cf2d5229204aa36",
+  "answer_isolation": "Workers receive demonstrations and test inputs; test.output has a throwing getter. Parent commits predictions before scoring."
+}

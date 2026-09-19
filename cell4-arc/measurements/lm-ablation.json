@@ -1,0 +1,115 @@
+{
+ "generated": "2026-09-19T21:14:23.148Z",
+ "rows": [
+  {
+   "id": "none",
+   "note": "full system",
+   "accuracy_pct": 100,
+   "turn_accuracy_pct": 100,
+   "hallucinations": 0,
+   "p50_ms": 9,
+   "p95_ms": 30,
+   "defects": 0,
+   "accuracy_delta": 0
+  },
+  {
+   "id": "no-kb",
+   "note": "local knowledge base off",
+   "accuracy_pct": 77.3,
+   "turn_accuracy_pct": 78.5,
+   "hallucinations": 7,
+   "p50_ms": 5,
+   "p95_ms": 14,
+   "defects": 0,
+   "accuracy_delta": -22.7
+  },
+  {
+   "id": "no-reasoning",
+   "note": "reasoning graph off (arithmetic, logic, sequences)",
+   "accuracy_pct": 75.3,
+   "turn_accuracy_pct": 77.3,
+   "hallucinations": 9,
+   "p50_ms": 9,
+   "p95_ms": 32,
+   "defects": 1,
+   "accuracy_delta": -24.7
+  },
+  {
+   "id": "no-retrieval",
+   "note": "BM25F + identity-tier retrieval off",
+   "accuracy_pct": 97.3,
+   "turn_accuracy_pct": 97.5,
+   "hallucinations": 0,
+   "p50_ms": 8,
+   "p95_ms": 28,
+   "defects": 0,
+   "accuracy_delta": -2.7
+  },
+  {
+   "id": "no-dialogue",
+   "note": "discourse state / anaphora off",
+   "accuracy_pct": 96.7,
+   "turn_accuracy_pct": 96.3,
+   "hallucinations": 1,
+   "p50_ms": 9,
+   "p95_ms": 28,
+   "defects": 0,
+   "accuracy_delta": -3.3
+  },
+  {
+   "id": "no-code",
+   "note": "code construction off",
+   "accuracy_pct": 97.3,
+   "turn_accuracy_pct": 97.5,
+   "hallucinations": 3,
+   "p50_ms": 8,
+   "p95_ms": 28,
+   "defects": 0,
+   "accuracy_delta": -2.7
+  },
+  {
+   "id": "no-ambiguity",
+   "note": "sense clarification off",
+   "accuracy_pct": 100,
+   "turn_accuracy_pct": 100,
+   "hallucinations": 0,
+   "p50_ms": 8,
+   "p95_ms": 30,
+   "defects": 0,
+   "accuracy_delta": 0
+  },
+  {
+   "id": "no-web",
+   "note": "public-source federation off",
+   "accuracy_pct": 98,
+   "turn_accuracy_pct": 98.2,
+   "hallucinations": 0,
+   "p50_ms": 8,
+   "p95_ms": 28,
+   "defects": 0,
+   "accuracy_delta": -2
+  },
+  {
+   "id": "no-normalization",
+   "note": "shared normalisation off (spell repair, preamble removal, format parsing)",
+   "accuracy_pct": 95.3,
+   "turn_accuracy_pct": 95.7,
+   "hallucinations": 3,
+   "p50_ms": 9,
+   "p95_ms": 31,
+   "defects": 0,
+   "accuracy_delta": -4.7
+  },
+  {
+   "id": "no-adaptive-depth",
+   "note": "adaptive depth off (every resolver runs, routing ignored)",
+   "accuracy_pct": 97.3,
+   "turn_accuracy_pct": 97.5,
+   "hallucinations": 0,
+   "p50_ms": 10,
+   "p95_ms": 30,
+   "defects": 0,
+   "accuracy_delta": -2.7
+  }
+ ]
+}

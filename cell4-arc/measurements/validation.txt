@@ -1,0 +1,51 @@
+c4-arc/test.js
+PASS scene shape equivalence, relations, strict tie rejection
+PASS inverse constructors round-trip and reject invalid grids
+PASS inverse construction composes crop, rotation, and anisotropic scale
+PASS nested inverse constructors transfer to different dimensions/colors
+PASS partial periods extend with an induced palette change
+PASS typed filtered reduction transfers to new square sizes and positions
+PASS marker-aligned assembly is invariant to positions and palette
+PASS all demos constrain a shared program
+PASS inference cannot access a test answer and does not mutate inputs
+PASS zero budget respects boundary
+PASS conditional composition preserves budget after an executable exact fit
+PASS bounded search is repeatable when work cap completes
+12 tests passed
+
+c4-arc/integration-test.js
+PASS browser globals, script order, planner load, corpus API, solving, answer isolation
+Scope: script-level browser integration. Unrelated scripts missing from the original archive are not supplied.
+
+c4-gates-test.js
+the site must NOT answer general questions from its own docs:
+  ok    machine reasoning
+  ok    quantum fuzz
+  ok    the capital of Nigeria
+  ok    photosynthesis
+  ok    quantum computing
+  ok    the French revolution
+  ok    neural networks
+  ok    transformers
+the site must STILL answer about itself:
+  ok    GABRIEL
+  ok    ASTRA
+  ok    the cell tree
+  ok    MAX_SLICE
+  ok    objtree
+  ok    delta_stencils
+  ok    CELL4
+a non-definitional question is not gated at all:
+  ok    empty concept passes
+a statement is not a research query:
+  ok    "etc, you see the issue - it needs way WAY be"
+  ok    "kind of self explanatory, but it needs bette"
+  ok    "What is machine reasoning?"
+  ok    "What is the capital of Nigeria?"
+  ok    "how does the cell tree rank hypotheses"
+  ok    "define quantum fuzz"
+known residual (not a failure): "the version space" -> false
+all gates correct
+
+PASS byte-identical build 6f25b2645ece32bcdeba538a20f54f961a3b9a80b039488c2cf2d5229204aa36
+PASS benchmark exact multi-pair scoring, error retention, prediction commits, resume, and configuration mismatch protection

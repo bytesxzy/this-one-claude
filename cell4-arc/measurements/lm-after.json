@@ -1,0 +1,4631 @@
+{
+ "summary": {
+  "label": "after",
+  "generated": "2026-09-19T21:03:54.209Z",
+  "net": "off",
+  "modules": [],
+  "disabled": [],
+  "cases": 150,
+  "turns": 163,
+  "passed": 150,
+  "accuracy_pct": 100,
+  "turn_accuracy_pct": 100,
+  "hallucinations": 0,
+  "synthesis_defects": 0,
+  "timeouts": 0,
+  "web_turns": 0,
+  "latency": {
+   "p50": 8,
+   "p90": 24,
+   "p95": 28,
+   "p99": 37,
+   "mean": 12
+  },
+  "local_latency": {
+   "n": 163,
+   "p50": 8,
+   "p95": 28
+  },
+  "web_latency": {
+   "n": 0,
+   "p50": 0,
+   "p95": 0
+  },
+  "by_category": {
+   "definition": {
+    "total": 4,
+    "pass": 4
+   },
+   "fact": {
+    "total": 5,
+    "pass": 5
+   },
+   "format": {
+    "total": 8,
+    "pass": 8
+   },
+   "explain": {
+    "total": 4,
+    "pass": 4
+   },
+   "compare": {
+    "total": 4,
+    "pass": 4
+   },
+   "compute": {
+    "total": 15,
+    "pass": 15
+   },
+   "reason": {
+    "total": 14,
+    "pass": 14
+   },
+   "code": {
+    "total": 9,
+    "pass": 9
+   },
+   "current": {
+    "total": 4,
+    "pass": 4
+   },
+   "ambiguity": {
+    "total": 4,
+    "pass": 4
+   },
+   "unknown": {
+    "total": 1,
+    "pass": 1
+   },
+   "dialogue": {
+    "total": 10,
+    "pass": 10
+   },
+   "robust": {
+    "total": 3,
+    "pass": 3
+   },
+   "remark": {
+    "total": 2,
+    "pass": 2
+   },
+   "para-fact": {
+    "total": 6,
+    "pass": 6
+   },
+   "relation": {
+    "total": 9,
+    "pass": 9
+   },
+   "para-def": {
+    "total": 10,
+    "pass": 10
+   },
+   "para-why": {
+    "total": 5,
+    "pass": 5
+   },
+   "para-cmp": {
+    "total": 4,
+    "pass": 4
+   },
+   "negation": {
+    "total": 3,
+    "pass": 3
+   },
+   "multihop": {
+    "total": 3,
+    "pass": 3
+   },
+   "chat": {
+    "total": 4,
+    "pass": 4
+   },
+   "edge": {
+    "total": 4,
+    "pass": 4
+   },
+   "site": {
+    "total": 3,
+    "pass": 3
+   },
+   "precision": {
+    "total": 3,
+    "pass": 3
+   },
+   "knowledge": {
+    "total": 9,
+    "pass": 9
+   }
+  },
+  "wall_ms": 25105
+ },
+ "records": [
+  {
+   "id": 1,
+   "cat": "definition",
+   "question": "What is generative AI?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is generative AI?",
+     "output": "Generative AI refers to models that produce new content — text, images, audio, code — by learning the statistical structure of training data and sampling from it. It is used for producing new text, images, audio, video or code.",
+     "route": "knowledge",
+     "subject": "generative AI",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 43,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 43
+  },
+  {
+   "id": 2,
+   "cat": "definition",
+   "question": "What is a high school?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is a high school?",
+     "output": "A high school is a secondary school, typically for students roughly aged 14 to 18, that comes after primary or middle school and before university. It is used for secondary education leading to a diploma or school-leaving qualification.",
+     "route": "knowledge",
+     "subject": "high school",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 14,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 14
+  },
+  {
+   "id": 3,
+   "cat": "definition",
+   "question": "What is machine reasoning?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is machine reasoning?",
+     "output": "Machine reasoning is the area of AI concerned with deriving new conclusions from existing knowledge — by logical inference, constraint solving, planning or probabilistic inference — rather than by pattern-matching alone. It is used for deriving conclusions that are not stated explicitly in the input.",
+     "route": "knowledge",
+     "subject": "machine reasoning",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 9,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 9
+  },
+  {
+   "id": 4,
+   "cat": "definition",
+   "question": "What is quantum computing?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is quantum computing?",
+     "output": "Quantum computing uses qubits, which can be in superpositions of 0 and 1 and can be entangled, to run algorithms that exploit interference. It is used for solving certain problems — factoring, simulation, search — faster than classical machines.",
+     "route": "knowledge",
+     "subject": "quantum computing",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 8,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 8
+  },
+  {
+   "id": 5,
+   "cat": "fact",
+   "question": "What is the capital of France?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the capital of France?",
+     "output": "The capital of France is Paris. It is in Western Europe.",
+     "route": "knowledge",
+     "subject": "France",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 6,
+   "cat": "fact",
+   "question": "What is the capital of the United States?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the capital of the United States?",
+     "output": "The capital of United States is Washington, D.C. It was created by the Founding Fathers.",
+     "route": "knowledge",
+     "subject": "United States",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 5
+  },
+  {
+   "id": 7,
+   "cat": "fact",
+   "question": "France's capital?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "France's capital?",
+     "output": "The capital of France is Paris. It is in Western Europe.",
+     "route": "knowledge",
+     "subject": "France",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 5
+  },
+  {
+   "id": 8,
+   "cat": "fact",
+   "question": "Who wrote Pride and Prejudice?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Who wrote Pride and Prejudice?",
+     "output": "Jane Austen wrote Pride and Prejudice. It dates to 1813.",
+     "route": "knowledge",
+     "subject": "Pride and Prejudice",
+     "relation": "author",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 6,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 6
+  },
+  {
+   "id": 9,
+   "cat": "fact",
+   "question": "What is the chemical symbol for gold?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the chemical symbol for gold?",
+     "output": "The chemical symbol for gold is Au.",
+     "route": "knowledge",
+     "subject": "gold",
+     "relation": "symbol",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 10,
+   "cat": "format",
+   "question": "Explain photosynthesis in one sentence.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Explain photosynthesis in one sentence.",
+     "output": "Photosynthesis is the process by which plants, algae and some bacteria use light energy to convert carbon dioxide and water into sugars, releasing oxygen.",
+     "route": "explanation",
+     "subject": "photosynthesis",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 5
+  },
+  {
+   "id": 11,
+   "cat": "explain",
+   "question": "Why does Earth have seasons?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Why does Earth have seasons?",
+     "output": "Earth's axis is tilted about 23.5 degrees. As Earth orbits the Sun, each hemisphere leans toward the Sun for part of the year and away for the rest, changing how directly sunlight strikes the surface and how long the day lasts. Distance from the Sun has almost nothing to do with it.",
+     "route": "knowledge",
+     "subject": "seasons",
+     "relation": "why",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 6,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 6
+  },
+  {
+   "id": 12,
+   "cat": "explain",
+   "question": "Why is the sky blue?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Why is the sky blue?",
+     "output": "Air molecules scatter sunlight in all directions, and Rayleigh scattering is far stronger at short wavelengths — roughly as one over wavelength to the fourth power. Blue light is therefore scattered across the whole sky while red light passes more directly through, so the sky away from the Sun looks blue.",
+     "route": "knowledge",
+     "subject": "blue sky",
+     "relation": "why",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 8,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 8
+  },
+  {
+   "id": 13,
+   "cat": "compare",
+   "question": "What is the difference between mass and weight?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the difference between mass and weight?",
+     "output": "Mass and weight differ in 3 main respects. Mass is the amount of matter in an object, while weight is the force gravity exerts on that matter. Mass is kilograms, while weight is newtons. Mass is the same everywhere, while weight changes with the local gravitational field.",
+     "route": "comparison",
+     "subject": "mass / weight",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 19,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 19
+  },
+  {
+   "id": 14,
+   "cat": "explain",
+   "question": "Why does a metal spoon feel colder than a wooden spoon when both are in the same room?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Why does a metal spoon feel colder than a wooden spoon when both are in the same room?",
+     "output": "Thermal conduction is heat transfer through direct contact, as faster-moving particles pass energy to slower neighbours. Metals conduct heat quickly because their free electrons carry energy through the material, so a metal object pulls heat out of your skin far faster than wood at the same temperature — which is why it feels colder even though both are at room temperature.",
+     "route": "explanation",
+     "subject": "thermal conduction",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 41,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 41
+  },
+  {
+   "id": 15,
+   "cat": "compute",
+   "question": "What is 17 * 23?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is 17 * 23?",
+     "output": "17 * 23 = 391.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 6,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 6
+  },
+  {
+   "id": 16,
+   "cat": "compute",
+   "question": "What is (144 / 12) + 7?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is (144 / 12) + 7?",
+     "output": "(144 / 12) + 7 = 19.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 5
+  },
+  {
+   "id": 17,
+   "cat": "compute",
+   "question": "What is 2^10?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is 2^10?",
+     "output": "2^10 = 1024.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 3,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 3
+  },
+  {
+   "id": 18,
+   "cat": "compute",
+   "question": "An $80 item is discounted by 25%. What is the new price?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "An $80 item is discounted by 25%. What is the new price?",
+     "output": "The new price is $60.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 15,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15
+  },
+  {
+   "id": 19,
+   "cat": "compute",
+   "question": "A car travels 60 miles per hour for 2.5 hours. How far does it travel?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "A car travels 60 miles per hour for 2.5 hours. How far does it travel?",
+     "output": "It travels 150 miles.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 17,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 17
+  },
+  {
+   "id": 20,
+   "cat": "reason",
+   "question": "If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops Lazzies?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops Lazzies?",
+     "output": "Yes. Every Bloop is in a category that is itself contained in Lazzies, so the containment carries through.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 33,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 33
+  },
+  {
+   "id": 21,
+   "cat": "reason",
+   "question": "No poets are robots. Some artists are poets. Can all artists be robots?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "No poets are robots. Some artists are poets. Can all artists be robots?",
+     "output": "No. Some artists are poets, and no poets are robots. Those artists therefore cannot be robots, so not all of them can.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 25,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 25
+  },
+  {
+   "id": 22,
+   "cat": "reason",
+   "question": "What comes next: 2, 4, 8, 16, ?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What comes next: 2, 4, 8, 16, ?",
+     "output": "32. In 2, 4, 8, 16, each term multiplies by 2.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 23,
+   "cat": "reason",
+   "question": "If A is older than B and B is older than C, who is youngest?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "If A is older than B and B is older than C, who is youngest?",
+     "output": "C. Ordering the statements gives A > B > C.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 15,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15
+  },
+  {
+   "id": 24,
+   "cat": "compare",
+   "question": "Compare TCP and UDP.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Compare TCP and UDP.",
+     "output": "TCP and UDP differ in 5 main respects. TCP sets up a connection with a three-way handshake, while UDP sends datagrams with no handshake. TCP retransmits lost segments and guarantees delivery, while UDP does not retransmit; losses are simply lost. TCP delivers bytes in the order they were sent, while UDP makes no ordering guarantee. TCP is larger headers and more round trips, while UDP is minimal header and no setup cost.",
+     "route": "comparison",
+     "subject": "TCP / UDP",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 15,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15
+  },
+  {
+   "id": 25,
+   "cat": "compare",
+   "question": "Compare RAM and SSD storage.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Compare RAM and SSD storage.",
+     "output": "RAM and SSD differ in 3 main respects. RAM is used for holding running programs and their working data, while SSD is used for persistent storage for the operating system, applications and files. RAM is volatile primary memory, while SSD is non-volatile secondary storage. RAM runs at nanosecond access times, while SSD runs at microsecond access times.",
+     "route": "comparison",
+     "subject": "RAM / SSD",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 21,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 21
+  },
+  {
+   "id": 26,
+   "cat": "compare",
+   "question": "What's the difference between supervised and unsupervised learning?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What's the difference between supervised and unsupervised learning?",
+     "output": "Supervised learning and unsupervised learning differ in 4 main respects. Supervised learning uses labelled examples with known correct answers, while unsupervised learning uses unlabelled data with no target output. Supervised learning learns a mapping from input to label, while unsupervised learning finds structure such as clusters or components. Supervised learning is measured against held-out labels, while unsupervised learning is measured indirectly, by cluster quality or reconstruction. Supervised learning is classification and regression, while unsupervised learning is clustering, dimensionality reduction and anomaly detection.",
+     "route": "comparison",
+     "subject": "supervised learning / unsupervised learning",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 16,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 16
+  },
+  {
+   "id": 27,
+   "cat": "format",
+   "question": "Compare mitosis and meiosis in exactly three bullets.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Compare mitosis and meiosis in exactly three bullets.",
+     "output": "- Outcome: mitosis produces two diploid cells identical to the parent, while meiosis produces four haploid cells that differ genetically.\n- Divisions: mitosis is one division, while meiosis is two successive divisions.\n- Purpose: mitosis is growth, repair and replacement of cells, while meiosis is producing gametes for sexual reproduction.",
+     "route": "comparison",
+     "subject": "mitosis / meiosis",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 27,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 27
+  },
+  {
+   "id": 28,
+   "cat": "code",
+   "question": "In JavaScript, write a function that removes duplicate values from an array while preserving order.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "In JavaScript, write a function that removes duplicate values from an array while preserving order.",
+     "output": "```javascript\nfunction unique(items) {\n  const seen = new Set();\n  const out = [];\n  for (const item of items) {\n    if (!seen.has(item)) {\n      seen.add(item);\n      out.push(item);\n    }\n  }\n  return out;\n}\n```\nA set records what has already been seen, so each value is kept the first time it appears and skipped afterwards. Insertion order is preserved and the whole pass is O(n).",
+     "route": "code",
+     "subject": "dedupe",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 30,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 30
+  },
+  {
+   "id": 29,
+   "cat": "code",
+   "question": "Explain async and await in JavaScript.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Explain async and await in JavaScript.",
+     "output": "Async and await are JavaScript keywords for writing asynchronous code in a sequential style: an async function returns a promise, and await pauses inside it until a promise settles. Await suspends only the async function, not the thread. The runtime continues processing other events and resumes the function when the awaited promise settles, so the code reads sequentially while staying non-blocking.",
+     "route": "explanation",
+     "subject": "async and await",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 12,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 12
+  },
+  {
+   "id": 30,
+   "cat": "code",
+   "question": "Why does this Python loop never stop? while x > 0: x += 1",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Why does this Python loop never stop? while x > 0: x += 1",
+     "output": "The condition holds while x > 0, but the body increases x on every pass, so the test never fails — x only moves further from 0. For the loop to end, the body has to decrease x toward 0.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 19,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 19
+  },
+  {
+   "id": 31,
+   "cat": "code",
+   "question": "Write a SQL query that counts users grouped by country.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Write a SQL query that counts users grouped by country.",
+     "output": "```sql\nSELECT country, COUNT(*) AS user_count\nFROM users\nGROUP BY country\nORDER BY user_count DESC;\n```\nGroups every row in users by country and counts the rows in each group, largest group first.",
+     "route": "code",
+     "subject": "group-count",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 6,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 6
+  },
+  {
+   "id": 32,
+   "cat": "current",
+   "question": "What is the current stable version of Node.js?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the current stable version of Node.js?",
+     "output": "Node.js is a runtime that executes JavaScript outside the browser, built on the V8 engine with an event-driven, non-blocking I/O model. It was created by Ryan Dahl. I could not reach a live source just now, so that is from local knowledge and may be out of date.",
+     "route": "knowledge",
+     "subject": "Node.js",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 22,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 22
+  },
+  {
+   "id": 33,
+   "cat": "current",
+   "question": "What is the latest stable Python release?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the latest stable Python release?",
+     "output": "Python is a high-level, dynamically typed programming language known for readable syntax and a large standard library. It was created by Guido van Rossum. I could not reach a live source just now, so that is from local knowledge and may be out of date.",
+     "route": "knowledge",
+     "subject": "Python",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 34,
+   "cat": "current",
+   "question": "What is the current Bitcoin price?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the current Bitcoin price?",
+     "output": "Bitcoin is a decentralised digital currency recorded on a public blockchain. It was created by Satoshi Nakamoto. I could not reach a live source just now, so that is from local knowledge and may be out of date.",
+     "route": "knowledge",
+     "subject": "Bitcoin",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 19,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 19
+  },
+  {
+   "id": 35,
+   "cat": "current",
+   "question": "What time is it right now?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What time is it right now?",
+     "output": "It is 09:03 PM on Saturday, September 19, 2026, by this device's clock.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 28,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 28
+  },
+  {
+   "id": 36,
+   "cat": "ambiguity",
+   "question": "What is Mercury?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is Mercury?",
+     "output": "“Mercury” could mean a few different things — the chemical element, a liquid metal with symbol Hg, the smallest planet and the one closest to the Sun, or the Roman messenger god. Which did you have in mind?",
+     "route": "clarify",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 6,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 6
+  },
+  {
+   "id": 37,
+   "cat": "ambiguity",
+   "question": "Tell me about Java.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Tell me about Java.",
+     "output": "“Java” could mean a few different things — the programming language, the Indonesian island, or a colloquial word for coffee. Which did you have in mind?",
+     "route": "clarify",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 3,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 3
+  },
+  {
+   "id": 38,
+   "cat": "ambiguity",
+   "question": "Who is Jordan?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Who is Jordan?",
+     "output": "“Jordan” could mean a few different things — the country in Western Asia, the American basketball player, or the river flowing to the Dead Sea. Which did you have in mind?",
+     "route": "clarify",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 39,
+   "cat": "ambiguity",
+   "question": "What is the Matrix?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the Matrix?",
+     "output": "A matrix is a rectangular array of numbers used to represent linear transformations and systems of equations.",
+     "route": "knowledge",
+     "subject": "matrix",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 40,
+   "cat": "unknown",
+   "question": "What is quantum fuzz?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is quantum fuzz?",
+     "output": "I don't have anything reliable on quantum fuzz. I couldn't confirm it from the public sources I can reach either. If you can point me at a more specific term or a source, I'll work from that.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 14,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 14
+  },
+  {
+   "id": 41,
+   "cat": "dialogue",
+   "question": "Tell me about Albert Einstein. || When was he born? || What about his education?",
+   "dialogue": true,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Tell me about Albert Einstein.",
+     "output": "Albert Einstein was a theoretical physicist best known for the theory of relativity and the mass–energy equivalence E = mc². It was created by the theory of relativity.",
+     "route": "knowledge",
+     "subject": "Albert Einstein",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "When was he born?",
+     "output": "Albert Einstein was born on 14 March 1879. It was created by the theory of relativity.",
+     "route": "knowledge",
+     "subject": "Albert Einstein",
+     "relation": "birth",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 3,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "What about his education?",
+     "output": "Einstein studied at the Swiss Federal Polytechnic in Zurich, graduating in 1900 with a teaching diploma in mathematics and physics, and took his doctorate at the University of Zurich in 1905.",
+     "route": "knowledge",
+     "subject": "Albert Einstein",
+     "relation": "education",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 3,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 13
+  },
+  {
+   "id": 42,
+   "cat": "dialogue",
+   "question": "What is quantum entanglement? || What is it used for?",
+   "dialogue": true,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is quantum entanglement?",
+     "output": "Quantum entanglement is a correlation between particles whose joint state cannot be written as separate individual states, so measuring one immediately constrains the other. It is used for quantum cryptography, quantum computing, quantum teleportation and precision sensing.",
+     "route": "knowledge",
+     "subject": "quantum entanglement",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "What is it used for?",
+     "output": "Quantum entanglement is used for quantum cryptography, quantum computing, quantum teleportation and precision sensing.",
+     "route": "knowledge",
+     "subject": "quantum entanglement",
+     "relation": "purpose",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 2,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 43,
+   "cat": "dialogue",
+   "question": "Tell me about TCP. || And UDP?",
+   "dialogue": true,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Tell me about TCP.",
+     "output": "TCP, the Transmission Control Protocol, is a connection-oriented transport protocol that delivers a reliable, ordered byte stream. It is used for reliable ordered delivery over an unreliable network.",
+     "route": "knowledge",
+     "subject": "TCP",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "And UDP?",
+     "output": "UDP, the User Datagram Protocol, is a connectionless transport protocol that sends datagrams with no handshake, ordering or retransmission. It is used for low-latency delivery where speed matters more than guaranteed delivery — video, voice, games, DNS.",
+     "route": "knowledge",
+     "subject": "UDP",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 2,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 6
+  },
+  {
+   "id": 44,
+   "cat": "dialogue",
+   "question": "Tell me about Einstein. || Anyway, what's photosynthesis?",
+   "dialogue": true,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Tell me about Einstein.",
+     "output": "Albert Einstein was a theoretical physicist best known for the theory of relativity and the mass–energy equivalence E = mc². It was created by the theory of relativity.",
+     "route": "knowledge",
+     "subject": "Albert Einstein",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "Anyway, what's photosynthesis?",
+     "output": "Photosynthesis is the process by which plants, algae and some bacteria use light energy to convert carbon dioxide and water into sugars, releasing oxygen. It is used for storing light energy as chemical energy in sugars.",
+     "route": "knowledge",
+     "subject": "photosynthesis",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 8,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 12
+  },
+  {
+   "id": 45,
+   "cat": "robust",
+   "question": "capital France",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "capital France",
+     "output": "The capital of France is Paris. It is in Western Europe.",
+     "route": "knowledge",
+     "subject": "France",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 46,
+   "cat": "robust",
+   "question": "what's teh capital of france",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what's teh capital of france",
+     "output": "The capital of France is Paris. It is in Western Europe.",
+     "route": "knowledge",
+     "subject": "France",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 47,
+   "cat": "robust",
+   "question": "explain photosynthsis in 1 sentence",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "explain photosynthsis in 1 sentence",
+     "output": "Photosynthesis is the process by which plants, algae and some bacteria use light energy to convert carbon dioxide and water into sugars, releasing oxygen.",
+     "route": "explanation",
+     "subject": "photosynthesis",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 6,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 6
+  },
+  {
+   "id": 48,
+   "cat": "remark",
+   "question": "kind of self explanatory, but it needs better interpretation",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "kind of self explanatory, but it needs better interpretation",
+     "output": "Understood — say more and I'll dig in.",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 35,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 35
+  },
+  {
+   "id": 49,
+   "cat": "format",
+   "question": "Give me only the number: 38 + 47.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Give me only the number: 38 + 47.",
+     "output": "85",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 8,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 8
+  },
+  {
+   "id": 50,
+   "cat": "explain",
+   "question": "Explain the difference between correlation and causation using one short example.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Explain the difference between correlation and causation using one short example.",
+     "output": "Correlation and causation differ in 3 main respects. Correlation only says two variables move together, while causation says one variable actually produces the change in the other. Correlation can be measured from observational data alone, while causation usually needs an experiment or a causal model. Correlation can be produced by a third variable or by coincidence, while causation is what an intervention would actually change. For example, ice-cream sales and drowning deaths rise together, but neither causes the other — hot weather drives both.",
+     "route": "comparison",
+     "subject": "correlation / causation",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 26,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 26
+  },
+  {
+   "id": 51,
+   "cat": "para-fact",
+   "question": "Which city is the capital of France?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Which city is the capital of France?",
+     "output": "The capital of France is Paris. It is in Western Europe.",
+     "route": "knowledge",
+     "subject": "France",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 6,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 6
+  },
+  {
+   "id": 52,
+   "cat": "para-fact",
+   "question": "the capital city of france is?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "the capital city of france is?",
+     "output": "The capital of France is Paris. It is in Western Europe.",
+     "route": "knowledge",
+     "subject": "France",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 53,
+   "cat": "para-fact",
+   "question": "Tell me France's capital city",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Tell me France's capital city",
+     "output": "The capital of France is Paris. It is in Western Europe.",
+     "route": "knowledge",
+     "subject": "France",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 5
+  },
+  {
+   "id": 54,
+   "cat": "para-fact",
+   "question": "what is the capital of japan",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is the capital of japan",
+     "output": "The capital of Japan is Tokyo. It is in East Asia.",
+     "route": "knowledge",
+     "subject": "Japan",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 55,
+   "cat": "para-fact",
+   "question": "Brazil's capital?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Brazil's capital?",
+     "output": "The capital of Brazil is Brasília. It is in South America.",
+     "route": "knowledge",
+     "subject": "Brazil",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 56,
+   "cat": "para-fact",
+   "question": "capital of australia",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "capital of australia",
+     "output": "The capital of Australia is Canberra. It is in Oceania.",
+     "route": "knowledge",
+     "subject": "Australia",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 57,
+   "cat": "relation",
+   "question": "What is the currency of Japan?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the currency of Japan?",
+     "output": "The currency of Japan is the yen. It is in East Asia.",
+     "route": "knowledge",
+     "subject": "Japan",
+     "relation": "currency",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 58,
+   "cat": "relation",
+   "question": "What language do they speak in Brazil?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What language do they speak in Brazil?",
+     "output": "The language of Brazil is Portuguese. It is in South America.",
+     "route": "knowledge",
+     "subject": "Brazil",
+     "relation": "language",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 10,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 10
+  },
+  {
+   "id": 59,
+   "cat": "relation",
+   "question": "Who wrote Hamlet?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Who wrote Hamlet?",
+     "output": "William Shakespeare wrote Hamlet. It dates to around 1600.",
+     "route": "knowledge",
+     "subject": "Hamlet",
+     "relation": "author",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 60,
+   "cat": "relation",
+   "question": "Who painted the Mona Lisa?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Who painted the Mona Lisa?",
+     "output": "Leonardo da Vinci created Mona Lisa. It was created by Leonardo da Vinci.",
+     "route": "knowledge",
+     "subject": "Mona Lisa",
+     "relation": "artist",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 61,
+   "cat": "relation",
+   "question": "What is the chemical symbol for iron?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the chemical symbol for iron?",
+     "output": "The chemical symbol for iron is Fe.",
+     "route": "knowledge",
+     "subject": "iron",
+     "relation": "symbol",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 62,
+   "cat": "relation",
+   "question": "What's the symbol for sodium?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What's the symbol for sodium?",
+     "output": "The chemical symbol for sodium is Na.",
+     "route": "knowledge",
+     "subject": "sodium",
+     "relation": "symbol",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 63,
+   "cat": "relation",
+   "question": "How many continents are there?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "How many continents are there?",
+     "output": "There are seven continents. It is made up of Africa, Antarctica, Asia, Australia, Europe, North America and South America.",
+     "route": "knowledge",
+     "subject": "continent",
+     "relation": "count",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 11,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 11
+  },
+  {
+   "id": 64,
+   "cat": "relation",
+   "question": "What is the largest planet in the solar system?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the largest planet in the solar system?",
+     "output": "Jupiter is the largest planet, at 139,820 km in diameter.",
+     "route": "knowledge",
+     "subject": "Jupiter",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 21,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 21
+  },
+  {
+   "id": 65,
+   "cat": "relation",
+   "question": "Who was the first person on the moon?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Who was the first person on the moon?",
+     "output": "Neil Armstrong was the first person to walk on the Moon, on 20 July 1969 during Apollo 11. It dates to 20 July 1969.",
+     "route": "knowledge",
+     "subject": "first person on the Moon",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 21,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 21
+  },
+  {
+   "id": 66,
+   "cat": "compute",
+   "question": "17 times 23",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "17 times 23",
+     "output": "17 * 23 = 391.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 67,
+   "cat": "compute",
+   "question": "calculate 144 divided by 12 plus 7",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "calculate 144 divided by 12 plus 7",
+     "output": "144 / 12 + 7 = 19.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 18,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 18
+  },
+  {
+   "id": 68,
+   "cat": "compute",
+   "question": "two to the power of ten",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "two to the power of ten",
+     "output": "2 ^ 10 = 1024.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 13,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 13
+  },
+  {
+   "id": 69,
+   "cat": "compute",
+   "question": "What is 15% of 240?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is 15% of 240?",
+     "output": "That is 36.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 5
+  },
+  {
+   "id": 70,
+   "cat": "compute",
+   "question": "A shirt costs 120 dollars with 30% off. What do I pay?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "A shirt costs 120 dollars with 30% off. What do I pay?",
+     "output": "The new price is $84.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 22,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 22
+  },
+  {
+   "id": 71,
+   "cat": "compute",
+   "question": "If a train goes 80 km/h for 3 hours how far?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "If a train goes 80 km/h for 3 hours how far?",
+     "output": "It travels 240 kilometres.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 17,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 17
+  },
+  {
+   "id": 72,
+   "cat": "compute",
+   "question": "Convert 100 kilometers to miles.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Convert 100 kilometers to miles.",
+     "output": "That is 62.1371 miles.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 10,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 10
+  },
+  {
+   "id": 73,
+   "cat": "compute",
+   "question": "How many minutes are in 3.5 hours?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "How many minutes are in 3.5 hours?",
+     "output": "That is 210 minutes.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 11,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 11
+  },
+  {
+   "id": 74,
+   "cat": "compute",
+   "question": "What is the average of 4, 8, 15, 16, 23, 42?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the average of 4, 8, 15, 16, 23, 42?",
+     "output": "The average is 18.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 8,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 8
+  },
+  {
+   "id": 75,
+   "cat": "compute",
+   "question": "What is 20 degrees Celsius in Fahrenheit?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is 20 degrees Celsius in Fahrenheit?",
+     "output": "That is 68 °F.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 15,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15
+  },
+  {
+   "id": 76,
+   "cat": "reason",
+   "question": "Every Gleeb is a Florp, and every Florp is a Quon. Is every Gleeb a Quon?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Every Gleeb is a Florp, and every Florp is a Quon. Is every Gleeb a Quon?",
+     "output": "Yes. Every Gleeb is in a category that is itself contained in Quon, so the containment carries through.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 27,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 27
+  },
+  {
+   "id": 77,
+   "cat": "reason",
+   "question": "All squares are rectangles. All rectangles are shapes. Are all squares shapes?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "All squares are rectangles. All rectangles are shapes. Are all squares shapes?",
+     "output": "Yes. Every square is in a category that is itself contained in shapes, so the containment carries through.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 20,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 20
+  },
+  {
+   "id": 78,
+   "cat": "reason",
+   "question": "Some birds are parrots. All parrots are animals. Are some birds animals?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Some birds are parrots. All parrots are animals. Are some birds animals?",
+     "output": "Yes. Some birds are parrots, and every parrot is an animal.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 31,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 31
+  },
+  {
+   "id": 79,
+   "cat": "reason",
+   "question": "No cats are dogs. Some pets are cats. Can all pets be dogs?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "No cats are dogs. Some pets are cats. Can all pets be dogs?",
+     "output": "No. Some pets are cats, and no cats are dogs. Those pets therefore cannot be dogs, so not all of them can.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 32,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 32
+  },
+  {
+   "id": 80,
+   "cat": "reason",
+   "question": "What comes next: 3, 6, 12, 24, ?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What comes next: 3, 6, 12, 24, ?",
+     "output": "48. In 3, 6, 12, 24, each term multiplies by 2.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 11,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 11
+  },
+  {
+   "id": 81,
+   "cat": "reason",
+   "question": "Continue the sequence 1, 4, 9, 16, 25",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Continue the sequence 1, 4, 9, 16, 25",
+     "output": "36. In 1, 4, 9, 16, 25, the terms are consecutive squares.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 13,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 13
+  },
+  {
+   "id": 82,
+   "cat": "reason",
+   "question": "What number comes next: 5, 10, 15, 20?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What number comes next: 5, 10, 15, 20?",
+     "output": "25. In 5, 10, 15, 20, each term adds 5.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 17,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 17
+  },
+  {
+   "id": 83,
+   "cat": "reason",
+   "question": "Tom is taller than Sue and Sue is taller than Ann. Who is tallest?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Tom is taller than Sue and Sue is taller than Ann. Who is tallest?",
+     "output": "Tom. Ordering the statements gives Tom > Sue > Ann.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 30,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 30
+  },
+  {
+   "id": 84,
+   "cat": "reason",
+   "question": "If Monday is day 1, what day is day 10?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "If Monday is day 1, what day is day 10?",
+     "output": "Wednesday. Day 10 is 9 days after day 1, and 9 mod 7 is 2.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 22,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 22
+  },
+  {
+   "id": 85,
+   "cat": "reason",
+   "question": "A bag has 3 red and 7 blue balls. What is the probability of drawing red?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "A bag has 3 red and 7 blue balls. What is the probability of drawing red?",
+     "output": "The probability is 0.3 (3/10, or 30%).",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 24,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 24
+  },
+  {
+   "id": 86,
+   "cat": "para-def",
+   "question": "define generative ai",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "define generative ai",
+     "output": "Generative AI refers to models that produce new content — text, images, audio, code — by learning the statistical structure of training data and sampling from it. It is used for producing new text, images, audio, video or code.",
+     "route": "knowledge",
+     "subject": "generative AI",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 8,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 8
+  },
+  {
+   "id": 87,
+   "cat": "para-def",
+   "question": "what does generative AI mean",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what does generative AI mean",
+     "output": "Generative AI refers to models that produce new content — text, images, audio, code — by learning the statistical structure of training data and sampling from it. It is used for producing new text, images, audio, video or code.",
+     "route": "knowledge",
+     "subject": "generative AI",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 17,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 17
+  },
+  {
+   "id": 88,
+   "cat": "para-def",
+   "question": "meaning of quantum computing",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "meaning of quantum computing",
+     "output": "Quantum computing uses qubits, which can be in superpositions of 0 and 1 and can be entangled, to run algorithms that exploit interference. It is used for solving certain problems — factoring, simulation, search — faster than classical machines.",
+     "route": "knowledge",
+     "subject": "quantum computing",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 14,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 14
+  },
+  {
+   "id": 89,
+   "cat": "para-def",
+   "question": "explain what a high school is",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "explain what a high school is",
+     "output": "A high school is a secondary school, typically for students roughly aged 14 to 18, that comes after primary or middle school and before university. It exists because secondary education leading to a diploma or school-leaving qualification is worth doing, and high school is how that is done.",
+     "route": "explanation",
+     "subject": "high school",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 12,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 12
+  },
+  {
+   "id": 90,
+   "cat": "para-def",
+   "question": "what is photosynthesis",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is photosynthesis",
+     "output": "Photosynthesis is the process by which plants, algae and some bacteria use light energy to convert carbon dioxide and water into sugars, releasing oxygen. It is used for storing light energy as chemical energy in sugars.",
+     "route": "knowledge",
+     "subject": "photosynthesis",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 91,
+   "cat": "para-def",
+   "question": "what is an api",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is an api",
+     "output": "An API, or application programming interface, is a defined contract that lets one piece of software call another. It is used for letting programs use each other's functionality without sharing internals.",
+     "route": "knowledge",
+     "subject": "API",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 92,
+   "cat": "para-def",
+   "question": "what is http",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is http",
+     "output": "HTTP, the Hypertext Transfer Protocol, is the request/response protocol the web uses to transfer documents and data. It is used for fetching and sending resources on the web.",
+     "route": "knowledge",
+     "subject": "HTTP",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 93,
+   "cat": "para-def",
+   "question": "what is dna",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is dna",
+     "output": "DNA is deoxyribonucleic acid, the double-helix molecule that stores the genetic instructions of living organisms. It is used for storing hereditary information.",
+     "route": "knowledge",
+     "subject": "DNA",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 94,
+   "cat": "para-def",
+   "question": "what is inflation",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is inflation",
+     "output": "Inflation is a general rise in prices over time, which reduces the purchasing power of money. It is caused by demand, costs or money supply outpacing real output.",
+     "route": "knowledge",
+     "subject": "inflation",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 3,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 3
+  },
+  {
+   "id": 95,
+   "cat": "para-def",
+   "question": "what is a recession",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is a recession",
+     "output": "A recession is a significant, broad decline in economic activity lasting more than a few months, often marked by two consecutive quarters of falling GDP. It is caused by falling demand, tightening credit or an external shock.",
+     "route": "knowledge",
+     "subject": "recession",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 96,
+   "cat": "para-why",
+   "question": "why do we have seasons on earth",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "why do we have seasons on earth",
+     "output": "Earth's axis is tilted about 23.5 degrees. As Earth orbits the Sun, each hemisphere leans toward the Sun for part of the year and away for the rest, changing how directly sunlight strikes the surface and how long the day lasts. Distance from the Sun has almost nothing to do with it.",
+     "route": "knowledge",
+     "subject": "seasons",
+     "relation": "why",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 12,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 12
+  },
+  {
+   "id": 97,
+   "cat": "para-why",
+   "question": "what makes the sky appear blue",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what makes the sky appear blue",
+     "output": "The sky looks blue because air scatters short-wavelength light more strongly than long-wavelength light. Air molecules scatter sunlight in all directions, and Rayleigh scattering is far stronger at short wavelengths — roughly as one over wavelength to the fourth power. Blue light is therefore scattered across the whole sky while red light passes more directly through, so the sky away from the Sun looks blue.",
+     "route": "explanation",
+     "subject": "blue sky",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 22,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 22
+  },
+  {
+   "id": 98,
+   "cat": "para-why",
+   "question": "why does metal feel cold to touch",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "why does metal feel cold to touch",
+     "output": "Thermal conduction is heat transfer through direct contact, as faster-moving particles pass energy to slower neighbours. Metals conduct heat quickly because their free electrons carry energy through the material, so a metal object pulls heat out of your skin far faster than wood at the same temperature — which is why it feels colder even though both are at room temperature.",
+     "route": "explanation",
+     "subject": "thermal conduction",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 23,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 23
+  },
+  {
+   "id": 99,
+   "cat": "para-why",
+   "question": "how does a vaccine work",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "how does a vaccine work",
+     "output": "A vaccine trains the immune system to recognise a pathogen by exposing it to a harmless piece or weakened form of that pathogen. The immune system responds to the vaccine by making antibodies and memory cells; if the real pathogen arrives later, those memory cells recognise it and respond fast enough to prevent illness.",
+     "route": "explanation",
+     "subject": "vaccine",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 13,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 13
+  },
+  {
+   "id": 100,
+   "cat": "para-why",
+   "question": "why is the ocean salty",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "why is the ocean salty",
+     "output": "Rain is slightly acidic and slowly weathers rock, dissolving mineral ions. Rivers carry those ions to the sea. Water evaporates from the ocean but salt does not, so over hundreds of millions of years the dissolved salts have accumulated.",
+     "route": "knowledge",
+     "subject": "ocean salinity",
+     "relation": "why",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 11,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 11
+  },
+  {
+   "id": 101,
+   "cat": "para-cmp",
+   "question": "tcp vs udp",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "tcp vs udp",
+     "output": "TCP and UDP differ in 5 main respects. TCP sets up a connection with a three-way handshake, while UDP sends datagrams with no handshake. TCP retransmits lost segments and guarantees delivery, while UDP does not retransmit; losses are simply lost. TCP delivers bytes in the order they were sent, while UDP makes no ordering guarantee. TCP is larger headers and more round trips, while UDP is minimal header and no setup cost.",
+     "route": "comparison",
+     "subject": "TCP / UDP",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 18,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 18
+  },
+  {
+   "id": 102,
+   "cat": "para-cmp",
+   "question": "difference between ram and ssd",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "difference between ram and ssd",
+     "output": "RAM and SSD differ in 4 main respects. RAM loses its contents when power is removed, while SSD keeps data without power. RAM is nanosecond access, directly addressable by the CPU, while SSD is microsecond access over a storage bus. RAM is working memory for running programs, while SSD is persistent storage for files and programs. RAM is smaller and far more expensive per gigabyte, while SSD is much larger and cheaper per gigabyte.",
+     "route": "comparison",
+     "subject": "RAM / SSD",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 17,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 17
+  },
+  {
+   "id": 103,
+   "cat": "para-cmp",
+   "question": "how do http and https differ",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "how do http and https differ",
+     "output": "HTTP and HTTPS differ in 3 main respects. HTTP sends requests and responses in the clear, while HTTPS wraps the same protocol in TLS encryption. HTTP is no server authentication, while HTTPS are the server presents a certificate that the client verifies. HTTP is 80, while HTTPS are 443.",
+     "route": "comparison",
+     "subject": "HTTP / HTTPS",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 18,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 18
+  },
+  {
+   "id": 104,
+   "cat": "para-cmp",
+   "question": "compare sql and nosql databases",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "compare sql and nosql databases",
+     "output": "SQL and NoSQL differ in one respect. SQL is SQL, Structured Query Language, is the declarative language for querying and modifying relational databases, while NoSQL is NoSQL databases relax the relational model for scale or flexibility, using document, key-value, column or graph structures.",
+     "route": "comparison",
+     "subject": "SQL / NoSQL",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 26,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 26
+  },
+  {
+   "id": 105,
+   "cat": "dialogue",
+   "question": "Tell me about Marie Curie. || What did she win? || when was she born?",
+   "dialogue": true,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Tell me about Marie Curie.",
+     "output": "Marie Curie was a physicist and chemist who pioneered research on radioactivity and won Nobel Prizes in both physics and chemistry.",
+     "route": "knowledge",
+     "subject": "Marie Curie",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "What did she win?",
+     "output": "She won the Nobel Prize in Physics in 1903 and the Nobel Prize in Chemistry in 1911, the first person to win in two sciences.",
+     "route": "knowledge",
+     "subject": "Marie Curie",
+     "relation": "achievement",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 2,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "when was she born?",
+     "output": "Marie Curie was born on 7 November 1867.",
+     "route": "knowledge",
+     "subject": "Marie Curie",
+     "relation": "birth",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 2,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 9
+  },
+  {
+   "id": 106,
+   "cat": "dialogue",
+   "question": "What is Python? || who created it?",
+   "dialogue": true,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is Python?",
+     "output": "Python is a high-level, dynamically typed programming language known for readable syntax and a large standard library. It was created by Guido van Rossum.",
+     "route": "knowledge",
+     "subject": "Python",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "who created it?",
+     "output": "Python is a high-level, dynamically typed programming language known for readable syntax and a large standard library. It was created by Guido van Rossum.",
+     "route": "knowledge",
+     "subject": "Python",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 2,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 6
+  },
+  {
+   "id": 107,
+   "cat": "dialogue",
+   "question": "Compare TCP and UDP. || which one is faster?",
+   "dialogue": true,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Compare TCP and UDP.",
+     "output": "TCP and UDP differ in 5 main respects. TCP sets up a connection with a three-way handshake, while UDP sends datagrams with no handshake. TCP retransmits lost segments and guarantees delivery, while UDP does not retransmit; losses are simply lost. TCP delivers bytes in the order they were sent, while UDP makes no ordering guarantee. TCP is larger headers and more round trips, while UDP is minimal header and no setup cost.",
+     "route": "comparison",
+     "subject": "TCP / UDP",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 18,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "which one is faster?",
+     "output": "UDP is the faster of the two — it is built for low-latency delivery where speed matters more than guaranteed delivery — video, voice, games, DNS.",
+     "route": "comparison",
+     "subject": "UDP",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 9,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 27
+  },
+  {
+   "id": 108,
+   "cat": "dialogue",
+   "question": "What is the capital of France? || and Germany?",
+   "dialogue": true,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the capital of France?",
+     "output": "The capital of France is Paris. It is in Western Europe.",
+     "route": "knowledge",
+     "subject": "France",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "and Germany?",
+     "output": "The capital of Germany is Berlin. It is in Central Europe.",
+     "route": "knowledge",
+     "subject": "Germany",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 3,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 109,
+   "cat": "dialogue",
+   "question": "Tell me about the Eiffel Tower. || how tall is it?",
+   "dialogue": true,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Tell me about the Eiffel Tower.",
+     "output": "The Eiffel Tower is a wrought-iron lattice tower in Paris, completed in 1889 for the World's Fair. It was created by Gustave Eiffel.",
+     "route": "knowledge",
+     "subject": "Eiffel Tower",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "how tall is it?",
+     "output": "Eiffel Tower is 330 metres (1,083 feet) including antennas tall. It was created by Gustave Eiffel.",
+     "route": "knowledge",
+     "subject": "Eiffel Tower",
+     "relation": "height",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 3,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 8
+  },
+  {
+   "id": 110,
+   "cat": "dialogue",
+   "question": "What is machine learning? || why? || Never mind. What is 12 * 12?",
+   "dialogue": true,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is machine learning?",
+     "output": "Machine learning is the branch of computing where systems learn patterns from data instead of following rules written by hand. It is used for making predictions or decisions from data.",
+     "route": "knowledge",
+     "subject": "machine learning",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 13,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "why?",
+     "output": "Machine learning is the branch of computing where systems learn patterns from data instead of following rules written by hand. It exists because making predictions or decisions from data is worth doing, and machine learning is how that is done.",
+     "route": "explanation",
+     "subject": "machine learning",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 10,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "Never mind. What is 12 * 12?",
+     "output": "12 * 12 = 144.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 2,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 25
+  },
+  {
+   "id": 111,
+   "cat": "format",
+   "question": "List three primary colors.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "List three primary colors.",
+     "output": "- Red.\n- Green.\n- Blue.",
+     "route": "knowledge",
+     "subject": "primary colour",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 14,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 14
+  },
+  {
+   "id": 112,
+   "cat": "format",
+   "question": "In one sentence, what is gravity?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "In one sentence, what is gravity?",
+     "output": "Gravity is the attraction between objects with mass; in general relativity it is the curvature of spacetime caused by mass and energy.",
+     "route": "knowledge",
+     "subject": "gravity",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 17,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 17
+  },
+  {
+   "id": 113,
+   "cat": "format",
+   "question": "Answer with a single word: what is the capital of Italy?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Answer with a single word: what is the capital of Italy?",
+     "output": "Rome",
+     "route": "knowledge",
+     "subject": "Italy",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 9,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 9
+  },
+  {
+   "id": 114,
+   "cat": "format",
+   "question": "Give me only the number: 12 * 12",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Give me only the number: 12 * 12",
+     "output": "144",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 115,
+   "cat": "format",
+   "question": "Summarize what an operating system does in two sentences.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Summarize what an operating system does in two sentences.",
+     "output": "An operating system manages a computer's hardware and provides services — processes, memory, files, devices — that applications rely.",
+     "route": "knowledge",
+     "subject": "operating system",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 27,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 27
+  },
+  {
+   "id": 116,
+   "cat": "negation",
+   "question": "Which of these is NOT a programming language: Python, Java, Everest?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Which of these is NOT a programming language: Python, Java, Everest?",
+     "output": "Everest. Everest is the highest mountain above sea level, on the border of Nepal and Tibet, not a programming language.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 37,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 37
+  },
+  {
+   "id": 117,
+   "cat": "negation",
+   "question": "Is the Moon a planet?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Is the Moon a planet?",
+     "output": "No. Moon is Earth's only natural satellite.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 19,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 19
+  },
+  {
+   "id": 118,
+   "cat": "negation",
+   "question": "Do spiders have six legs?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Do spiders have six legs?",
+     "output": "A spider is an eight-legged arachnid, not an insect. It has eight legs.",
+     "route": "knowledge",
+     "subject": "spider",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 13,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 13
+  },
+  {
+   "id": 119,
+   "cat": "multihop",
+   "question": "What is the capital of the country where the Eiffel Tower is?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the capital of the country where the Eiffel Tower is?",
+     "output": "The capital of France is Paris.",
+     "route": "knowledge",
+     "subject": "France",
+     "relation": "capital",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 5
+  },
+  {
+   "id": 120,
+   "cat": "multihop",
+   "question": "Who wrote the play that features the character Hamlet?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Who wrote the play that features the character Hamlet?",
+     "output": "William Shakespeare wrote Hamlet. It dates to around 1600.",
+     "route": "knowledge",
+     "subject": "Hamlet",
+     "relation": "author",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 121,
+   "cat": "multihop",
+   "question": "What language is spoken in the country whose capital is Lisbon?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What language is spoken in the country whose capital is Lisbon?",
+     "output": "The language of Portugal is Portuguese.",
+     "route": "knowledge",
+     "subject": "Portugal",
+     "relation": "language",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 122,
+   "cat": "chat",
+   "question": "hey",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "hey",
+     "output": "Hi — what would you like to know?",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 8,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 8
+  },
+  {
+   "id": 123,
+   "cat": "chat",
+   "question": "thanks, that helps",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "thanks, that helps",
+     "output": "Any time.",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 12,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 12
+  },
+  {
+   "id": 124,
+   "cat": "chat",
+   "question": "hmm, that's interesting",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "hmm, that's interesting",
+     "output": "Noted.",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 12,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 12
+  },
+  {
+   "id": 125,
+   "cat": "chat",
+   "question": "what are you?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what are you?",
+     "output": "I'm CELL4's local language system. I run in your browser: I answer from a local knowledge base and reasoning engine, and I only go to public data sources when a question needs current information.",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 126,
+   "cat": "remark",
+   "question": "you see the issue, it needs better lookup",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "you see the issue, it needs better lookup",
+     "output": "Understood — say more and I'll dig in.",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 22,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 22
+  },
+  {
+   "id": 127,
+   "cat": "edge",
+   "question": "",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "",
+     "output": "Ask me anything — a fact, a calculation, an explanation, or something to build.",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 2,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 2
+  },
+  {
+   "id": 128,
+   "cat": "edge",
+   "question": "?????",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "?????",
+     "output": "Ask me anything — a fact, a calculation, an explanation, or something to build.",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 2,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 2
+  },
+  {
+   "id": 129,
+   "cat": "edge",
+   "question": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+     "output": "I don't have anything reliable on aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa. I couldn't confirm it from the public sources I can reach either. If you can point me at a more specific term or a source, I'll work from that.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 130,
+   "cat": "edge",
+   "question": "I have been thinking for a while about how computers represent numbers internally and why floating point arithmetic sometimes produces surprising results such as 0.1 plus 0.2 not being exactly 0.3, and I would like a clear explanation of what is going on under the hood.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "I have been thinking for a while about how computers represent numbers internally and why floating point arithmetic sometimes produces surprising results such as 0.1 plus 0.2 not being exactly 0.3, and I would like a clear explanation of what is going on under the hood.",
+     "output": "A binary fraction can only represent sums of powers of two, and 0.1 and 0.2 are not such sums. Each is rounded to the nearest representable value, and the rounding errors survive the addition, so 0.1 + 0.2 comes out as 0.30000000000000004 rather than exactly 0.3.",
+     "route": "knowledge",
+     "subject": "floating point",
+     "relation": "why",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 16,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 16
+  },
+  {
+   "id": 131,
+   "cat": "site",
+   "question": "What does CELL4 do?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What does CELL4 do?",
+     "output": "ARC-AGI-3 is interactive -- an agent takes actions in an environment over time. This engine is static: it reads a task, synthesises a program, and returns grids.",
+     "route": "local",
+     "subject": "Two things this is not",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "/astron/xyz/README.OPS.md"
+     ],
+     "used": [
+      "this site"
+     ],
+     "latency_ms": 10,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 10
+  },
+  {
+   "id": 132,
+   "cat": "site",
+   "question": "What is robots.js?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is robots.js?",
+     "output": "I don't have anything reliable on robots.js. I couldn't confirm it from the public sources I can reach either. If you can point me at a more specific term or a source, I'll work from that.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 11,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 11
+  },
+  {
+   "id": 133,
+   "cat": "site",
+   "question": "the version space",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "the version space",
+     "output": "A version space is the set of all hypotheses in a hypothesis space that remain consistent with the examples seen so far; learning narrows it as evidence arrives. It is used for representing every hypothesis still consistent with the data.",
+     "route": "knowledge",
+     "subject": "version space",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 13,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 13
+  },
+  {
+   "id": 134,
+   "cat": "precision",
+   "question": "What is JavaScript?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is JavaScript?",
+     "output": "JavaScript is a dynamically typed programming language that runs in web browsers and, through Node.js, on servers. It is used for scripting web pages and building servers and tools.",
+     "route": "knowledge",
+     "subject": "JavaScript",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 135,
+   "cat": "precision",
+   "question": "What is a compiler?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is a compiler?",
+     "output": "A compiler translates source code in one language into another form — usually machine code — before the program runs. It is used for turning source code into executable form.",
+     "route": "knowledge",
+     "subject": "compiler",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 136,
+   "cat": "precision",
+   "question": "What is an engine?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is an engine?",
+     "output": "An engine is a machine or software component that converts input into useful work — a heat engine turns fuel into motion, a software engine turns data and rules into results. It is used for converting an input into useful work.",
+     "route": "knowledge",
+     "subject": "engine",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 137,
+   "cat": "knowledge",
+   "question": "When did World War II end?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "When did World War II end?",
+     "output": "World War II was the global conflict fought from 1939 to 1945 between the Allied and Axis powers. It dates to 1939 to 1945, ending on 2 September 1945.",
+     "route": "knowledge",
+     "subject": "World War II",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 138,
+   "cat": "knowledge",
+   "question": "Who was the first president of the United States?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Who was the first president of the United States?",
+     "output": "George Washington was a general and statesman and the first President of the United States.",
+     "route": "knowledge",
+     "subject": "George Washington",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 26,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 26
+  },
+  {
+   "id": 139,
+   "cat": "knowledge",
+   "question": "What is GDP?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is GDP?",
+     "output": "GDP, gross domestic product, is the total market value of the goods and services an economy produces in a period. It is used for measuring the size of an economy.",
+     "route": "knowledge",
+     "subject": "GDP",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 3,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 3
+  },
+  {
+   "id": 140,
+   "cat": "knowledge",
+   "question": "What is supply and demand?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is supply and demand?",
+     "output": "Supply and demand is the model in which price moves until the quantity buyers want equals the quantity sellers offer. It is made up of a supply curve, a demand curve and an equilibrium price.",
+     "route": "knowledge",
+     "subject": "supply and demand",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 141,
+   "cat": "knowledge",
+   "question": "What is the speed of light?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the speed of light?",
+     "output": "The speed of speed of light is 299,792,458 m/s.",
+     "route": "knowledge",
+     "subject": "speed of light",
+     "relation": "speed",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 5
+  },
+  {
+   "id": 142,
+   "cat": "knowledge",
+   "question": "How many bones are in the human body?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "How many bones are in the human body?",
+     "output": "The human body has 206 bones in an adult. It is made up of skeletal, muscular, nervous, circulatory, respiratory, digestive and immune systems.",
+     "route": "knowledge",
+     "subject": "human body",
+     "relation": "count",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 5
+  },
+  {
+   "id": 143,
+   "cat": "knowledge",
+   "question": "What is the boiling point of water?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the boiling point of water?",
+     "output": "Water boils at 100 °C at sea-level pressure.",
+     "route": "knowledge",
+     "subject": "water",
+     "relation": "boiling",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 10,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 10
+  },
+  {
+   "id": 144,
+   "cat": "knowledge",
+   "question": "What causes rain?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What causes rain?",
+     "output": "Rain is caused by condensation of water vapour followed by droplet growth.",
+     "route": "knowledge",
+     "subject": "rain",
+     "relation": "cause",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 3,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 3
+  },
+  {
+   "id": 145,
+   "cat": "knowledge",
+   "question": "What is a black hole?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is a black hole?",
+     "output": "A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape. It is caused by the gravitational collapse of a massive star.",
+     "route": "knowledge",
+     "subject": "black hole",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 5
+  },
+  {
+   "id": 146,
+   "cat": "code",
+   "question": "Write a Python function to reverse a string.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Write a Python function to reverse a string.",
+     "output": "```python\ndef reverse_string(text):\n    return text[::-1]\n```\nThe string is split into characters, the order is inverted, and the characters are joined back together. Spreading rather than using split(\"\") keeps surrogate pairs intact.",
+     "route": "code",
+     "subject": "reverse-string",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 24,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 24
+  },
+  {
+   "id": 147,
+   "cat": "code",
+   "question": "Write a JavaScript function that returns the sum of an array.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Write a JavaScript function that returns the sum of an array.",
+     "output": "```javascript\nfunction sum(numbers) {\n  return numbers.reduce((total, n) => total + n, 0);\n}\n```\nreduce folds the array into a single value, starting from 0 so an empty array returns 0 rather than undefined.",
+     "route": "code",
+     "subject": "sum",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 20,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 20
+  },
+  {
+   "id": 148,
+   "cat": "code",
+   "question": "What does this do? const x = [1,2,3].map(n => n * 2)",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What does this do? const x = [1,2,3].map(n => n * 2)",
+     "output": "It multiplies every element by 2 and returns a new array, so the result is [2, 4, 6]. The original array is not modified.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 149,
+   "cat": "code",
+   "question": "Explain what a REST API is.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Explain what a REST API is.",
+     "output": "REST is an architectural style for web APIs: resources have URLs, HTTP methods express the operation, and each request carries everything the server needs. It is made up of resources, HTTP verbs, statelessness and representations.",
+     "route": "knowledge",
+     "subject": "REST",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 18,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 18
+  },
+  {
+   "id": 150,
+   "cat": "code",
+   "question": "Write a SQL query to find the top 5 highest paid employees.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Write a SQL query to find the top 5 highest paid employees.",
+     "output": "```sql\nSELECT *\nFROM employees\nORDER BY salary DESC\nLIMIT 5;\n```\nSorts employees by salary from highest to lowest and returns the first 5 rows.",
+     "route": "code",
+     "subject": "top-n",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 11,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 11
+  }
+ ]
+}

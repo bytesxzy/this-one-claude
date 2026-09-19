@@ -1,0 +1,4739 @@
+{
+ "summary": {
+  "label": "baseline",
+  "generated": "2026-09-19T20:27:27.976Z",
+  "net": "off",
+  "modules": [],
+  "disabled": [],
+  "cases": 150,
+  "turns": 163,
+  "passed": 21,
+  "accuracy_pct": 14,
+  "turn_accuracy_pct": 16,
+  "hallucinations": 1,
+  "synthesis_defects": 0,
+  "timeouts": 0,
+  "web_turns": 4,
+  "latency": {
+   "p50": 7488,
+   "p90": 7607,
+   "p95": 7636,
+   "p99": 7806,
+   "mean": 7070
+  },
+  "local_latency": {
+   "n": 159,
+   "p50": 7490,
+   "p95": 7644
+  },
+  "web_latency": {
+   "n": 4,
+   "p50": 469,
+   "p95": 523
+  },
+  "by_category": {
+   "definition": {
+    "total": 4,
+    "pass": 0
+   },
+   "fact": {
+    "total": 5,
+    "pass": 0
+   },
+   "format": {
+    "total": 8,
+    "pass": 0
+   },
+   "explain": {
+    "total": 4,
+    "pass": 0
+   },
+   "compare": {
+    "total": 4,
+    "pass": 0
+   },
+   "compute": {
+    "total": 15,
+    "pass": 0
+   },
+   "reason": {
+    "total": 14,
+    "pass": 4
+   },
+   "code": {
+    "total": 9,
+    "pass": 1
+   },
+   "current": {
+    "total": 4,
+    "pass": 0
+   },
+   "ambiguity": {
+    "total": 4,
+    "pass": 1
+   },
+   "unknown": {
+    "total": 1,
+    "pass": 1
+   },
+   "dialogue": {
+    "total": 10,
+    "pass": 0
+   },
+   "robust": {
+    "total": 3,
+    "pass": 0
+   },
+   "remark": {
+    "total": 2,
+    "pass": 1
+   },
+   "para-fact": {
+    "total": 6,
+    "pass": 0
+   },
+   "relation": {
+    "total": 9,
+    "pass": 0
+   },
+   "para-def": {
+    "total": 10,
+    "pass": 0
+   },
+   "para-why": {
+    "total": 5,
+    "pass": 1
+   },
+   "para-cmp": {
+    "total": 4,
+    "pass": 2
+   },
+   "negation": {
+    "total": 3,
+    "pass": 1
+   },
+   "multihop": {
+    "total": 3,
+    "pass": 0
+   },
+   "chat": {
+    "total": 4,
+    "pass": 3
+   },
+   "edge": {
+    "total": 4,
+    "pass": 4
+   },
+   "site": {
+    "total": 3,
+    "pass": 0
+   },
+   "precision": {
+    "total": 3,
+    "pass": 2
+   },
+   "knowledge": {
+    "total": 9,
+    "pass": 0
+   }
+  },
+  "wall_ms": 1157659
+ },
+ "records": [
+  {
+   "id": 1,
+   "cat": "definition",
+   "question": "What is generative AI?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is generative AI?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is generative AI?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7455,
+     "correct": false,
+     "issues": [
+      "none-of:/model/i|/content/i|/data/i",
+      "rejected:/insufficient|couldn.t find|could not find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7455
+  },
+  {
+   "id": 2,
+   "cat": "definition",
+   "question": "What is a high school?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is a high school?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is a high school?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7472,
+     "correct": false,
+     "issues": [
+      "none-of:/secondary/i|/students?/i|/education/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7472
+  },
+  {
+   "id": 3,
+   "cat": "definition",
+   "question": "What is machine reasoning?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is machine reasoning?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is machine reasoning?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7350,
+     "correct": false,
+     "issues": [
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7350
+  },
+  {
+   "id": 4,
+   "cat": "definition",
+   "question": "What is quantum computing?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is quantum computing?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is quantum computing?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7397,
+     "correct": false,
+     "issues": [
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7397
+  },
+  {
+   "id": 5,
+   "cat": "fact",
+   "question": "What is the capital of France?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the capital of France?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the capital of France?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7558,
+     "correct": false,
+     "issues": [
+      "missing:/\\bParis\\b/",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7558
+  },
+  {
+   "id": 6,
+   "cat": "fact",
+   "question": "What is the capital of the United States?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the capital of the United States?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the capital of the United States?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7541,
+     "correct": false,
+     "issues": [
+      "missing:/Washington/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7541
+  },
+  {
+   "id": 7,
+   "cat": "fact",
+   "question": "France's capital?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "France's capital?",
+     "output": "I couldn’t find enough relevant evidence to answer “France's capital?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7458,
+     "correct": false,
+     "issues": [
+      "missing:/\\bParis\\b/",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7458
+  },
+  {
+   "id": 8,
+   "cat": "fact",
+   "question": "Who wrote Pride and Prejudice?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Who wrote Pride and Prejudice?",
+     "output": "I couldn’t find enough relevant evidence to answer “Who wrote Pride and Prejudice?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7430,
+     "correct": false,
+     "issues": [
+      "missing:/Jane Austen/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7430
+  },
+  {
+   "id": 9,
+   "cat": "fact",
+   "question": "What is the chemical symbol for gold?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the chemical symbol for gold?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the chemical symbol for gold?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7543,
+     "correct": false,
+     "issues": [
+      "missing:/\\bAu\\b/",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7543
+  },
+  {
+   "id": 10,
+   "cat": "format",
+   "question": "Explain photosynthesis in one sentence.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Explain photosynthesis in one sentence.",
+     "output": "I couldn’t find enough relevant evidence to answer “Explain photosynthesis in one sentence.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7434,
+     "correct": false,
+     "issues": [
+      "none-of:/light/i|/sunlight/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7434
+  },
+  {
+   "id": 11,
+   "cat": "explain",
+   "question": "Why does Earth have seasons?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Why does Earth have seasons?",
+     "output": "I couldn’t find enough relevant evidence to answer “Why does Earth have seasons?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7415,
+     "correct": false,
+     "issues": [
+      "none-of:/tilt/i|/axis/i|/axial/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7415
+  },
+  {
+   "id": 12,
+   "cat": "explain",
+   "question": "Why is the sky blue?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Why is the sky blue?",
+     "output": "I couldn’t find enough relevant evidence to answer “Why is the sky blue?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7550,
+     "correct": false,
+     "issues": [
+      "none-of:/scatter/i|/Rayleigh/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7550
+  },
+  {
+   "id": 13,
+   "cat": "compare",
+   "question": "What is the difference between mass and weight?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the difference between mass and weight?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the difference between mass and weight?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7551,
+     "correct": false,
+     "issues": [
+      "none-of:/gravit/i|/force/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7551
+  },
+  {
+   "id": 14,
+   "cat": "explain",
+   "question": "Why does a metal spoon feel colder than a wooden spoon when both are in the same room?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Why does a metal spoon feel colder than a wooden spoon when both are in the same room?",
+     "output": "I couldn’t find enough relevant evidence to answer “Why does a metal spoon feel colder than a wooden spoon when both are in the same room?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7849,
+     "correct": false,
+     "issues": [
+      "none-of:/conduct/i|/heat/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7849
+  },
+  {
+   "id": 15,
+   "cat": "compute",
+   "question": "What is 17 * 23?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is 17 * 23?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is 17 * 23?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7406,
+     "correct": false,
+     "issues": [
+      "missing:/\\b391\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7406
+  },
+  {
+   "id": 16,
+   "cat": "compute",
+   "question": "What is (144 / 12) + 7?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is (144 / 12) + 7?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is (144 / 12) + 7?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7453,
+     "correct": false,
+     "issues": [
+      "missing:/\\b19\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7453
+  },
+  {
+   "id": 17,
+   "cat": "compute",
+   "question": "What is 2^10?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is 2^10?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is 2^10?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7382,
+     "correct": false,
+     "issues": [
+      "missing:/\\b1024\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7382
+  },
+  {
+   "id": 18,
+   "cat": "compute",
+   "question": "An $80 item is discounted by 25%. What is the new price?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "An $80 item is discounted by 25%. What is the new price?",
+     "output": "I couldn’t find enough relevant evidence to answer “An $80 item is discounted by 25%. What is the new price?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7596,
+     "correct": false,
+     "issues": [
+      "missing:/\\b60\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7596
+  },
+  {
+   "id": 19,
+   "cat": "compute",
+   "question": "A car travels 60 miles per hour for 2.5 hours. How far does it travel?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "A car travels 60 miles per hour for 2.5 hours. How far does it travel?",
+     "output": "I couldn’t find enough relevant evidence to answer “A car travels 60 miles per hour for 2.5 hours. How far does it travel?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7784,
+     "correct": false,
+     "issues": [
+      "missing:/\\b150\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7784
+  },
+  {
+   "id": 20,
+   "cat": "reason",
+   "question": "If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops Lazzies?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops Lazzies?",
+     "output": "I couldn’t find enough relevant evidence to answer “If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops Lazzies?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7632,
+     "correct": false,
+     "issues": [
+      "none-of:/\\byes\\b/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7632
+  },
+  {
+   "id": 21,
+   "cat": "reason",
+   "question": "No poets are robots. Some artists are poets. Can all artists be robots?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "No poets are robots. Some artists are poets. Can all artists be robots?",
+     "output": "I couldn’t find enough relevant evidence to answer “No poets are robots. Some artists are poets. Can all artists be robots?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7710,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7710
+  },
+  {
+   "id": 22,
+   "cat": "reason",
+   "question": "What comes next: 2, 4, 8, 16, ?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What comes next: 2, 4, 8, 16, ?",
+     "output": "I couldn’t find enough relevant evidence to answer “What comes next: 2, 4, 8, 16, ?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7419,
+     "correct": false,
+     "issues": [
+      "missing:/\\b32\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7419
+  },
+  {
+   "id": 23,
+   "cat": "reason",
+   "question": "If A is older than B and B is older than C, who is youngest?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "If A is older than B and B is older than C, who is youngest?",
+     "output": "I couldn’t find enough relevant evidence to answer “If A is older than B and B is older than C, who is youngest?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7456,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7456
+  },
+  {
+   "id": 24,
+   "cat": "compare",
+   "question": "Compare TCP and UDP.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Compare TCP and UDP.",
+     "output": "I couldn’t find enough relevant evidence to answer “Compare TCP and UDP.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7532,
+     "correct": false,
+     "issues": [
+      "none-of:/reliab/i|/connection/i|/ordered/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7532
+  },
+  {
+   "id": 25,
+   "cat": "compare",
+   "question": "Compare RAM and SSD storage.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Compare RAM and SSD storage.",
+     "output": "I couldn’t find enough relevant evidence to answer “Compare RAM and SSD storage.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7434,
+     "correct": false,
+     "issues": [
+      "none-of:/volatile/i|/persist/i|/memory/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7434
+  },
+  {
+   "id": 26,
+   "cat": "compare",
+   "question": "What's the difference between supervised and unsupervised learning?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What's the difference between supervised and unsupervised learning?",
+     "output": "I couldn’t find enough relevant evidence to answer “What's the difference between supervised and unsupervised learning?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7499,
+     "correct": false,
+     "issues": [
+      "none-of:/label/i|/cluster/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7499
+  },
+  {
+   "id": 27,
+   "cat": "format",
+   "question": "Compare mitosis and meiosis in exactly three bullets.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Compare mitosis and meiosis in exactly three bullets.",
+     "output": "I couldn’t find enough relevant evidence to answer “Compare mitosis and meiosis in exactly three bullets.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7531,
+     "correct": false,
+     "issues": [
+      "rejected:/insufficient|couldn.t find/i",
+      "bullets!=3 (0)"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7531
+  },
+  {
+   "id": 28,
+   "cat": "code",
+   "question": "In JavaScript, write a function that removes duplicate values from an array while preserving order.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "In JavaScript, write a function that removes duplicate values from an array while preserving order.",
+     "output": "I couldn’t find enough relevant evidence to answer “In JavaScript, write a function that removes duplicate values from an array while preserving order.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7806,
+     "correct": false,
+     "issues": [
+      "missing:/\\[/",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7806
+  },
+  {
+   "id": 29,
+   "cat": "code",
+   "question": "Explain async and await in JavaScript.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Explain async and await in JavaScript.",
+     "output": "I couldn’t find enough relevant evidence to answer “Explain async and await in JavaScript.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7592,
+     "correct": false,
+     "issues": [
+      "none-of:/promise/i|/asynchron/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7592
+  },
+  {
+   "id": 30,
+   "cat": "code",
+   "question": "Why does this Python loop never stop? while x > 0: x += 1",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Why does this Python loop never stop? while x > 0: x += 1",
+     "output": "I couldn’t find enough relevant evidence to answer “Why does this Python loop never stop? while x > 0: x += 1”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7621,
+     "correct": false,
+     "issues": [
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7621
+  },
+  {
+   "id": 31,
+   "cat": "code",
+   "question": "Write a SQL query that counts users grouped by country.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Write a SQL query that counts users grouped by country.",
+     "output": "I couldn’t find enough relevant evidence to answer “Write a SQL query that counts users grouped by country.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7531,
+     "correct": false,
+     "issues": [
+      "missing:/select/i",
+      "missing:/group by/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7531
+  },
+  {
+   "id": 32,
+   "cat": "current",
+   "question": "What is the current stable version of Node.js?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the current stable version of Node.js?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the current stable version of Node.js?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7516,
+     "correct": false,
+     "issues": [
+      "none-of:/\\d+\\.\\d+/|/could not reach|offline|no network|unavailable/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7516
+  },
+  {
+   "id": 33,
+   "cat": "current",
+   "question": "What is the latest stable Python release?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the latest stable Python release?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the latest stable Python release?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7512,
+     "correct": false,
+     "issues": [
+      "none-of:/3\\.\\d+/|/could not reach|offline|no network|unavailable/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7512
+  },
+  {
+   "id": 34,
+   "cat": "current",
+   "question": "What is the current Bitcoin price?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the current Bitcoin price?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the current Bitcoin price?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7433,
+     "correct": false,
+     "issues": [
+      "none-of:/\\$|\\busd\\b|\\d/i|/could not reach|offline|no network|unavailable/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7433
+  },
+  {
+   "id": 35,
+   "cat": "current",
+   "question": "What time is it right now?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What time is it right now?",
+     "output": "I couldn’t find enough relevant evidence to answer “What time is it right now?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7477,
+     "correct": false,
+     "issues": [
+      "none-of:/\\d{1,2}:\\d{2}/|/\\d{4}/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7477
+  },
+  {
+   "id": 36,
+   "cat": "ambiguity",
+   "question": "What is Mercury?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is Mercury?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is Mercury?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7424,
+     "correct": false,
+     "issues": [
+      "none-of:/planet/i|/element/i|/metal/i|/which/i|/mean/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7424
+  },
+  {
+   "id": 37,
+   "cat": "ambiguity",
+   "question": "Tell me about Java.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Tell me about Java.",
+     "output": "I couldn’t find enough relevant evidence to answer “Tell me about Java.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7453,
+     "correct": false,
+     "issues": [
+      "none-of:/programming/i|/island/i|/coffee/i|/which/i|/mean/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7453
+  },
+  {
+   "id": 38,
+   "cat": "ambiguity",
+   "question": "Who is Jordan?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Who is Jordan?",
+     "output": "I couldn’t find enough relevant evidence to answer “Who is Jordan?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7401,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7401
+  },
+  {
+   "id": 39,
+   "cat": "ambiguity",
+   "question": "What is the Matrix?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the Matrix?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the Matrix?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7503,
+     "correct": false,
+     "issues": [
+      "none-of:/film|movie/i|/mathemat/i|/array/i|/which/i|/mean/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7503
+  },
+  {
+   "id": 40,
+   "cat": "unknown",
+   "question": "What is quantum fuzz?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is quantum fuzz?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is quantum fuzz?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7396,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7396
+  },
+  {
+   "id": 41,
+   "cat": "dialogue",
+   "question": "Tell me about Albert Einstein. || When was he born? || What about his education?",
+   "dialogue": true,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Tell me about Albert Einstein.",
+     "output": "I couldn’t find enough relevant evidence to answer “Tell me about Albert Einstein.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7488,
+     "correct": false,
+     "issues": [
+      "none-of:/physic/i|/relativity/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "When was he born?",
+     "output": "I couldn’t find enough relevant evidence to answer “When was he born?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7368,
+     "correct": false,
+     "issues": [
+      "missing:/1879/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "What about his education?",
+     "output": "I couldn’t find enough relevant evidence to answer “What about his education?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 506,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15362
+  },
+  {
+   "id": 42,
+   "cat": "dialogue",
+   "question": "What is quantum entanglement? || What is it used for?",
+   "dialogue": true,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is quantum entanglement?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is quantum entanglement?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7514,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "What is it used for?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is it used for?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7486,
+     "correct": false,
+     "issues": [
+      "none-of:/cryptograph/i|/computing/i|/teleport/i|/sensing/i|/communicat/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15000
+  },
+  {
+   "id": 43,
+   "cat": "dialogue",
+   "question": "Tell me about TCP. || And UDP?",
+   "dialogue": true,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Tell me about TCP.",
+     "output": "I couldn’t find enough relevant evidence to answer “Tell me about TCP.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7490,
+     "correct": false,
+     "issues": [
+      "none-of:/protocol/i|/reliab/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "And UDP?",
+     "output": "I couldn’t find enough relevant evidence to answer “And UDP?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7351,
+     "correct": false,
+     "issues": [
+      "none-of:/datagram/i|/connectionless/i|/no.{0,12}(?:guarantee|reliab)/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 14841
+  },
+  {
+   "id": 44,
+   "cat": "dialogue",
+   "question": "Tell me about Einstein. || Anyway, what's photosynthesis?",
+   "dialogue": true,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Tell me about Einstein.",
+     "output": "I couldn’t find enough relevant evidence to answer “Tell me about Einstein.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7539,
+     "correct": false,
+     "issues": [
+      "none-of:/physic/i|/relativity/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "Anyway, what's photosynthesis?",
+     "output": "I couldn’t find enough relevant evidence to answer “Anyway, what's photosynthesis?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7448,
+     "correct": false,
+     "issues": [
+      "none-of:/light/i|/plants?/i|/sugar|glucose|energy/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 14987
+  },
+  {
+   "id": 45,
+   "cat": "robust",
+   "question": "capital France",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "capital France",
+     "output": "I couldn’t find enough relevant evidence to answer “capital France”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7396,
+     "correct": false,
+     "issues": [
+      "missing:/\\bParis\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7396
+  },
+  {
+   "id": 46,
+   "cat": "robust",
+   "question": "what's teh capital of france",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "what's teh capital of france",
+     "output": "I couldn’t find enough relevant evidence to answer “what's teh capital of france”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7395,
+     "correct": false,
+     "issues": [
+      "missing:/\\bParis\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7395
+  },
+  {
+   "id": 47,
+   "cat": "robust",
+   "question": "explain photosynthsis in 1 sentence",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "explain photosynthsis in 1 sentence",
+     "output": "I couldn’t find enough relevant evidence to answer “explain photosynthsis in 1 sentence”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7510,
+     "correct": false,
+     "issues": [
+      "none-of:/light/i|/plants?/i",
+      "sentences>1 (2)"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7510
+  },
+  {
+   "id": 48,
+   "cat": "remark",
+   "question": "kind of self explanatory, but it needs better interpretation",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "kind of self explanatory, but it needs better interpretation",
+     "output": "I’m here. What’s on your mind?",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 611,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 611
+  },
+  {
+   "id": 49,
+   "cat": "format",
+   "question": "Give me only the number: 38 + 47.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Give me only the number: 38 + 47.",
+     "output": "I couldn’t find enough relevant evidence to answer “Give me only the number: 38 + 47.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7595,
+     "correct": false,
+     "issues": [
+      "missing:/\\b85\\b/",
+      "words>4 (26)"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7595
+  },
+  {
+   "id": 50,
+   "cat": "explain",
+   "question": "Explain the difference between correlation and causation using one short example.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Explain the difference between correlation and causation using one short example.",
+     "output": "I couldn’t find enough relevant evidence to answer “Explain the difference between correlation and causation using one short example.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7628,
+     "correct": false,
+     "issues": [
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7628
+  },
+  {
+   "id": 51,
+   "cat": "para-fact",
+   "question": "Which city is the capital of France?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Which city is the capital of France?",
+     "output": "I couldn’t find enough relevant evidence to answer “Which city is the capital of France?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7475,
+     "correct": false,
+     "issues": [
+      "missing:/\\bParis\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7475
+  },
+  {
+   "id": 52,
+   "cat": "para-fact",
+   "question": "the capital city of france is?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "the capital city of france is?",
+     "output": "I couldn’t find enough relevant evidence to answer “the capital city of france is?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7607,
+     "correct": false,
+     "issues": [
+      "missing:/\\bParis\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7607
+  },
+  {
+   "id": 53,
+   "cat": "para-fact",
+   "question": "Tell me France's capital city",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Tell me France's capital city",
+     "output": "I couldn’t find enough relevant evidence to answer “Tell me France's capital city”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7440,
+     "correct": false,
+     "issues": [
+      "missing:/\\bParis\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7440
+  },
+  {
+   "id": 54,
+   "cat": "para-fact",
+   "question": "what is the capital of japan",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "what is the capital of japan",
+     "output": "I couldn’t find enough relevant evidence to answer “what is the capital of japan”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7455,
+     "correct": false,
+     "issues": [
+      "missing:/Tokyo/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7455
+  },
+  {
+   "id": 55,
+   "cat": "para-fact",
+   "question": "Brazil's capital?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Brazil's capital?",
+     "output": "I couldn’t find enough relevant evidence to answer “Brazil's capital?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7552,
+     "correct": false,
+     "issues": [
+      "missing:/Bras[ií]lia/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7552
+  },
+  {
+   "id": 56,
+   "cat": "para-fact",
+   "question": "capital of australia",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "capital of australia",
+     "output": "I couldn’t find enough relevant evidence to answer “capital of australia”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7380,
+     "correct": false,
+     "issues": [
+      "missing:/Canberra/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7380
+  },
+  {
+   "id": 57,
+   "cat": "relation",
+   "question": "What is the currency of Japan?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the currency of Japan?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the currency of Japan?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7444,
+     "correct": false,
+     "issues": [
+      "none-of:/yen/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7444
+  },
+  {
+   "id": 58,
+   "cat": "relation",
+   "question": "What language do they speak in Brazil?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What language do they speak in Brazil?",
+     "output": "I couldn’t find enough relevant evidence to answer “What language do they speak in Brazil?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7488,
+     "correct": false,
+     "issues": [
+      "none-of:/Portuguese/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7488
+  },
+  {
+   "id": 59,
+   "cat": "relation",
+   "question": "Who wrote Hamlet?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Who wrote Hamlet?",
+     "output": "I couldn’t find enough relevant evidence to answer “Who wrote Hamlet?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7411,
+     "correct": false,
+     "issues": [
+      "missing:/Shakespeare/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7411
+  },
+  {
+   "id": 60,
+   "cat": "relation",
+   "question": "Who painted the Mona Lisa?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Who painted the Mona Lisa?",
+     "output": "I couldn’t find enough relevant evidence to answer “Who painted the Mona Lisa?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7499,
+     "correct": false,
+     "issues": [
+      "missing:/Leonardo|Vinci/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7499
+  },
+  {
+   "id": 61,
+   "cat": "relation",
+   "question": "What is the chemical symbol for iron?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the chemical symbol for iron?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the chemical symbol for iron?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7598,
+     "correct": false,
+     "issues": [
+      "missing:/\\bFe\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7598
+  },
+  {
+   "id": 62,
+   "cat": "relation",
+   "question": "What's the symbol for sodium?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What's the symbol for sodium?",
+     "output": "I couldn’t find enough relevant evidence to answer “What's the symbol for sodium?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7472,
+     "correct": false,
+     "issues": [
+      "missing:/\\bNa\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7472
+  },
+  {
+   "id": 63,
+   "cat": "relation",
+   "question": "How many continents are there?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "How many continents are there?",
+     "output": "I couldn’t find enough relevant evidence to answer “How many continents are there?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7485,
+     "correct": false,
+     "issues": [
+      "none-of:/seven|\\b7\\b/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7485
+  },
+  {
+   "id": 64,
+   "cat": "relation",
+   "question": "What is the largest planet in the solar system?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the largest planet in the solar system?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the largest planet in the solar system?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7457,
+     "correct": false,
+     "issues": [
+      "missing:/Jupiter/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7457
+  },
+  {
+   "id": 65,
+   "cat": "relation",
+   "question": "Who was the first person on the moon?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Who was the first person on the moon?",
+     "output": "I couldn’t find enough relevant evidence to answer “Who was the first person on the moon?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7479,
+     "correct": false,
+     "issues": [
+      "missing:/Armstrong/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7479
+  },
+  {
+   "id": 66,
+   "cat": "compute",
+   "question": "17 times 23",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "17 times 23",
+     "output": "I couldn’t find enough relevant evidence to answer “17 times 23”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7374,
+     "correct": false,
+     "issues": [
+      "missing:/\\b391\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7374
+  },
+  {
+   "id": 67,
+   "cat": "compute",
+   "question": "calculate 144 divided by 12 plus 7",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "calculate 144 divided by 12 plus 7",
+     "output": "I couldn’t find enough relevant evidence to answer “calculate 144 divided by 12 plus 7”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7592,
+     "correct": false,
+     "issues": [
+      "missing:/\\b19\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7592
+  },
+  {
+   "id": 68,
+   "cat": "compute",
+   "question": "two to the power of ten",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "two to the power of ten",
+     "output": "I couldn’t find enough relevant evidence to answer “two to the power of ten”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7528,
+     "correct": false,
+     "issues": [
+      "missing:/\\b1024\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7528
+  },
+  {
+   "id": 69,
+   "cat": "compute",
+   "question": "What is 15% of 240?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is 15% of 240?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is 15% of 240?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7354,
+     "correct": false,
+     "issues": [
+      "missing:/\\b36\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7354
+  },
+  {
+   "id": 70,
+   "cat": "compute",
+   "question": "A shirt costs 120 dollars with 30% off. What do I pay?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "A shirt costs 120 dollars with 30% off. What do I pay?",
+     "output": "I couldn’t find enough relevant evidence to answer “A shirt costs 120 dollars with 30% off. What do I pay?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7644,
+     "correct": false,
+     "issues": [
+      "missing:/\\b84\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7644
+  },
+  {
+   "id": 71,
+   "cat": "compute",
+   "question": "If a train goes 80 km/h for 3 hours how far?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "If a train goes 80 km/h for 3 hours how far?",
+     "output": "I couldn’t find enough relevant evidence to answer “If a train goes 80 km/h for 3 hours how far?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7518,
+     "correct": false,
+     "issues": [
+      "missing:/\\b240\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7518
+  },
+  {
+   "id": 72,
+   "cat": "compute",
+   "question": "Convert 100 kilometers to miles.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Convert 100 kilometers to miles.",
+     "output": "I couldn’t find enough relevant evidence to answer “Convert 100 kilometers to miles.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7547,
+     "correct": false,
+     "issues": [
+      "none-of:/\\b62(\\.\\d+)?\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7547
+  },
+  {
+   "id": 73,
+   "cat": "compute",
+   "question": "How many minutes are in 3.5 hours?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "How many minutes are in 3.5 hours?",
+     "output": "I couldn’t find enough relevant evidence to answer “How many minutes are in 3.5 hours?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7575,
+     "correct": false,
+     "issues": [
+      "missing:/\\b210\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7575
+  },
+  {
+   "id": 74,
+   "cat": "compute",
+   "question": "What is the average of 4, 8, 15, 16, 23, 42?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the average of 4, 8, 15, 16, 23, 42?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the average of 4, 8, 15, 16, 23, 42?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7532,
+     "correct": false,
+     "issues": [
+      "none-of:/\\b18(\\.\\d+)?\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7532
+  },
+  {
+   "id": 75,
+   "cat": "compute",
+   "question": "What is 20 degrees Celsius in Fahrenheit?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is 20 degrees Celsius in Fahrenheit?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is 20 degrees Celsius in Fahrenheit?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7524,
+     "correct": false,
+     "issues": [
+      "missing:/\\b68\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7524
+  },
+  {
+   "id": 76,
+   "cat": "reason",
+   "question": "Every Gleeb is a Florp, and every Florp is a Quon. Is every Gleeb a Quon?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Every Gleeb is a Florp, and every Florp is a Quon. Is every Gleeb a Quon?",
+     "output": "I couldn’t find enough relevant evidence to answer “Every Gleeb is a Florp, and every Florp is a Quon. Is every Gleeb a Quon?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7489,
+     "correct": false,
+     "issues": [
+      "none-of:/\\byes\\b/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7489
+  },
+  {
+   "id": 77,
+   "cat": "reason",
+   "question": "All squares are rectangles. All rectangles are shapes. Are all squares shapes?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "All squares are rectangles. All rectangles are shapes. Are all squares shapes?",
+     "output": "I couldn’t find enough relevant evidence to answer “All squares are rectangles. All rectangles are shapes. Are all squares shapes?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7573,
+     "correct": false,
+     "issues": [
+      "none-of:/\\byes\\b/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7573
+  },
+  {
+   "id": 78,
+   "cat": "reason",
+   "question": "Some birds are parrots. All parrots are animals. Are some birds animals?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Some birds are parrots. All parrots are animals. Are some birds animals?",
+     "output": "I couldn’t find enough relevant evidence to answer “Some birds are parrots. All parrots are animals. Are some birds animals?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7565,
+     "correct": false,
+     "issues": [
+      "none-of:/\\byes\\b/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7565
+  },
+  {
+   "id": 79,
+   "cat": "reason",
+   "question": "No cats are dogs. Some pets are cats. Can all pets be dogs?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "No cats are dogs. Some pets are cats. Can all pets be dogs?",
+     "output": "I couldn’t find enough relevant evidence to answer “No cats are dogs. Some pets are cats. Can all pets be dogs?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7660,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7660
+  },
+  {
+   "id": 80,
+   "cat": "reason",
+   "question": "What comes next: 3, 6, 12, 24, ?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What comes next: 3, 6, 12, 24, ?",
+     "output": "I couldn’t find enough relevant evidence to answer “What comes next: 3, 6, 12, 24, ?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7515,
+     "correct": false,
+     "issues": [
+      "missing:/\\b48\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7515
+  },
+  {
+   "id": 81,
+   "cat": "reason",
+   "question": "Continue the sequence 1, 4, 9, 16, 25",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Continue the sequence 1, 4, 9, 16, 25",
+     "output": "I couldn’t find enough relevant evidence to answer “Continue the sequence 1, 4, 9, 16, 25”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7564,
+     "correct": false,
+     "issues": [
+      "missing:/\\b36\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7564
+  },
+  {
+   "id": 82,
+   "cat": "reason",
+   "question": "What number comes next: 5, 10, 15, 20?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What number comes next: 5, 10, 15, 20?",
+     "output": "I couldn’t find enough relevant evidence to answer “What number comes next: 5, 10, 15, 20?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7541,
+     "correct": false,
+     "issues": [
+      "missing:/\\b25\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7541
+  },
+  {
+   "id": 83,
+   "cat": "reason",
+   "question": "Tom is taller than Sue and Sue is taller than Ann. Who is tallest?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Tom is taller than Sue and Sue is taller than Ann. Who is tallest?",
+     "output": "I couldn’t find enough relevant evidence to answer “Tom is taller than Sue and Sue is taller than Ann. Who is tallest?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7626,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7626
+  },
+  {
+   "id": 84,
+   "cat": "reason",
+   "question": "If Monday is day 1, what day is day 10?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "If Monday is day 1, what day is day 10?",
+     "output": "I couldn’t find enough relevant evidence to answer “If Monday is day 1, what day is day 10?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7575,
+     "correct": false,
+     "issues": [
+      "none-of:/wednesday/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7575
+  },
+  {
+   "id": 85,
+   "cat": "reason",
+   "question": "A bag has 3 red and 7 blue balls. What is the probability of drawing red?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "A bag has 3 red and 7 blue balls. What is the probability of drawing red?",
+     "output": "I couldn’t find enough relevant evidence to answer “A bag has 3 red and 7 blue balls. What is the probability of drawing red?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7548,
+     "correct": false,
+     "issues": [
+      "none-of:/0\\.3|30%|3\\/10/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7548
+  },
+  {
+   "id": 86,
+   "cat": "para-def",
+   "question": "define generative ai",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "define generative ai",
+     "output": "I couldn’t find enough relevant evidence to answer “define generative ai”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7538,
+     "correct": false,
+     "issues": [
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7538
+  },
+  {
+   "id": 87,
+   "cat": "para-def",
+   "question": "what does generative AI mean",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "what does generative AI mean",
+     "output": "I couldn’t find enough relevant evidence to answer “what does generative AI mean”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7528,
+     "correct": false,
+     "issues": [
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7528
+  },
+  {
+   "id": 88,
+   "cat": "para-def",
+   "question": "meaning of quantum computing",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "meaning of quantum computing",
+     "output": "I couldn’t find enough relevant evidence to answer “meaning of quantum computing”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7465,
+     "correct": false,
+     "issues": [
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7465
+  },
+  {
+   "id": 89,
+   "cat": "para-def",
+   "question": "explain what a high school is",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "explain what a high school is",
+     "output": "I couldn’t find enough relevant evidence to answer “explain what a high school is”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7555,
+     "correct": false,
+     "issues": [
+      "none-of:/secondary/i|/students?/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7555
+  },
+  {
+   "id": 90,
+   "cat": "para-def",
+   "question": "what is photosynthesis",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "what is photosynthesis",
+     "output": "I couldn’t find enough relevant evidence to answer “what is photosynthesis”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7339,
+     "correct": false,
+     "issues": [
+      "none-of:/light/i|/plants?/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7339
+  },
+  {
+   "id": 91,
+   "cat": "para-def",
+   "question": "what is an api",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "what is an api",
+     "output": "I couldn’t find enough relevant evidence to answer “what is an api”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7399,
+     "correct": false,
+     "issues": [
+      "none-of:/interface/i|/application/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7399
+  },
+  {
+   "id": 92,
+   "cat": "para-def",
+   "question": "what is http",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "what is http",
+     "output": "I couldn’t find enough relevant evidence to answer “what is http”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7345,
+     "correct": false,
+     "issues": [
+      "none-of:/protocol/i|/transfer/i|/web/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7345
+  },
+  {
+   "id": 93,
+   "cat": "para-def",
+   "question": "what is dna",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "what is dna",
+     "output": "I couldn’t find enough relevant evidence to answer “what is dna”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7327,
+     "correct": false,
+     "issues": [
+      "none-of:/genetic/i|/nucleic/i|/molecul/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7327
+  },
+  {
+   "id": 94,
+   "cat": "para-def",
+   "question": "what is inflation",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "what is inflation",
+     "output": "I couldn’t find enough relevant evidence to answer “what is inflation”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7330,
+     "correct": false,
+     "issues": [
+      "none-of:/prices?/i|/purchasing power/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7330
+  },
+  {
+   "id": 95,
+   "cat": "para-def",
+   "question": "what is a recession",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "what is a recession",
+     "output": "I couldn’t find enough relevant evidence to answer “what is a recession”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7371,
+     "correct": false,
+     "issues": [
+      "none-of:/econom/i|/decline/i|/GDP/i",
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7371
+  },
+  {
+   "id": 96,
+   "cat": "para-why",
+   "question": "why do we have seasons on earth",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "why do we have seasons on earth",
+     "output": "I couldn’t find enough relevant evidence to answer “why do we have seasons on earth”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7534,
+     "correct": false,
+     "issues": [
+      "none-of:/tilt/i|/axis/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7534
+  },
+  {
+   "id": 97,
+   "cat": "para-why",
+   "question": "what makes the sky appear blue",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "what makes the sky appear blue",
+     "output": "I couldn’t find enough relevant evidence to answer “what makes the sky appear blue”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7463,
+     "correct": false,
+     "issues": [
+      "none-of:/scatter/i|/Rayleigh/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7463
+  },
+  {
+   "id": 98,
+   "cat": "para-why",
+   "question": "why does metal feel cold to touch",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "why does metal feel cold to touch",
+     "output": "I couldn’t find enough relevant evidence to answer “why does metal feel cold to touch”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7546,
+     "correct": false,
+     "issues": [
+      "none-of:/conduct/i|/heat/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7546
+  },
+  {
+   "id": 99,
+   "cat": "para-why",
+   "question": "how does a vaccine work",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "how does a vaccine work",
+     "output": "I couldn’t find enough relevant evidence to answer “how does a vaccine work”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7417,
+     "correct": false,
+     "issues": [
+      "none-of:/immune/i|/antibod/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7417
+  },
+  {
+   "id": 100,
+   "cat": "para-why",
+   "question": "why is the ocean salty",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "why is the ocean salty",
+     "output": "I couldn’t find enough relevant evidence to answer “why is the ocean salty”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7504,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7504
+  },
+  {
+   "id": 101,
+   "cat": "para-cmp",
+   "question": "tcp vs udp",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "tcp vs udp",
+     "output": "I couldn’t find enough relevant evidence to answer “tcp vs udp”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7520,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7520
+  },
+  {
+   "id": 102,
+   "cat": "para-cmp",
+   "question": "difference between ram and ssd",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "difference between ram and ssd",
+     "output": "I couldn’t find enough relevant evidence to answer “difference between ram and ssd”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7463,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7463
+  },
+  {
+   "id": 103,
+   "cat": "para-cmp",
+   "question": "how do http and https differ",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "how do http and https differ",
+     "output": "2.1 Typed programs: `engine/program.py` — A `Hyp` stores an opaque closure. That is enough to *check* a rule and nothing else, and the V2 equation asks a question that cannot be answered about a closure: how many different parameterisations of this same abstraction also explain the demonstrations, and do they agree about the test grid? Two programs differing only in a colour constant share one structure.",
+     "route": "site",
+     "subject": "",
+     "relation": "",
+     "web_used": true,
+     "sources": [
+      "/astron/xyz/ARC-V2-V3.md",
+      "/astron/xyz/ARC-IMPROVEMENTS.md"
+     ],
+     "used": [],
+     "latency_ms": 545,
+     "correct": false,
+     "issues": [
+      "missing:/HTTPS?/i",
+      "none-of:/encrypt/i|/TLS|SSL/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": true,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 545
+  },
+  {
+   "id": 104,
+   "cat": "para-cmp",
+   "question": "compare sql and nosql databases",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "compare sql and nosql databases",
+     "output": "I couldn’t find enough relevant evidence to answer “compare sql and nosql databases”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7515,
+     "correct": false,
+     "issues": [
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7515
+  },
+  {
+   "id": 105,
+   "cat": "dialogue",
+   "question": "Tell me about Marie Curie. || What did she win? || when was she born?",
+   "dialogue": true,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Tell me about Marie Curie.",
+     "output": "I couldn’t find enough relevant evidence to answer “Tell me about Marie Curie.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7565,
+     "correct": false,
+     "issues": [
+      "none-of:/physic|chemis|radioactiv|Nobel/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "What did she win?",
+     "output": "I couldn’t find enough relevant evidence to answer “What did she win?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7429,
+     "correct": false,
+     "issues": [
+      "none-of:/Nobel/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "when was she born?",
+     "output": "I couldn’t find enough relevant evidence to answer “when was she born?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 449,
+     "correct": false,
+     "issues": [
+      "none-of:/1867/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15443
+  },
+  {
+   "id": 106,
+   "cat": "dialogue",
+   "question": "What is Python? || who created it?",
+   "dialogue": true,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is Python?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is Python?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7374,
+     "correct": false,
+     "issues": [
+      "none-of:/programming/i|/language/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "who created it?",
+     "output": "I couldn’t find enough relevant evidence to answer “who created it?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7508,
+     "correct": false,
+     "issues": [
+      "none-of:/Rossum/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 14882
+  },
+  {
+   "id": 107,
+   "cat": "dialogue",
+   "question": "Compare TCP and UDP. || which one is faster?",
+   "dialogue": true,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Compare TCP and UDP.",
+     "output": "I couldn’t find enough relevant evidence to answer “Compare TCP and UDP.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7370,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "which one is faster?",
+     "output": "I couldn’t find enough relevant evidence to answer “which one is faster?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7434,
+     "correct": false,
+     "issues": [
+      "none-of:/UDP/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 14804
+  },
+  {
+   "id": 108,
+   "cat": "dialogue",
+   "question": "What is the capital of France? || and Germany?",
+   "dialogue": true,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the capital of France?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the capital of France?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7418,
+     "correct": false,
+     "issues": [
+      "missing:/Paris/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "and Germany?",
+     "output": "I couldn’t find enough relevant evidence to answer “and Germany?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7543,
+     "correct": false,
+     "issues": [
+      "missing:/Berlin/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 14961
+  },
+  {
+   "id": 109,
+   "cat": "dialogue",
+   "question": "Tell me about the Eiffel Tower. || how tall is it?",
+   "dialogue": true,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Tell me about the Eiffel Tower.",
+     "output": "I couldn’t find enough relevant evidence to answer “Tell me about the Eiffel Tower.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7585,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "how tall is it?",
+     "output": "I couldn’t find enough relevant evidence to answer “how tall is it?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7441,
+     "correct": false,
+     "issues": [
+      "none-of:/\\b3(2|3)\\d\\b|\\b1,?0\\d\\d\\b|metre|meter|feet/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15026
+  },
+  {
+   "id": 110,
+   "cat": "dialogue",
+   "question": "What is machine learning? || why? || Never mind. What is 12 * 12?",
+   "dialogue": true,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is machine learning?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is machine learning?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7538,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "why?",
+     "output": "Local-rule induction, and why it needs a capacity guard — A rule that survives is discounted; a rule that fails is *penalised*, not merely un-rewarded. The second guard is the one that matters. Before it existed, this module was producing the top-ranked hypothesis on dozens of tasks it then got wrong.",
+     "route": "site",
+     "subject": "",
+     "relation": "",
+     "web_used": true,
+     "sources": [
+      "/astron/xyz/ARCHITECTURE.md",
+      "/astron/xyz/ARCHITECTURE.md"
+     ],
+     "used": [],
+     "latency_ms": 394,
+     "correct": false,
+     "issues": [
+      "none-of:/\\w{20,}/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    },
+    {
+     "question": "Never mind. What is 12 * 12?",
+     "output": "I couldn’t find enough relevant evidence to answer “Never mind. What is 12 * 12?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7482,
+     "correct": false,
+     "issues": [
+      "missing:/\\b144\\b/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15414
+  },
+  {
+   "id": 111,
+   "cat": "format",
+   "question": "List three primary colors.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "List three primary colors.",
+     "output": "I couldn’t find enough relevant evidence to answer “List three primary colors.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7504,
+     "correct": false,
+     "issues": [
+      "none-of:/red/i",
+      "bullets<3 (0)"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7504
+  },
+  {
+   "id": 112,
+   "cat": "format",
+   "question": "In one sentence, what is gravity?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "In one sentence, what is gravity?",
+     "output": "I couldn’t find enough relevant evidence to answer “In one sentence, what is gravity?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7577,
+     "correct": false,
+     "issues": [
+      "none-of:/force|attract|mass/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7577
+  },
+  {
+   "id": 113,
+   "cat": "format",
+   "question": "Answer with a single word: what is the capital of Italy?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Answer with a single word: what is the capital of Italy?",
+     "output": "I couldn’t find enough relevant evidence to answer “Answer with a single word: what is the capital of Italy?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7565,
+     "correct": false,
+     "issues": [
+      "missing:/Rome/i",
+      "words>2 (29)"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7565
+  },
+  {
+   "id": 114,
+   "cat": "format",
+   "question": "Give me only the number: 12 * 12",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Give me only the number: 12 * 12",
+     "output": "I couldn’t find enough relevant evidence to answer “Give me only the number: 12 * 12”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7491,
+     "correct": false,
+     "issues": [
+      "missing:/\\b144\\b/",
+      "words>4 (26)"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7491
+  },
+  {
+   "id": 115,
+   "cat": "format",
+   "question": "Summarize what an operating system does in two sentences.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Summarize what an operating system does in two sentences.",
+     "output": "I couldn’t find enough relevant evidence to answer “Summarize what an operating system does in two sentences.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7674,
+     "correct": false,
+     "issues": [
+      "none-of:/hardware|resources|software|programs/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7674
+  },
+  {
+   "id": 116,
+   "cat": "negation",
+   "question": "Which of these is NOT a programming language: Python, Java, Everest?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Which of these is NOT a programming language: Python, Java, Everest?",
+     "output": "I couldn’t find enough relevant evidence to answer “Which of these is NOT a programming language: Python, Java, Everest?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7636,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7636
+  },
+  {
+   "id": 117,
+   "cat": "negation",
+   "question": "Is the Moon a planet?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Is the Moon a planet?",
+     "output": "I couldn’t find enough relevant evidence to answer “Is the Moon a planet?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7428,
+     "correct": false,
+     "issues": [
+      "none-of:/\\bno\\b|satellite|not a planet/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7428
+  },
+  {
+   "id": 118,
+   "cat": "negation",
+   "question": "Do spiders have six legs?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Do spiders have six legs?",
+     "output": "I couldn’t find enough relevant evidence to answer “Do spiders have six legs?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7472,
+     "correct": false,
+     "issues": [
+      "none-of:/\\bno\\b|eight/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7472
+  },
+  {
+   "id": 119,
+   "cat": "multihop",
+   "question": "What is the capital of the country where the Eiffel Tower is?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the capital of the country where the Eiffel Tower is?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the capital of the country where the Eiffel Tower is?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7609,
+     "correct": false,
+     "issues": [
+      "missing:/Paris/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7609
+  },
+  {
+   "id": 120,
+   "cat": "multihop",
+   "question": "Who wrote the play that features the character Hamlet?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Who wrote the play that features the character Hamlet?",
+     "output": "I couldn’t find enough relevant evidence to answer “Who wrote the play that features the character Hamlet?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7663,
+     "correct": false,
+     "issues": [
+      "missing:/Shakespeare/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7663
+  },
+  {
+   "id": 121,
+   "cat": "multihop",
+   "question": "What language is spoken in the country whose capital is Lisbon?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What language is spoken in the country whose capital is Lisbon?",
+     "output": "I couldn’t find enough relevant evidence to answer “What language is spoken in the country whose capital is Lisbon?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7547,
+     "correct": false,
+     "issues": [
+      "none-of:/Portuguese/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7547
+  },
+  {
+   "id": 122,
+   "cat": "chat",
+   "question": "hey",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "hey",
+     "output": "I’m here. What’s on your mind?",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 250,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 250
+  },
+  {
+   "id": 123,
+   "cat": "chat",
+   "question": "thanks, that helps",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "thanks, that helps",
+     "output": "I’m here. What’s on your mind?",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 344,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 344
+  },
+  {
+   "id": 124,
+   "cat": "chat",
+   "question": "hmm, that's interesting",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "hmm, that's interesting",
+     "output": "I’m here. What’s on your mind?",
+     "route": "conversation",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 381,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 381
+  },
+  {
+   "id": 125,
+   "cat": "chat",
+   "question": "what are you?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "what are you?",
+     "output": "I couldn’t find enough relevant evidence to answer “what are you?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7328,
+     "correct": false,
+     "issues": [
+      "rejected:/couldn.t find enough relevant evidence/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7328
+  },
+  {
+   "id": 126,
+   "cat": "remark",
+   "question": "you see the issue, it needs better lookup",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "you see the issue, it needs better lookup",
+     "output": "I couldn’t find enough relevant evidence to answer “you see the issue, it needs better lookup”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7611,
+     "correct": false,
+     "issues": [
+      "rejected:/couldn.t find enough relevant evidence/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7611
+  },
+  {
+   "id": 127,
+   "cat": "edge",
+   "question": "",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "",
+     "output": "I couldn’t find enough relevant evidence to answer “”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7303,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7303
+  },
+  {
+   "id": 128,
+   "cat": "edge",
+   "question": "?????",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "?????",
+     "output": "I couldn’t find enough relevant evidence to answer “?????”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7401,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7401
+  },
+  {
+   "id": 129,
+   "cat": "edge",
+   "question": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+     "output": "I couldn’t find enough relevant evidence to answer “aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7438,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7438
+  },
+  {
+   "id": 130,
+   "cat": "edge",
+   "question": "I have been thinking for a while about how computers represent numbers internally and why floating point arithmetic sometimes produces surprising results such as 0.1 plus 0.2 not being exactly 0.3, and I would like a clear explanation of what is going on under the hood.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "I have been thinking for a while about how computers represent numbers internally and why floating point arithmetic sometimes produces surprising results such as 0.1 plus 0.2 not being exactly 0.3, and I would like a clear explanation of what is going on under the hood.",
+     "output": "I couldn’t find enough relevant evidence to answer “I have been thinking for a while about how computers represent numbers internally and why floating point arithmetic sometimes produces surprising results such as 0.1 plus 0.2 not being exactly 0.3, and I would like a clear explanation of what is going on under the hood.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 8408,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 8408
+  },
+  {
+   "id": 131,
+   "cat": "site",
+   "question": "What does CELL4 do?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What does CELL4 do?",
+     "output": "A generator that fits rarely is the one that has an idea when nothing else does. Both are kept — the features are cheap and the draw bank is what its category needs — but neither has paid yet. **Per-object stencil tables do not generalise.",
+     "route": "site",
+     "subject": "",
+     "relation": "",
+     "web_used": true,
+     "sources": [
+      "/astron/xyz/HANDOFF-GPT6.md",
+      "/astron/xyz/HANDOFF-GPT6.md"
+     ],
+     "used": [],
+     "latency_ms": 469,
+     "correct": false,
+     "issues": [
+      "none-of:/CELL4|ARC|engine|solver|browser/i",
+      "unnecessary_web"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 469
+  },
+  {
+   "id": 132,
+   "cat": "site",
+   "question": "What is robots.js?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is robots.js?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is robots.js?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7324,
+     "correct": false,
+     "issues": [
+      "rejected:/insufficient|couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7324
+  },
+  {
+   "id": 133,
+   "cat": "site",
+   "question": "the version space",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "the version space",
+     "output": "I couldn’t find enough relevant evidence to answer “the version space”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7413,
+     "correct": false,
+     "issues": [
+      "rejected:/couldn.t find enough relevant evidence/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7413
+  },
+  {
+   "id": 134,
+   "cat": "precision",
+   "question": "What is JavaScript?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is JavaScript?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is JavaScript?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7326,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7326
+  },
+  {
+   "id": 135,
+   "cat": "precision",
+   "question": "What is a compiler?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is a compiler?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is a compiler?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7502,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7502
+  },
+  {
+   "id": 136,
+   "cat": "precision",
+   "question": "What is an engine?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is an engine?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is an engine?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7426,
+     "correct": false,
+     "issues": [
+      "none-of:/\\w{15,}/",
+      "rejected:/^I couldn.t find/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7426
+  },
+  {
+   "id": 137,
+   "cat": "knowledge",
+   "question": "When did World War II end?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "When did World War II end?",
+     "output": "I couldn’t find enough relevant evidence to answer “When did World War II end?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7462,
+     "correct": false,
+     "issues": [
+      "missing:/1945/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7462
+  },
+  {
+   "id": 138,
+   "cat": "knowledge",
+   "question": "Who was the first president of the United States?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Who was the first president of the United States?",
+     "output": "I couldn’t find enough relevant evidence to answer “Who was the first president of the United States?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7570,
+     "correct": false,
+     "issues": [
+      "missing:/Washington/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7570
+  },
+  {
+   "id": 139,
+   "cat": "knowledge",
+   "question": "What is GDP?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is GDP?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is GDP?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7398,
+     "correct": false,
+     "issues": [
+      "none-of:/gross domestic product/i|/goods and services/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7398
+  },
+  {
+   "id": 140,
+   "cat": "knowledge",
+   "question": "What is supply and demand?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is supply and demand?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is supply and demand?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7481,
+     "correct": false,
+     "issues": [
+      "none-of:/price/i|/market/i|/quantity/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7481
+  },
+  {
+   "id": 141,
+   "cat": "knowledge",
+   "question": "What is the speed of light?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the speed of light?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the speed of light?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7555,
+     "correct": false,
+     "issues": [
+      "none-of:/299|300,000|3\\s*[x×]\\s*10/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7555
+  },
+  {
+   "id": 142,
+   "cat": "knowledge",
+   "question": "How many bones are in the human body?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "How many bones are in the human body?",
+     "output": "I couldn’t find enough relevant evidence to answer “How many bones are in the human body?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7622,
+     "correct": false,
+     "issues": [
+      "none-of:/206/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7622
+  },
+  {
+   "id": 143,
+   "cat": "knowledge",
+   "question": "What is the boiling point of water?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is the boiling point of water?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is the boiling point of water?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7471,
+     "correct": false,
+     "issues": [
+      "none-of:/100/"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7471
+  },
+  {
+   "id": 144,
+   "cat": "knowledge",
+   "question": "What causes rain?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What causes rain?",
+     "output": "I couldn’t find enough relevant evidence to answer “What causes rain?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7434,
+     "correct": false,
+     "issues": [
+      "none-of:/condens|evaporat|cloud|water vapou?r/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7434
+  },
+  {
+   "id": 145,
+   "cat": "knowledge",
+   "question": "What is a black hole?",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What is a black hole?",
+     "output": "I couldn’t find enough relevant evidence to answer “What is a black hole?”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7503,
+     "correct": false,
+     "issues": [
+      "none-of:/gravit|light|escape|collaps/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7503
+  },
+  {
+   "id": 146,
+   "cat": "code",
+   "question": "Write a Python function to reverse a string.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Write a Python function to reverse a string.",
+     "output": "I couldn’t find enough relevant evidence to answer “Write a Python function to reverse a string.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7493,
+     "correct": false,
+     "issues": [
+      "none-of:/def /i|/\\[::-1\\]/|/reversed/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7493
+  },
+  {
+   "id": 147,
+   "cat": "code",
+   "question": "Write a JavaScript function that returns the sum of an array.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Write a JavaScript function that returns the sum of an array.",
+     "output": "I couldn’t find enough relevant evidence to answer “Write a JavaScript function that returns the sum of an array.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7540,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7540
+  },
+  {
+   "id": 148,
+   "cat": "code",
+   "question": "What does this do? const x = [1,2,3].map(n => n * 2)",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "What does this do? const x = [1,2,3].map(n => n * 2)",
+     "output": "I couldn’t find enough relevant evidence to answer “What does this do? const x = [1,2,3].map(n => n * 2)”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7541,
+     "correct": false,
+     "issues": [
+      "none-of:/doubl|multipl|\\[2, ?4, ?6\\]|each element/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7541
+  },
+  {
+   "id": 149,
+   "cat": "code",
+   "question": "Explain what a REST API is.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Explain what a REST API is.",
+     "output": "Install — venv`, creates `policy/ logs/ queue/ predictions/`, smoke-tests the imports, and installs one crontab line -- replacing only its own, leaving the rest of your crontab alone. The line it installs: ```cron */6 * * * * /root/astraarcengine-improved/astra/scripts/cron_evolve.sh ``` Every six minutes as you asked.",
+     "route": "site",
+     "subject": "",
+     "relation": "",
+     "web_used": true,
+     "sources": [
+      "/astron/xyz/README.OPS.md",
+      "/astron/xyz/ARC-IMPROVEMENTS.md"
+     ],
+     "used": [],
+     "latency_ms": 523,
+     "correct": false,
+     "issues": [
+      "none-of:/HTTP|resource|stateless|endpoint/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 523
+  },
+  {
+   "id": 150,
+   "cat": "code",
+   "question": "Write a SQL query to find the top 5 highest paid employees.",
+   "dialogue": false,
+   "pass": false,
+   "turns": [
+    {
+     "question": "Write a SQL query to find the top 5 highest paid employees.",
+     "output": "I couldn’t find enough relevant evidence to answer “Write a SQL query to find the top 5 highest paid employees.”. Try a more specific topic, error message, or source name.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 7605,
+     "correct": false,
+     "issues": [
+      "missing:/select/i"
+     ],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7605
+  }
+ ]
+}

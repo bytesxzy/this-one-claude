@@ -1,0 +1,141 @@
+{
+  "engine_sha256": "6f25b2645ece32bcdeba538a20f54f961a3b9a80b039488c2cf2d5229204aa36",
+  "budget": 3,
+  "jobs": 1,
+  "cases": [
+    {
+      "id": "arc1_017c7c7b",
+      "runs": [
+        {
+          "top1": true,
+          "top2": true,
+          "program": [
+            [
+              "bidirectional",
+              "bidi[periodic:0:fixed:9(latent)](tiling:gate[nonbg->2/0](periodRows))"
+            ]
+          ]
+        },
+        {
+          "top1": true,
+          "top2": true,
+          "program": [
+            [
+              "bidirectional",
+              "bidi[periodic:0:fixed:9(latent)](tiling:gate[nonbg->2/0](periodRows))"
+            ]
+          ]
+        },
+        {
+          "top1": true,
+          "top2": true,
+          "program": [
+            [
+              "bidirectional",
+              "bidi[periodic:0:fixed:9(latent)](tiling:gate[nonbg->2/0](periodRows))"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arc1_1fad071e",
+      "runs": [
+        {
+          "top1": true,
+          "top2": true,
+          "program": [
+            [
+              "reductions",
+              "render(row,count(filter(nontrivial&color:1,c4)),1,0)"
+            ]
+          ]
+        },
+        {
+          "top1": true,
+          "top2": true,
+          "program": [
+            [
+              "reductions",
+              "render(row,count(filter(nontrivial&color:1,c4)),1,0)"
+            ]
+          ]
+        },
+        {
+          "top1": true,
+          "top2": true,
+          "program": [
+            [
+              "reductions",
+              "render(row,count(filter(nontrivial&color:1,c4)),1,0)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arc1_22168020",
+      "runs": [
+        {
+          "top1": true,
+          "top2": true,
+          "program": [
+            [
+              "sequence",
+              "connect"
+            ]
+          ]
+        },
+        {
+          "top1": true,
+          "top2": true,
+          "program": [
+            [
+              "sequence",
+              "connect"
+            ]
+          ]
+        },
+        {
+          "top1": false,
+          "top2": true,
+          "program": [
+            [
+              "cellwise",
+              "treeD[field,1]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arc1_2bee17df",
+      "runs": [
+        {
+          "top1": false,
+          "top2": false,
+          "program": [
+            null
+          ]
+        },
+        {
+          "top1": false,
+          "top2": false,
+          "program": [
+            null
+          ]
+        },
+        {
+          "top1": true,
+          "top2": true,
+          "program": [
+            [
+              "cellwise",
+              "treeD[pos,4]"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

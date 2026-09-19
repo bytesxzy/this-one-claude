@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/fchollet/ARC-AGI",
+  "commit": "399030444e0ab0cc8b4e199870fb20b863846f34",
+  "archive_arc1_count": 400,
+  "identifier_comparison": {
+    "training": {
+      "official_count": 400,
+      "matching_ids": 400
+    },
+    "evaluation": {
+      "official_count": 400,
+      "matching_ids": 0
+    }
+  },
+  "verified_at": "2026-09-19T17:56:37.798Z"
+}
