@@ -86,6 +86,9 @@
      does not go to an encyclopedia and an encyclopedic question does not go
      to a package registry, so neither pays for the other's latency. */
   var DOMAINS = {
+    /* A word is not a thing. "What does 'pivot' mean" goes to dictionaries;
+       "who is Marie Curie" does not. */
+    lexical: ["dictionary", "wiktionary"],
     encyclopedic: ["wikipedia-title", "wikidata", "wikipedia-search"],
     software: ["npm", "pypi", "wikipedia-search"],
     finance: ["coindesk", "exchange"],
@@ -95,6 +98,7 @@
 
   function domainFor(frame) {
     var low = frame.lower;
+    if (frame.lexicalQuestion) return "lexical";
     if (/\b(?:npm|node|python|pip|package|library|framework|release|version)\b/.test(low) &&
         frame.requiresFreshInformation) return "software";
     if (/\b(?:price|bitcoin|btc|stock|exchange rate|currency rate|usd)\b/.test(low) &&
@@ -275,6 +279,63 @@
   Federation.prototype.providers = function () {
     var self = this;
     return {
+      /* Keyless, CORS-enabled dictionaries. These answer what a WORD means,
+         which is a different question from what a THING is, and the two were
+         being conflated. */
+      "dictionary": {
+        kind: "dictionary", authority: 0.85, exact: true,
+        run: function (q, signal) {
+          var w = String(q).trim().split(/\s+/)[0].replace(/[^A-Za-z'-]/g, "");
+          if (!w) return Promise.resolve([]);
+          return self.getJSON("https://api.dictionaryapi.dev/api/v2/entries/en/" + encodeURIComponent(w), signal)
+            .then(function (j) {
+              if (!j || !j.length || !j[0].meanings) return [];
+              var out = [];
+              j[0].meanings.forEach(function (m) {
+                var pos = /verb/i.test(m.partOfSpeech) ? "v" :
+                          /adjective/i.test(m.partOfSpeech) ? "adj" :
+                          /adverb/i.test(m.partOfSpeech) ? "adv" : "n";
+                (m.definitions || []).slice(0, 2).forEach(function (d) {
+                  if (!d.definition) return;
+                  out.push(new Proposition({
+                    subject: j[0].word || w, predicate: "wordSense", object: d.definition,
+                    qualifiers: { pos: pos }, source: "dictionaryapi.dev", sourceKind: "dictionary",
+                    confidence: 0.85, text: d.definition
+                  }));
+                });
+              });
+              return out.slice(0, 6);
+            });
+        }
+      },
+      "wiktionary": {
+        kind: "dictionary", authority: 0.8, exact: true,
+        run: function (q, signal) {
+          var w = String(q).trim().split(/\s+/)[0].replace(/[^A-Za-z'-]/g, "");
+          if (!w) return Promise.resolve([]);
+          return self.getJSON("https://en.wiktionary.org/api/rest_v1/page/definition/" + encodeURIComponent(w), signal)
+            .then(function (j) {
+              var en = j && j.en;
+              if (!en || !en.length) return [];
+              var out = [];
+              en.forEach(function (block) {
+                var pos = /verb/i.test(block.partOfSpeech) ? "v" :
+                          /adjective/i.test(block.partOfSpeech) ? "adj" :
+                          /adverb/i.test(block.partOfSpeech) ? "adv" : "n";
+                (block.definitions || []).slice(0, 2).forEach(function (d) {
+                  var text = String(d.definition || "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+                  if (text.length < 8) return;
+                  out.push(new Proposition({
+                    subject: w, predicate: "wordSense", object: text,
+                    qualifiers: { pos: pos }, source: "Wiktionary", sourceKind: "dictionary",
+                    confidence: 0.8, text: text
+                  }));
+                });
+              });
+              return out.slice(0, 6);
+            });
+        }
+      },
       "wikipedia-title": {
         kind: "encyclopedia", authority: 0.9, exact: true,
         run: function (q, signal) {

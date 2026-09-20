@@ -25,7 +25,8 @@ var ABLATIONS = [
   { id: "no-ambiguity", disable: "ambiguity", note: "sense clarification off" },
   { id: "no-web", disable: "web", note: "public-source federation off" },
   { id: "no-normalization", disable: "normalize", note: "shared normalisation off (spell repair, preamble removal, format parsing)" },
-  { id: "no-adaptive-depth", disable: "depth", note: "adaptive depth off (every resolver runs, routing ignored)" }
+  { id: "no-adaptive-depth", disable: "depth", note: "adaptive depth off (every resolver runs, routing ignored)" },
+  { id: "no-lexical", disable: "lexical", note: "word lexicon and compositional reading off" }
 ];
 
 function runOne(a) {

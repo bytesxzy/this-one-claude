@@ -121,10 +121,18 @@
       }
     }
     if (!needsCarry && frame.wordCount <= 6) {
+      /* A bare noun that names something is a NEW topic, not an ellipsis:
+         typing "learning" after a question about Mercury is a change of
+         subject. Only an explicit continuation marker, a pronoun or an
+         unattached relation carries the previous subject forward. */
+      var namesSomething = frame.contentTokens.length >= 1 &&
+        ((KB && KB.resolve(frame.body.replace(/[?.!]+$/, "").trim(), { strict: true }).length > 0) ||
+         (root.C4LMLexicon && frame.contentTokens.every(function (t) { return root.C4LMLexicon.has(t); })));
       if (frame.leadMarker === "and" || frame.leadMarker === "but" ||
           /^(?:and|what about|how about|why|how|when|where|what else|more|and what of)\b/i.test(frame.body) ||
           (frame.relation && !frame.subject) ||
-          (frame.queryForm === "statement" && !frame.entities.length && frame.contentTokens.length <= 2)) {
+          (!namesSomething && frame.queryForm === "statement" && !frame.entities.length &&
+           frame.contentTokens.length <= 2)) {
         needsCarry = true; reason = "ellipsis";
       }
     }
@@ -223,7 +231,7 @@
     frame.subjectCandidates.forEach(function (c) { if (c.weight >= 0.35) tries.push(c.text); });
     var best = null;
     for (var i = 0; i < tries.length && i < 22; i++) {
-      var hits = KB.resolve(tries[i]);
+      var hits = KB.resolve(tries[i]).filter(genuineMatch);
       if (!hits.length) continue;
       var ent = hits[0].entity;
       var senses = KB.senses(tries[i]);
@@ -314,7 +322,51 @@
     };
   }
 
+  /* A type qualifier is only a qualifier when the word really names a type
+     and the other word really names something. The lexicon supplies the
+     first test and the knowledge base the second; neither is a list written
+     for particular phrases. */
+  var TYPE_CLASSES = { GROUP: 1, PLACE: 1, ARTIFACT: 1, PERSON: 1, ORGANISM: 1, FIELD: 1, COMMUNICATION: 1, SUBSTANCE: 1 };
+  function validQualifier(frame) {
+    if (!frame.typeQualifier || !frame.qualifiedName) return null;
+    var LX = root.C4LMLexicon;
+    var q = frame.typeQualifier;
+    /* Any common noun may name a type. Whether it really does is settled by
+       whether a candidate sense matches it -- if none does, the qualifier
+       reading is abandoned and nothing is lost. The class test only raises
+       confidence, it does not gate. */
+    var typeish = false;
+    if (LX) {
+      var hit = LX.lookup(q);
+      if (hit) typeish = hit.senses.some(function (sn) { return sn.pos === "n"; });
+    }
+    if (!typeish && KB) typeish = KB.byType(q).length > 0;
+    if (!typeish) return null;
+    /* The qualified word must not itself be an ordinary word being modified
+       ("learning pivot" is not a pivot of type learning). */
+    if (LX && LX.lookup(frame.qualifiedName) && !/^[A-Z]/.test(frame.qualifiedName)) {
+      var known = KB && KB.resolve(frame.qualifiedName, { strict: true }).length;
+      if (!known) return null;
+    }
+    return { type: q, name: frame.qualifiedName };
+  }
+
   /* ================================================= knowledge answering */
+
+  /* A knowledge-base entry reached through a GENERIC alias is a pointer, not
+     an identification: "method" points at the programming sense of function,
+     "river" points at the Nile. When the matched spelling is an ordinary word
+     and the entry is named something else, the match is rejected -- the word
+     belongs to the lexicon, and the entry is about a different thing. */
+  function genuineMatch(hit) {
+    var LX = root.C4LMLexicon;
+    if (!LX || !hit || !hit.surface) return true;
+    var surface = String(hit.surface).toLowerCase();
+    var name = C.flatten(hit.entity.name).replace(/\s*\([^)]*\)\s*$/, "").trim();
+    if (C.flatten(surface) === name) return true;          /* matched its own name */
+    if (/^[A-Z]/.test(hit.surface)) return true;           /* a proper spelling */
+    return !LX.has(surface);                               /* else: ordinary word wins */
+  }
 
   var RELATION_LABEL = {
     capital: "capital", currency: "currency", language: "language", symbol: "chemical symbol",
@@ -329,6 +381,18 @@
     var g = decision.grounded;
     if (!g || !g.hits.length) return null;
     var entity = g.hits[0].entity;
+
+    /* "the company Meta" asks for the sense of Meta that is a company. The
+       qualifier filters the candidates before anything else looks at them. */
+    var qual = validQualifier(frame);
+    if (qual) {
+      var wanted = qual.type.replace(/s$/, "");
+      for (var qi = 0; qi < g.hits.length; qi++) {
+        var cand = g.hits[qi].entity;
+        var blob = (cand.type + " " + (cand.rel && cand.rel.type || "") + " " + cand.defn).toLowerCase();
+        if (blob.indexOf(wanted) >= 0) { entity = cand; break; }
+      }
+    }
 
     /* Ambiguity gate. Several senses AND no disambiguating context means the
        honest answer is a short question, not a confident guess. A dominant
@@ -366,6 +430,27 @@
       }
       if (person) entity = person;
       else if (!(g.senses && g.senses.length > 1)) return null;
+    }
+
+    /* The entry must be about the PHRASE, not about one word inside it. A
+       multi-word question whose knowledge-base match covers only the head is
+       a compound the base does not hold, and reading it compositionally says
+       more than defining its head would. */
+    if (!frame.relation && !frame.requiresExplanation && isDefinitional(frame)) {
+      var askedPhrase = C.flatten(frame.subject || frame.topic || "");
+      var entName = C.flatten(displayName(entity));
+      if (askedPhrase && entName && askedPhrase !== entName) {
+        var askedWords = askedPhrase.split(" ").filter(function (w) { return !C.STOP[w]; });
+        var entWords = entName.split(" ");
+        if (askedWords.length >= 2 && entWords.length < askedWords.length &&
+            entWords.every(function (w) { return askedWords.indexOf(w) >= 0; })) {
+          /* Step aside only if the compositional reader can actually read the
+             phrase. If it cannot, defining the head is still the best answer
+             available, and silence would be worse. */
+          var CPm = root.C4LMCompose;
+          if (CPm && CPm.read(askedPhrase)) return null;
+        }
+      }
     }
 
     /* A relation question is answered from the attribute, not from prose. */
@@ -810,6 +895,11 @@
       var r = ranked[i];
       if (r.doc.scope !== "kb") continue;
       if (r.score < 6) continue;
+      /* Identity again, for definitional questions: an entry may only define
+         the thing asked about. A "who/when/which" question is different --
+         there the entry that MENTIONS the asked description is exactly what
+         is wanted, as with "the first president of the United States". */
+      if (isDefinitional(frame) && r.tier < RT.TIER.DEFINES) continue;
       var ent = r.doc.ref.entity;
       /* An explanation question may only be answered by an entry that
          actually explains something. Otherwise a shared word ("cold") lets
@@ -843,6 +933,124 @@
     var dOut = RZ.realize(dPlan);
     return { text: dOut.text, route: "knowledge", entity: entity.name, confidence: 0.65,
              defects: dOut.defects, sources: ["local knowledge base"] };
+  }
+
+  /* A type qualifier is a disambiguation instruction: "the company Meta"
+     says which Meta. Resolve the NAME and keep only the sense of the right
+     type, rather than treating "company meta" as a compound to be read. */
+  function answerQualified(frame, decision) {
+    var qual = validQualifier(frame);
+    if (!qual || !KB) return null;
+    var hits = KB.resolve(qual.name);
+    if (!hits.length) return null;
+    var wanted = qual.type.replace(/s$/, "");
+    var pick = null;
+    for (var i = 0; i < hits.length; i++) {
+      var e = hits[i].entity;
+      var blob = (e.type + " " + (e.rel && e.rel.type || "") + " " + e.defn).toLowerCase();
+      if (blob.indexOf(wanted) >= 0) { pick = e; break; }
+    }
+    if (!pick) return null;
+    if (frame.relation) {
+      var val = KB.attribute(pick, frame.relation);
+      if (val) {
+        var rPlan = { kind: "relation", subject: displayName(pick), relation: frame.relation,
+                      relationLabel: RELATION_LABEL[frame.relation] || frame.relation, value: val,
+                      format: frame.requestedFormat, onlyValue: frame.onlyValue };
+        var rOut = RZ.realize(rPlan);
+        return { text: rOut.text, route: "knowledge", entity: pick.name, relation: frame.relation,
+                 confidence: 0.9, defects: rOut.defects, sources: ["local knowledge base"] };
+      }
+    }
+    var plan = { kind: "definition", name: displayName(pick), definition: pick.defn,
+                 elaboration: frame.requestedTone === "brief" ? "" : shortElaboration(pick, ""),
+                 format: frame.requestedFormat, tone: frame.requestedTone,
+                 lengthLimit: frame.requestedLength, lengthUnit: frame.requestedUnit };
+    var out = RZ.realize(plan);
+    return { text: out.text, route: "knowledge", entity: pick.name, confidence: 0.88,
+             defects: out.defects, sources: ["local knowledge base"], disambiguatedBy: qual.type };
+  }
+
+  /* ------------------------------------------------- words and compounds
+   * A definitional question whose subject is not a named thing is a question
+   * about LANGUAGE. It is answered from word senses: one word gets its
+   * senses, a compound gets read compositionally from its head and modifier.
+   * This is what stops an unseen phrase being matched to the nearest article
+   * with similar letters in it. */
+  function answerLexical(frame, decision) {
+    var CP = root.C4LMCompose;
+    if (!CP || off("lexical")) return null;
+    var asked = (frame.subject || frame.topic || frame.contentTokens.join(" ")).trim();
+    if (!asked) return null;
+    var words = C.words(asked).filter(function (w) { return !C.STOP[w]; });
+    if (!words.length || words.length > 5) return null;
+
+    /* If any span of the question names something the knowledge base holds,
+       that is not a phrase to read compositionally -- it is a term with an
+       entry, and the entry is the better answer. */
+    if (KB) {
+      for (var n = words.length; n >= 2; n--) {
+        for (var i = 0; i + n <= words.length; i++) {
+          var span = words.slice(i, i + n).join(" ");
+          var hit = KB.resolve(span, { strict: true })[0];
+          if (hit && hit.score >= 0.85) return null;
+        }
+      }
+    }
+
+    if (words.length >= 2) {
+      var reading = CP.read(asked);
+      if (reading) {
+        var text = CP.explain(reading, frame.requestedTone === "brief" ? "brief" : "");
+        var out = RZ.realize({ kind: "statement", statement: text,
+                               lengthLimit: frame.requestedLength, lengthUnit: frame.requestedUnit });
+        return {
+          text: out.text || text, route: "compose", entity: reading.phrase,
+          confidence: reading.confidence, defects: [], sources: reading.sources,
+          composed: true, reading: {
+            head: reading.headWord, modifier: reading.modifierWord,
+            relation: reading.relation.rel
+          }
+        };
+      }
+    }
+    var single = CP.defineWord(words[words.length - 1], { limit: frame.requestedLength === 1 ? 1 : 3 });
+    if (single) {
+      var sOut = RZ.realize({ kind: "statement", statement: single.text,
+                              lengthLimit: frame.requestedLength, lengthUnit: frame.requestedUnit });
+      return { text: sOut.text || single.text, route: "lexicon", entity: single.word,
+               confidence: single.confidence, defects: [], sources: single.sources, defined: true };
+    }
+    return null;
+  }
+
+  /* When a word is not held locally, the dictionaries are asked for it and
+     the answer is learned, so the same phrase is read locally next time. */
+  function learnWords(frame) {
+    var CP = root.C4LMCompose, LX = root.C4LMLexicon;
+    if (!CP || !LX || !state.federation || off("web")) return Promise.resolve(false);
+    var words = C.words(frame.subject || frame.topic || "")
+      .filter(function (w) { return w.length > 2 && !C.STOP[w] && !LX.has(w); });
+    if (!words.length) return Promise.resolve(false);
+    var jobs = words.slice(0, 3).map(function (w) {
+      var sub = C.parse("define " + w);
+      sub.lexicalQuestion = true;
+      sub.subject = w;
+      return state.federation.gather(sub, { domain: "lexical" }).then(function (graph) {
+        if (!graph || !graph.size()) return false;
+        var senses = graph.props
+          .filter(function (pr) { return pr.predicate === "wordSense" && pr.object; })
+          .slice(0, 4)
+          .map(function (pr) {
+            var pos = (pr.qualifiers && pr.qualifiers.pos) || "n";
+            return { pos: pos, gloss: String(pr.object).replace(/\s+/g, " ").trim(), cls: CP.classify(pr.object, pos) };
+          });
+        if (!senses.length) return false;
+        LX.learn(w, senses);
+        return true;
+      }, function () { return false; });
+    });
+    return Promise.all(jobs).then(function (r) { return r.some(Boolean); });
   }
 
   /* ========================================================= local site */
@@ -988,6 +1196,11 @@
         })[0];
       }
       if (!claim) return null;
+      /* Identity gate on retrieved evidence. An article may only answer for
+         the thing that was asked about; sharing letters with the question is
+         not the same as being about it. Without this, an unseen phrase picks
+         up whatever article the search engine liked best. */
+      if (!frame.relation && subject && !identityMatches(subject, claim)) return null;
       var conflicts = graph.conflicts(claim.subject, claim.predicate);
       var plan;
       if (claim.predicate === "version" || claim.predicate === "price" || claim.predicate === "rate") {
@@ -1013,6 +1226,32 @@
         elapsed: graph.elapsed, reason: graph.reason
       };
     }, function () { return null; });
+  }
+
+  /* Does this evidence identify the thing that was asked about? The test is
+     over the claim's own subject/title, not over the body text. */
+  function identityMatches(asked, claim) {
+    var a = C.flatten(asked).replace(/^(?:the|a|an) /, "");
+    var titles = [claim.exactTitle, claim.subject].filter(Boolean)
+      .map(function (t) { return C.flatten(t).replace(/\s*\([^)]*\)\s*$/, "").trim(); });
+    if (!a) return true;
+    for (var i = 0; i < titles.length; i++) {
+      var t = titles[i];
+      if (!t) continue;
+      if (t === a) return true;
+      /* A qualified title is the same concept: "Mercury (planet)" answers
+         "Mercury". A title that merely contains the words is not. */
+      var at = a.split(" "), tt = t.split(" ");
+      if (tt.length >= at.length) {
+        var head = true;
+        for (var k = 0; k < at.length; k++) if (tt[k] !== at[k]) { head = false; break; }
+        var repeats = false;
+        for (var r = at.length; r < tt.length; r++) if (at.indexOf(tt[r]) >= 0) repeats = true;
+        if (head && !repeats && tt.length - at.length <= 2) return true;
+      }
+      if (at.length >= tt.length && at.join(" ").indexOf(tt.join(" ")) === 0 && at.length - tt.length <= 1) return true;
+    }
+    return false;
   }
 
   /* ==================================================== conversation */
@@ -1089,6 +1328,56 @@
       code: built.code, language: built.language, verified: built.verified,
       defects: [], entity: built.spec.op
     };
+  }
+
+  /* Everything that can answer without the network, in the order that keeps
+     each kind of question with the resolver that understands it. One chain,
+     used both as the fast path and as the fallback after a web attempt, so
+     the two can never drift apart. */
+  function localResolvers(frame, decision) {
+    return answerQualified(frame, decision) ||
+           answerListRequest(frame, decision) ||
+           answerSuperlative(frame) ||
+           answerFromKB(frame, decision) ||
+           /* A definitional question about ordinary language is answered from
+              word senses before any document is consulted: "what is learning"
+              is about the word, and "machine learning" is a different term
+              that merely contains it. */
+           (isDefinitional(frame) ? answerLexical(frame, decision) : null) ||
+           answerKBByContent(frame, decision) ||
+           (isDefinitional(frame) ? null : answerLexical(frame, decision)) ||
+           answerLocal(frame, decision);
+  }
+
+  function hasUnknownWord(frame) {
+    var LX = root.C4LMLexicon;
+    if (!LX || !KB) return false;
+    var words = frame.contentTokens.filter(function (w) { return w.length > 2; });
+    /* A compound is short. A long question is not a phrase to be read from
+       its parts, so an unfamiliar word in it is not a reason to stop and
+       look the word up. */
+    if (!words.length || words.length > 3) return false;
+    for (var i = 0; i < words.length; i++) {
+      if (LX.has(words[i])) continue;
+      if (KB.resolve(words[i], { strict: true }).length) continue;
+      return true;
+    }
+    return false;
+  }
+
+  function isDefinitional(frame) {
+    if (frame.queryForm === "whatis" || frame.queryForm === "topic") return true;
+    if (/\b(?:mean|means|meaning|define|definition)\b/i.test(frame.lower)) return true;
+    if (frame.queryForm === "whois" && !frame.wantsPerson) return true;
+    /* A bare noun phrase typed into a box is a request for what it is.
+       "learning", "growth engine" -- no verb, no question mark, nothing else
+       to read it as. */
+    if (frame.queryForm === "statement" && !frame.hasQuestionMark &&
+        frame.contentTokens.length >= 1 && frame.contentTokens.length <= 3 &&
+        !frame.requiresComputation && !frame.requiresCode && !frame.requiresComparison) {
+      return true;
+    }
+    return false;
   }
 
   /* ========================================================== fallback */
@@ -1207,27 +1496,44 @@
       return Promise.resolve(finish(frame, fallback(frame, decision), t0, decision));
     }
 
-    if (!frame.requiresFreshInformation) {
-      var listed = timed("list", function () { return answerListRequest(frame, decision); });
-      if (listed) return Promise.resolve(finish(frame, listed, t0, decision));
-      var superl = timed("superlative", function () { return answerSuperlative(frame); });
-      if (superl) return Promise.resolve(finish(frame, superl, t0, decision));
-      var known = timed("knowledge", function () { return answerFromKB(frame, decision); });
-      if (known) return Promise.resolve(finish(frame, known, t0, decision));
-      var byContent = timed("kb-retrieval", function () { return answerKBByContent(frame, decision); });
-      if (byContent) return Promise.resolve(finish(frame, byContent, t0, decision));
-      var local = timed("local", function () { return answerLocal(frame, decision); });
-      if (local) return Promise.resolve(finish(frame, local, t0, decision));
+    /* A definitional question containing a word nothing local knows is a
+       question for the dictionaries. Answering it from the words that happen
+       to be known produces a confident answer to a different question, so
+       the local shortcut is skipped until the unknown word has been looked
+       up. */
+    var unknownWord = isDefinitional(frame) && hasUnknownWord(frame) &&
+                      state.federation && !off("web");
+
+    if (!frame.requiresFreshInformation && !unknownWord) {
+      var localAnswer = timed("local-chain", function () { return localResolvers(frame, decision); });
+      if (localAnswer) return Promise.resolve(finish(frame, localAnswer, t0, decision));
     }
 
     /* ---- Level 2/3: evidence from the network, only when warranted ---- */
-    var needWeb = frame.requiresFreshInformation ||
+    /* A definitional question containing a word nothing local knows is a
+       question the dictionaries can answer. Learning the word is cheaper and
+       more accurate than guessing from the words that ARE known. */
+    var needWeb = unknownWord || frame.requiresFreshInformation ||
                   (!off("web") && decision.dist.web > 0.15) ||
                   (!decision.features.kbHit && frame.speechAct === "question");
     if (needWeb && state.federation && !off("web")) {
-      return answerWeb(frame, decision).then(function (web) {
-        if (web) return finish(frame, web, t0, decision);
-        var late = answerFromKB(frame, decision) || answerKBByContent(frame, decision) || answerLocal(frame, decision);
+      /* A definitional question asks both kinds of source: the dictionaries
+         for the words, the encyclopedias for the thing. Whichever produces an
+         answer that actually identifies what was asked wins. */
+      var wordsFirst = isDefinitional(frame) && (unknownWord || !decision.features.kbHit) ?
+        learnWords(frame) : Promise.resolve(false);
+      return wordsFirst.then(function (learned) {
+        if (learned) {
+          var fromWords = answerQualified(frame, decision) || answerLexical(frame, decision);
+          if (fromWords) return finish(frame, fromWords, t0, decision);
+        }
+        return answerWeb(frame, decision);
+      }).then(function (web) {
+        if (!web || web.text === undefined) {
+          /* answerWeb already resolved above when it returned an answer. */
+        }
+        if (web && web.text) return finish(frame, web, t0, decision);
+        var late = localResolvers(frame, decision);
         if (late) {
           if (frame.requiresFreshInformation) late.caveat = true;
           return finish(frame, late, t0, decision);
@@ -1235,9 +1541,7 @@
         return finish(frame, fallback(frame, decision), t0, decision);
       });
     }
-    var last = answerListRequest(frame, decision) || answerSuperlative(frame) ||
-               answerFromKB(frame, decision) || answerKBByContent(frame, decision) ||
-               answerLocal(frame, decision);
+    var last = localResolvers(frame, decision);
     return Promise.resolve(finish(frame, last || fallback(frame, decision), t0, decision));
   }
 

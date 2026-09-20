@@ -500,8 +500,24 @@
       }
       return out;
     }
-    var ranked = names.map(function (n) { return { name: n, below: reach(n).length }; })
-                      .sort(function (a, b) { return b.below - a.below; });
+    /* A comparison is a PARTIAL order. Two items with the same number of
+       things below them may simply be unordered with respect to each other,
+       and saying "A > C > B" when the premises only give "A > B" and
+       "C > B" states something that was never claimed. */
+    var ranked = names.map(function (n) { return { name: n, below: reach(n).length, above: 0 }; });
+    ranked.forEach(function (r) {
+      names.forEach(function (other) { if (other !== r.name && reach(other).indexOf(r.name) >= 0) r.above++; });
+    });
+    ranked.sort(function (a, b) { return b.below - a.below; });
+    function comparable(a, b) {
+      return reach(a).indexOf(b) >= 0 || reach(b).indexOf(a) >= 0;
+    }
+    var unordered = [];
+    for (var ui = 0; ui < names.length; ui++) {
+      for (var uj = ui + 1; uj < names.length; uj++) {
+        if (!comparable(names[ui], names[uj])) unordered.push([names[ui], names[uj]]);
+      }
+    }
     var low = String(text).toLowerCase();
     var wantLowest = /\b(?:youngest|smallest|shortest|lightest|slowest|cheapest|lowest|weakest|coldest|least)\b/.test(low);
     var wantHighest = /\b(?:oldest|biggest|largest|tallest|heaviest|fastest|richest|highest|strongest|warmest|most)\b/.test(low);
@@ -513,9 +529,30 @@
     ranked = ranked.map(function (r) { return { name: label(r.name), below: r.below }; });
     pick = { name: label(pick.name), below: pick.below };
     var order = ranked.map(function (r) { return r.name; });
+
+    /* The answer is only determined if the chosen item is comparable with
+       every other one. Otherwise several could tie for the position asked
+       about, and saying one of them would be a guess. */
+    var decisive = names.every(function (n) { return n === pick.name || comparable(n, pick.name); });
+    var chain = edges.map(function (e) { return label(e.hi) + " > " + label(e.lo); });
+    var why;
+    if (unordered.length) {
+      why = "The premises give " + chain.join(" and ") + ". " +
+        unordered.map(function (u) { return label(u[0]) + " and " + label(u[1]); }).join(", ") +
+        (unordered.length === 1 ? " are not compared with each other" : " are not compared") +
+        ", so the full order is not fixed" +
+        (decisive ? " — but " + pick.name + " is below everything either way." : ".");
+    } else {
+      why = "Ordering the statements gives " + order.join(" > ") + ".";
+    }
+    if (!decisive) {
+      return { ok: true, answer: "", order: order,
+        text: "The premises don't settle that.",
+        why: why, nodes: edges.map(function (e) { return node("ORDER", { hi: e.hi, lo: e.lo, dim: e.dim }); }) };
+    }
     return { ok: true, answer: pick.name, order: order,
       text: pick.name,
-      why: "Ordering the statements gives " + order.join(" > ") + ".",
+      why: why,
       nodes: edges.map(function (e) { return node("ORDER", { hi: e.hi, lo: e.lo, dim: e.dim }); }) };
   }
 

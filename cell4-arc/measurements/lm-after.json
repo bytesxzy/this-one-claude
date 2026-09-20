@@ -1,13 +1,13 @@
 {
  "summary": {
   "label": "after",
-  "generated": "2026-09-19T21:03:54.209Z",
+  "generated": "2026-09-20T01:56:53.584Z",
   "net": "off",
   "modules": [],
   "disabled": [],
-  "cases": 150,
-  "turns": 163,
-  "passed": 150,
+  "cases": 176,
+  "turns": 189,
+  "passed": 176,
   "accuracy_pct": 100,
   "turn_accuracy_pct": 100,
   "hallucinations": 0,
@@ -15,16 +15,16 @@
   "timeouts": 0,
   "web_turns": 0,
   "latency": {
-   "p50": 8,
-   "p90": 24,
-   "p95": 28,
-   "p99": 37,
-   "mean": 12
+   "p50": 9,
+   "p90": 26,
+   "p95": 32,
+   "p99": 46,
+   "mean": 13
   },
   "local_latency": {
-   "n": 163,
-   "p50": 8,
-   "p95": 28
+   "n": 189,
+   "p50": 9,
+   "p95": 32
   },
   "web_latency": {
    "n": 0,
@@ -57,8 +57,8 @@
     "pass": 15
    },
    "reason": {
-    "total": 14,
-    "pass": 14
+    "total": 17,
+    "pass": 17
    },
    "code": {
     "total": 9,
@@ -81,8 +81,8 @@
     "pass": 10
    },
    "robust": {
-    "total": 3,
-    "pass": 3
+    "total": 5,
+    "pass": 5
    },
    "remark": {
     "total": 2,
@@ -93,8 +93,8 @@
     "pass": 6
    },
    "relation": {
-    "total": 9,
-    "pass": 9
+    "total": 12,
+    "pass": 12
    },
    "para-def": {
     "total": 10,
@@ -135,9 +135,21 @@
    "knowledge": {
     "total": 9,
     "pass": 9
+   },
+   "lexical": {
+    "total": 5,
+    "pass": 5
+   },
+   "compose": {
+    "total": 8,
+    "pass": 8
+   },
+   "qualifier": {
+    "total": 5,
+    "pass": 5
    }
   },
-  "wall_ms": 25105
+  "wall_ms": 27419
  },
  "records": [
   {
@@ -158,7 +170,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 43,
+     "latency_ms": 54,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -167,7 +179,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 43
+   "latency_ms": 54
   },
   {
    "id": 2,
@@ -187,7 +199,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 14,
+     "latency_ms": 10,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -196,7 +208,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 14
+   "latency_ms": 10
   },
   {
    "id": 3,
@@ -216,7 +228,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 9,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -225,7 +237,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 9
+   "latency_ms": 6
   },
   {
    "id": 4,
@@ -245,7 +257,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 8,
+     "latency_ms": 11,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -254,7 +266,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 11
   },
   {
    "id": 5,
@@ -274,7 +286,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -283,7 +295,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 6
   },
   {
    "id": 6,
@@ -303,7 +315,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -312,7 +324,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 4
   },
   {
    "id": 7,
@@ -361,7 +373,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 6,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -370,7 +382,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 6
+   "latency_ms": 5
   },
   {
    "id": 9,
@@ -390,7 +402,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -399,7 +411,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 6
   },
   {
    "id": 10,
@@ -477,7 +489,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 8,
+     "latency_ms": 10,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -486,7 +498,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 10
   },
   {
    "id": 13,
@@ -506,7 +518,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 19,
+     "latency_ms": 24,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -515,7 +527,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 19
+   "latency_ms": 24
   },
   {
    "id": 14,
@@ -535,7 +547,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 41,
+     "latency_ms": 46,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -544,7 +556,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 41
+   "latency_ms": 46
   },
   {
    "id": 15,
@@ -589,7 +601,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 8,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -598,7 +610,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 8
   },
   {
    "id": 17,
@@ -643,7 +655,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 15,
+     "latency_ms": 24,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -652,7 +664,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 15
+   "latency_ms": 24
   },
   {
    "id": 19,
@@ -670,7 +682,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 34,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -679,7 +691,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 34
   },
   {
    "id": 20,
@@ -697,7 +709,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 33,
+     "latency_ms": 32,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -706,7 +718,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 33
+   "latency_ms": 32
   },
   {
    "id": 21,
@@ -724,7 +736,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 25,
+     "latency_ms": 30,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -733,7 +745,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 25
+   "latency_ms": 30
   },
   {
    "id": 22,
@@ -751,7 +763,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 14,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -760,7 +772,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 14
   },
   {
    "id": 23,
@@ -807,7 +819,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 15,
+     "latency_ms": 16,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -816,7 +828,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 15
+   "latency_ms": 16
   },
   {
    "id": 25,
@@ -836,7 +848,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 21,
+     "latency_ms": 25,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -845,7 +857,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 21
+   "latency_ms": 25
   },
   {
    "id": 26,
@@ -865,7 +877,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 16,
+     "latency_ms": 20,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -874,7 +886,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 16
+   "latency_ms": 20
   },
   {
    "id": 27,
@@ -894,7 +906,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 27,
+     "latency_ms": 14,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -903,7 +915,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 27
+   "latency_ms": 14
   },
   {
    "id": 28,
@@ -921,7 +933,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 30,
+     "latency_ms": 36,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -930,7 +942,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 30
+   "latency_ms": 36
   },
   {
    "id": 29,
@@ -950,7 +962,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 12,
+     "latency_ms": 13,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -959,7 +971,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 12
+   "latency_ms": 13
   },
   {
    "id": 30,
@@ -977,7 +989,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 19,
+     "latency_ms": 22,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -986,7 +998,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 19
+   "latency_ms": 22
   },
   {
    "id": 31,
@@ -1004,7 +1016,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 6,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1013,7 +1025,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 6
+   "latency_ms": 7
   },
   {
    "id": 32,
@@ -1033,7 +1045,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 22,
+     "latency_ms": 24,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1042,7 +1054,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 22
+   "latency_ms": 24
   },
   {
    "id": 33,
@@ -1082,16 +1094,17 @@
    "turns": [
     {
      "question": "What is the current Bitcoin price?",
-     "output": "Bitcoin is a decentralised digital currency recorded on a public blockchain. It was created by Satoshi Nakamoto. I could not reach a live source just now, so that is from local knowledge and may be out of date.",
-     "route": "knowledge",
-     "subject": "Bitcoin",
+     "output": "I don't hold “current bitcoin price” as a fixed term, so here is what it has to mean from its parts. Price: the amount of money expected for something. Bitcoin: a decentralised digital currency recorded on a public blockchain. Put together, a current bitcoin price would be an amount of money expected for something concerning Bitcoin (a decentralised digital currency recorded on a public blockchain). I could not reach a live source just now, so that is from local knowledge and may be out of date.",
+     "route": "compose",
+     "subject": "current bitcoin price",
      "relation": "",
      "web_used": false,
      "sources": [
+      "word lexicon",
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 19,
+     "latency_ms": 23,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1100,7 +1113,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 19
+   "latency_ms": 23
   },
   {
    "id": 35,
@@ -1111,14 +1124,14 @@
    "turns": [
     {
      "question": "What time is it right now?",
-     "output": "It is 09:03 PM on Saturday, September 19, 2026, by this device's clock.",
+     "output": "It is 01:56 AM on Sunday, September 20, 2026, by this device's clock.",
      "route": "compute",
      "subject": "",
      "relation": "",
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 28,
+     "latency_ms": 31,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1127,7 +1140,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 28
+   "latency_ms": 31
   },
   {
    "id": 36,
@@ -1145,7 +1158,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 6,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1154,7 +1167,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 6
+   "latency_ms": 3
   },
   {
    "id": 37,
@@ -1228,7 +1241,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1237,7 +1250,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 5
   },
   {
    "id": 40,
@@ -1255,7 +1268,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 14,
+     "latency_ms": 16,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1264,7 +1277,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 14
+   "latency_ms": 16
   },
   {
    "id": 41,
@@ -1275,7 +1288,7 @@
    "turns": [
     {
      "question": "Tell me about Albert Einstein.",
-     "output": "Albert Einstein was a theoretical physicist best known for the theory of relativity and the mass–energy equivalence E = mc². It was created by the theory of relativity.",
+     "output": "Albert Einstein was a theoretical physicist best known for the theory of relativity and the mass–energy equivalence E = mc². It is in born in Ulm, Germany.",
      "route": "knowledge",
      "subject": "Albert Einstein",
      "relation": "",
@@ -1284,7 +1297,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1294,7 +1307,7 @@
     },
     {
      "question": "When was he born?",
-     "output": "Albert Einstein was born on 14 March 1879. It was created by the theory of relativity.",
+     "output": "Albert Einstein was born on 14 March 1879. It is in born in Ulm, Germany.",
      "route": "knowledge",
      "subject": "Albert Einstein",
      "relation": "birth",
@@ -1322,7 +1335,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 3,
+     "latency_ms": 2,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1331,7 +1344,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 13
+   "latency_ms": 10
   },
   {
    "id": 42,
@@ -1351,7 +1364,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1370,7 +1383,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 2,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1379,7 +1392,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 9
   },
   {
    "id": 43,
@@ -1399,7 +1412,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1418,7 +1431,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 2,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1438,7 +1451,7 @@
    "turns": [
     {
      "question": "Tell me about Einstein.",
-     "output": "Albert Einstein was a theoretical physicist best known for the theory of relativity and the mass–energy equivalence E = mc². It was created by the theory of relativity.",
+     "output": "Albert Einstein was a theoretical physicist best known for the theory of relativity and the mass–energy equivalence E = mc². It is in born in Ulm, Germany.",
      "route": "knowledge",
      "subject": "Albert Einstein",
      "relation": "",
@@ -1447,7 +1460,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1466,7 +1479,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 8,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1475,7 +1488,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 12
+   "latency_ms": 9
   },
   {
    "id": 45,
@@ -1495,7 +1508,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1504,7 +1517,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 3
   },
   {
    "id": 46,
@@ -1524,7 +1537,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1533,7 +1546,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 5
   },
   {
    "id": 47,
@@ -1553,7 +1566,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 6,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1562,7 +1575,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 6
+   "latency_ms": 5
   },
   {
    "id": 48,
@@ -1580,7 +1593,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 35,
+     "latency_ms": 53,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1589,7 +1602,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 35
+   "latency_ms": 53
   },
   {
    "id": 49,
@@ -1607,7 +1620,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 8,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1616,7 +1629,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 3
   },
   {
    "id": 50,
@@ -1636,7 +1649,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 26,
+     "latency_ms": 14,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1645,7 +1658,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 26
+   "latency_ms": 14
   },
   {
    "id": 51,
@@ -1665,7 +1678,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 6,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1674,7 +1687,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 6
+   "latency_ms": 3
   },
   {
    "id": 52,
@@ -1752,7 +1765,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1761,7 +1774,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 5
   },
   {
    "id": 55,
@@ -1810,7 +1823,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1819,7 +1832,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 3
   },
   {
    "id": 57,
@@ -1839,7 +1852,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1848,7 +1861,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 5
   },
   {
    "id": 58,
@@ -1868,7 +1881,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 10,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1877,7 +1890,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 10
+   "latency_ms": 4
   },
   {
    "id": 59,
@@ -1955,7 +1968,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1964,7 +1977,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 6
   },
   {
    "id": 62,
@@ -2013,7 +2026,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 11,
+     "latency_ms": 9,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2022,7 +2035,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 11
+   "latency_ms": 9
   },
   {
    "id": 64,
@@ -2042,7 +2055,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 21,
+     "latency_ms": 17,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2051,7 +2064,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 21
+   "latency_ms": 17
   },
   {
    "id": 65,
@@ -2071,7 +2084,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 21,
+     "latency_ms": 16,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2080,7 +2093,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 21
+   "latency_ms": 16
   },
   {
    "id": 66,
@@ -2092,168 +2105,6 @@
     {
      "question": "17 times 23",
      "output": "17 * 23 = 391.",
-     "route": "compute",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 7,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 7
-  },
-  {
-   "id": 67,
-   "cat": "compute",
-   "question": "calculate 144 divided by 12 plus 7",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "calculate 144 divided by 12 plus 7",
-     "output": "144 / 12 + 7 = 19.",
-     "route": "compute",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 18,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 18
-  },
-  {
-   "id": 68,
-   "cat": "compute",
-   "question": "two to the power of ten",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "two to the power of ten",
-     "output": "2 ^ 10 = 1024.",
-     "route": "compute",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 13,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 13
-  },
-  {
-   "id": 69,
-   "cat": "compute",
-   "question": "What is 15% of 240?",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "What is 15% of 240?",
-     "output": "That is 36.",
-     "route": "compute",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 5,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 5
-  },
-  {
-   "id": 70,
-   "cat": "compute",
-   "question": "A shirt costs 120 dollars with 30% off. What do I pay?",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "A shirt costs 120 dollars with 30% off. What do I pay?",
-     "output": "The new price is $84.",
-     "route": "compute",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 22,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 22
-  },
-  {
-   "id": 71,
-   "cat": "compute",
-   "question": "If a train goes 80 km/h for 3 hours how far?",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "If a train goes 80 km/h for 3 hours how far?",
-     "output": "It travels 240 kilometres.",
-     "route": "compute",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 17,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 17
-  },
-  {
-   "id": 72,
-   "cat": "compute",
-   "question": "Convert 100 kilometers to miles.",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "Convert 100 kilometers to miles.",
-     "output": "That is 62.1371 miles.",
      "route": "compute",
      "subject": "",
      "relation": "",
@@ -2272,22 +2123,22 @@
    "latency_ms": 10
   },
   {
-   "id": 73,
+   "id": 67,
    "cat": "compute",
-   "question": "How many minutes are in 3.5 hours?",
+   "question": "calculate 144 divided by 12 plus 7",
    "dialogue": false,
    "pass": true,
    "turns": [
     {
-     "question": "How many minutes are in 3.5 hours?",
-     "output": "That is 210 minutes.",
+     "question": "calculate 144 divided by 12 plus 7",
+     "output": "144 / 12 + 7 = 19.",
      "route": "compute",
      "subject": "",
      "relation": "",
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 11,
+     "latency_ms": 22,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2296,45 +2147,18 @@
      "error": ""
     }
    ],
-   "latency_ms": 11
+   "latency_ms": 22
   },
   {
-   "id": 74,
+   "id": 68,
    "cat": "compute",
-   "question": "What is the average of 4, 8, 15, 16, 23, 42?",
+   "question": "two to the power of ten",
    "dialogue": false,
    "pass": true,
    "turns": [
     {
-     "question": "What is the average of 4, 8, 15, 16, 23, 42?",
-     "output": "The average is 18.",
-     "route": "compute",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 8,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 8
-  },
-  {
-   "id": 75,
-   "cat": "compute",
-   "question": "What is 20 degrees Celsius in Fahrenheit?",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "What is 20 degrees Celsius in Fahrenheit?",
-     "output": "That is 68 °F.",
+     "question": "two to the power of ten",
+     "output": "2 ^ 10 = 1024.",
      "route": "compute",
      "subject": "",
      "relation": "",
@@ -2353,6 +2177,195 @@
    "latency_ms": 15
   },
   {
+   "id": 69,
+   "cat": "compute",
+   "question": "What is 15% of 240?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is 15% of 240?",
+     "output": "That is 36.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 8,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 8
+  },
+  {
+   "id": 70,
+   "cat": "compute",
+   "question": "A shirt costs 120 dollars with 30% off. What do I pay?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "A shirt costs 120 dollars with 30% off. What do I pay?",
+     "output": "The new price is $84.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 28,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 28
+  },
+  {
+   "id": 71,
+   "cat": "compute",
+   "question": "If a train goes 80 km/h for 3 hours how far?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "If a train goes 80 km/h for 3 hours how far?",
+     "output": "It travels 240 kilometres.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 29,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 29
+  },
+  {
+   "id": 72,
+   "cat": "compute",
+   "question": "Convert 100 kilometers to miles.",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Convert 100 kilometers to miles.",
+     "output": "That is 62.1371 miles.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 12,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 12
+  },
+  {
+   "id": 73,
+   "cat": "compute",
+   "question": "How many minutes are in 3.5 hours?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "How many minutes are in 3.5 hours?",
+     "output": "That is 210 minutes.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 12,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 12
+  },
+  {
+   "id": 74,
+   "cat": "compute",
+   "question": "What is the average of 4, 8, 15, 16, 23, 42?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the average of 4, 8, 15, 16, 23, 42?",
+     "output": "The average is 18.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 12,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 12
+  },
+  {
+   "id": 75,
+   "cat": "compute",
+   "question": "What is 20 degrees Celsius in Fahrenheit?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is 20 degrees Celsius in Fahrenheit?",
+     "output": "That is 68 °F.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 19,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 19
+  },
+  {
    "id": 76,
    "cat": "reason",
    "question": "Every Gleeb is a Florp, and every Florp is a Quon. Is every Gleeb a Quon?",
@@ -2362,195 +2375,6 @@
     {
      "question": "Every Gleeb is a Florp, and every Florp is a Quon. Is every Gleeb a Quon?",
      "output": "Yes. Every Gleeb is in a category that is itself contained in Quon, so the containment carries through.",
-     "route": "reason",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 27,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 27
-  },
-  {
-   "id": 77,
-   "cat": "reason",
-   "question": "All squares are rectangles. All rectangles are shapes. Are all squares shapes?",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "All squares are rectangles. All rectangles are shapes. Are all squares shapes?",
-     "output": "Yes. Every square is in a category that is itself contained in shapes, so the containment carries through.",
-     "route": "reason",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 20,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 20
-  },
-  {
-   "id": 78,
-   "cat": "reason",
-   "question": "Some birds are parrots. All parrots are animals. Are some birds animals?",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "Some birds are parrots. All parrots are animals. Are some birds animals?",
-     "output": "Yes. Some birds are parrots, and every parrot is an animal.",
-     "route": "reason",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 31,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 31
-  },
-  {
-   "id": 79,
-   "cat": "reason",
-   "question": "No cats are dogs. Some pets are cats. Can all pets be dogs?",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "No cats are dogs. Some pets are cats. Can all pets be dogs?",
-     "output": "No. Some pets are cats, and no cats are dogs. Those pets therefore cannot be dogs, so not all of them can.",
-     "route": "reason",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 32,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 32
-  },
-  {
-   "id": 80,
-   "cat": "reason",
-   "question": "What comes next: 3, 6, 12, 24, ?",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "What comes next: 3, 6, 12, 24, ?",
-     "output": "48. In 3, 6, 12, 24, each term multiplies by 2.",
-     "route": "reason",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 11,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 11
-  },
-  {
-   "id": 81,
-   "cat": "reason",
-   "question": "Continue the sequence 1, 4, 9, 16, 25",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "Continue the sequence 1, 4, 9, 16, 25",
-     "output": "36. In 1, 4, 9, 16, 25, the terms are consecutive squares.",
-     "route": "reason",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 13,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 13
-  },
-  {
-   "id": 82,
-   "cat": "reason",
-   "question": "What number comes next: 5, 10, 15, 20?",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "What number comes next: 5, 10, 15, 20?",
-     "output": "25. In 5, 10, 15, 20, each term adds 5.",
-     "route": "reason",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 17,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 17
-  },
-  {
-   "id": 83,
-   "cat": "reason",
-   "question": "Tom is taller than Sue and Sue is taller than Ann. Who is tallest?",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "Tom is taller than Sue and Sue is taller than Ann. Who is tallest?",
-     "output": "Tom. Ordering the statements gives Tom > Sue > Ann.",
      "route": "reason",
      "subject": "",
      "relation": "",
@@ -2569,15 +2393,150 @@
    "latency_ms": 30
   },
   {
-   "id": 84,
+   "id": 77,
    "cat": "reason",
-   "question": "If Monday is day 1, what day is day 10?",
+   "question": "All squares are rectangles. All rectangles are shapes. Are all squares shapes?",
    "dialogue": false,
    "pass": true,
    "turns": [
     {
-     "question": "If Monday is day 1, what day is day 10?",
-     "output": "Wednesday. Day 10 is 9 days after day 1, and 9 mod 7 is 2.",
+     "question": "All squares are rectangles. All rectangles are shapes. Are all squares shapes?",
+     "output": "Yes. Every square is in a category that is itself contained in shapes, so the containment carries through.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 26,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 26
+  },
+  {
+   "id": 78,
+   "cat": "reason",
+   "question": "Some birds are parrots. All parrots are animals. Are some birds animals?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Some birds are parrots. All parrots are animals. Are some birds animals?",
+     "output": "Yes. Some birds are parrots, and every parrot is an animal.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 34,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 34
+  },
+  {
+   "id": 79,
+   "cat": "reason",
+   "question": "No cats are dogs. Some pets are cats. Can all pets be dogs?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "No cats are dogs. Some pets are cats. Can all pets be dogs?",
+     "output": "No. Some pets are cats, and no cats are dogs. Those pets therefore cannot be dogs, so not all of them can.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 31,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 31
+  },
+  {
+   "id": 80,
+   "cat": "reason",
+   "question": "What comes next: 3, 6, 12, 24, ?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What comes next: 3, 6, 12, 24, ?",
+     "output": "48. In 3, 6, 12, 24, each term multiplies by 2.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 15,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15
+  },
+  {
+   "id": 81,
+   "cat": "reason",
+   "question": "Continue the sequence 1, 4, 9, 16, 25",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Continue the sequence 1, 4, 9, 16, 25",
+     "output": "36. In 1, 4, 9, 16, 25, the terms are consecutive squares.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 15,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15
+  },
+  {
+   "id": 82,
+   "cat": "reason",
+   "question": "What number comes next: 5, 10, 15, 20?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What number comes next: 5, 10, 15, 20?",
+     "output": "25. In 5, 10, 15, 20, each term adds 5.",
      "route": "reason",
      "subject": "",
      "relation": "",
@@ -2596,6 +2555,60 @@
    "latency_ms": 22
   },
   {
+   "id": 83,
+   "cat": "reason",
+   "question": "Tom is taller than Sue and Sue is taller than Ann. Who is tallest?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Tom is taller than Sue and Sue is taller than Ann. Who is tallest?",
+     "output": "Tom. Ordering the statements gives Tom > Sue > Ann.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 37,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 37
+  },
+  {
+   "id": 84,
+   "cat": "reason",
+   "question": "If Monday is day 1, what day is day 10?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "If Monday is day 1, what day is day 10?",
+     "output": "Wednesday. Day 10 is 9 days after day 1, and 9 mod 7 is 2.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 21,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 21
+  },
+  {
    "id": 85,
    "cat": "reason",
    "question": "A bag has 3 red and 7 blue balls. What is the probability of drawing red?",
@@ -2611,7 +2624,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 24,
+     "latency_ms": 36,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2620,7 +2633,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 24
+   "latency_ms": 36
   },
   {
    "id": 86,
@@ -2640,7 +2653,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 8,
+     "latency_ms": 9,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2649,7 +2662,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 9
   },
   {
    "id": 87,
@@ -2669,7 +2682,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2678,7 +2691,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 6
   },
   {
    "id": 88,
@@ -2727,7 +2740,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 12,
+     "latency_ms": 11,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2736,7 +2749,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 12
+   "latency_ms": 11
   },
   {
    "id": 90,
@@ -2756,7 +2769,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2765,7 +2778,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 4
   },
   {
    "id": 91,
@@ -2785,7 +2798,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2794,7 +2807,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 6
   },
   {
    "id": 92,
@@ -2814,7 +2827,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2823,7 +2836,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 3
   },
   {
    "id": 93,
@@ -2843,7 +2856,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2852,7 +2865,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 3
   },
   {
    "id": 94,
@@ -2872,7 +2885,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 3,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2881,7 +2894,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 3
+   "latency_ms": 5
   },
   {
    "id": 95,
@@ -2901,7 +2914,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2910,7 +2923,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 4
   },
   {
    "id": 96,
@@ -2930,7 +2943,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 12,
+     "latency_ms": 11,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2939,7 +2952,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 12
+   "latency_ms": 11
   },
   {
    "id": 97,
@@ -2959,7 +2972,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 22,
+     "latency_ms": 24,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2968,7 +2981,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 22
+   "latency_ms": 24
   },
   {
    "id": 98,
@@ -2988,7 +3001,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 23,
+     "latency_ms": 24,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2997,7 +3010,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 23
+   "latency_ms": 24
   },
   {
    "id": 99,
@@ -3017,7 +3030,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 13,
+     "latency_ms": 15,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3026,7 +3039,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 13
+   "latency_ms": 15
   },
   {
    "id": 100,
@@ -3075,7 +3088,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 18,
+     "latency_ms": 16,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3084,7 +3097,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 18
+   "latency_ms": 16
   },
   {
    "id": 102,
@@ -3104,7 +3117,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 19,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3113,7 +3126,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 19
   },
   {
    "id": 103,
@@ -3162,7 +3175,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 26,
+     "latency_ms": 19,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3171,7 +3184,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 26
+   "latency_ms": 19
   },
   {
    "id": 105,
@@ -3258,7 +3271,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3268,10 +3281,10 @@
     },
     {
      "question": "who created it?",
-     "output": "Python is a high-level, dynamically typed programming language known for readable syntax and a large standard library. It was created by Guido van Rossum.",
+     "output": "Python was created by Guido van Rossum. It dates to 1991.",
      "route": "knowledge",
      "subject": "Python",
-     "relation": "",
+     "relation": "creator",
      "web_used": false,
      "sources": [
       "local knowledge base"
@@ -3286,7 +3299,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 6
+   "latency_ms": 5
   },
   {
    "id": 107,
@@ -3306,7 +3319,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 18,
+     "latency_ms": 16,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3325,7 +3338,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 9,
+     "latency_ms": 10,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3334,7 +3347,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 27
+   "latency_ms": 26
   },
   {
    "id": 108,
@@ -3354,7 +3367,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3373,7 +3386,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 3,
+     "latency_ms": 2,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3382,7 +3395,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 5
   },
   {
    "id": 109,
@@ -3402,7 +3415,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3430,7 +3443,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 9
   },
   {
    "id": 110,
@@ -3450,7 +3463,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 13,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3469,7 +3482,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 10,
+     "latency_ms": 9,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3495,7 +3508,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 25
+   "latency_ms": 18
   },
   {
    "id": 111,
@@ -3515,7 +3528,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 14,
+     "latency_ms": 15,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3524,7 +3537,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 14
+   "latency_ms": 15
   },
   {
    "id": 112,
@@ -3544,7 +3557,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3553,7 +3566,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 3
   },
   {
    "id": 113,
@@ -3573,7 +3586,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 9,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3582,7 +3595,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 9
+   "latency_ms": 3
   },
   {
    "id": 114,
@@ -3600,7 +3613,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3609,7 +3622,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 3
   },
   {
    "id": 115,
@@ -3629,7 +3642,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 27,
+     "latency_ms": 26,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3638,7 +3651,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 27
+   "latency_ms": 26
   },
   {
    "id": 116,
@@ -3656,7 +3669,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 37,
+     "latency_ms": 32,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3665,7 +3678,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 37
+   "latency_ms": 32
   },
   {
    "id": 117,
@@ -3683,7 +3696,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 19,
+     "latency_ms": 18,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3692,7 +3705,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 19
+   "latency_ms": 18
   },
   {
    "id": 118,
@@ -3712,7 +3725,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 13,
+     "latency_ms": 21,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3721,7 +3734,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 13
+   "latency_ms": 21
   },
   {
    "id": 119,
@@ -3799,7 +3812,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3808,7 +3821,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 5
   },
   {
    "id": 122,
@@ -3826,7 +3839,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 8,
+     "latency_ms": 9,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3835,7 +3848,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 9
   },
   {
    "id": 123,
@@ -3853,7 +3866,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 12,
+     "latency_ms": 14,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3862,7 +3875,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 12
+   "latency_ms": 14
   },
   {
    "id": 124,
@@ -3880,7 +3893,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 12,
+     "latency_ms": 15,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3889,7 +3902,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 12
+   "latency_ms": 15
   },
   {
    "id": 125,
@@ -3907,7 +3920,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3916,7 +3929,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 3
   },
   {
    "id": 126,
@@ -3934,7 +3947,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 22,
+     "latency_ms": 28,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3943,7 +3956,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 22
+   "latency_ms": 28
   },
   {
    "id": 127,
@@ -3961,7 +3974,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 2,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3970,7 +3983,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 2
+   "latency_ms": 3
   },
   {
    "id": 128,
@@ -3988,7 +4001,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 2,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3997,7 +4010,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 2
+   "latency_ms": 3
   },
   {
    "id": 129,
@@ -4015,7 +4028,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 11,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4024,7 +4037,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 11
   },
   {
    "id": 130,
@@ -4044,7 +4057,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 16,
+     "latency_ms": 37,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4053,7 +4066,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 16
+   "latency_ms": 37
   },
   {
    "id": 131,
@@ -4075,7 +4088,7 @@
      "used": [
       "this site"
      ],
-     "latency_ms": 10,
+     "latency_ms": 9,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4084,7 +4097,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 10
+   "latency_ms": 9
   },
   {
    "id": 132,
@@ -4102,7 +4115,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 11,
+     "latency_ms": 8,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4111,7 +4124,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 11
+   "latency_ms": 8
   },
   {
    "id": 133,
@@ -4131,7 +4144,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 13,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4140,7 +4153,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 13
+   "latency_ms": 7
   },
   {
    "id": 134,
@@ -4160,7 +4173,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4169,7 +4182,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 7
   },
   {
    "id": 135,
@@ -4218,7 +4231,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4227,7 +4240,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 3
   },
   {
    "id": 137,
@@ -4247,7 +4260,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4256,7 +4269,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 5
   },
   {
    "id": 138,
@@ -4276,7 +4289,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 26,
+     "latency_ms": 24,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4285,7 +4298,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 26
+   "latency_ms": 24
   },
   {
    "id": 139,
@@ -4305,7 +4318,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 3,
+     "latency_ms": 9,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4314,7 +4327,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 3
+   "latency_ms": 9
   },
   {
    "id": 140,
@@ -4334,7 +4347,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 8,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4343,7 +4356,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 8
   },
   {
    "id": 141,
@@ -4363,7 +4376,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4372,7 +4385,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 6
   },
   {
    "id": 142,
@@ -4383,7 +4396,7 @@
    "turns": [
     {
      "question": "How many bones are in the human body?",
-     "output": "The human body has 206 bones in an adult. It is made up of skeletal, muscular, nervous, circulatory, respiratory, digestive and immune systems.",
+     "output": "The human body has 206 bones in an adult.",
      "route": "knowledge",
      "subject": "human body",
      "relation": "count",
@@ -4392,7 +4405,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4401,7 +4414,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 3
   },
   {
    "id": 143,
@@ -4479,7 +4492,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4488,7 +4501,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 6
   },
   {
    "id": 146,
@@ -4506,7 +4519,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 24,
+     "latency_ms": 19,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4515,7 +4528,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 24
+   "latency_ms": 19
   },
   {
    "id": 147,
@@ -4533,7 +4546,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 20,
+     "latency_ms": 26,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4542,7 +4555,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 20
+   "latency_ms": 26
   },
   {
    "id": 148,
@@ -4560,7 +4573,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 13,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4569,7 +4582,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 13
   },
   {
    "id": 149,
@@ -4589,7 +4602,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 18,
+     "latency_ms": 11,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4598,7 +4611,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 18
+   "latency_ms": 11
   },
   {
    "id": 150,
@@ -4626,6 +4639,751 @@
     }
    ],
    "latency_ms": 11
+  },
+  {
+   "id": 151,
+   "cat": "lexical",
+   "question": "What is a pivot?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is a pivot?",
+     "output": "Pivot has more than one sense: a central point, pin or shaft on which something turns; a decisive change of direction, strategy or approach; as a verb, to turn on a point, or to change direction or strategy sharply.",
+     "route": "lexicon",
+     "subject": "pivot",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "word lexicon"
+     ],
+     "used": [],
+     "latency_ms": 6,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 6
+  },
+  {
+   "id": 152,
+   "cat": "lexical",
+   "question": "what does pivot mean",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what does pivot mean",
+     "output": "Pivot has more than one sense: a central point, pin or shaft on which something turns; a decisive change of direction, strategy or approach; as a verb, to turn on a point, or to change direction or strategy sharply.",
+     "route": "lexicon",
+     "subject": "pivot",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "word lexicon"
+     ],
+     "used": [],
+     "latency_ms": 9,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 9
+  },
+  {
+   "id": 153,
+   "cat": "lexical",
+   "question": "what is learning",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is learning",
+     "output": "Learning has more than one sense: the acquisition of knowledge or skill through study, experience or being taught; knowledge acquired through study.",
+     "route": "lexicon",
+     "subject": "learning",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "word lexicon"
+     ],
+     "used": [],
+     "latency_ms": 10,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 10
+  },
+  {
+   "id": 154,
+   "cat": "lexical",
+   "question": "define strategy",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "define strategy",
+     "output": "Strategy means a plan of action designed to achieve a long-term aim.",
+     "route": "lexicon",
+     "subject": "strategy",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "word lexicon"
+     ],
+     "used": [],
+     "latency_ms": 5,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 5
+  },
+  {
+   "id": 155,
+   "cat": "lexical",
+   "question": "what does the word threshold mean",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what does the word threshold mean",
+     "output": "I don't have anything reliable on word threshold. I couldn't confirm it from the public sources I can reach either. If you can point me at a more specific term or a source, I'll work from that.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 15,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 15
+  },
+  {
+   "id": 156,
+   "cat": "compose",
+   "question": "What is a learning pivot?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is a learning pivot?",
+     "output": "I don't hold “learning pivot” as a fixed term, so here is what it has to mean from its parts. Pivot: a decisive change of direction, strategy or approach. Learning: the acquisition of knowledge or skill through study, experience or being taught. Put together, a learning pivot would be a decisive change of direction, strategy or approach that occurs in the course of learning (the acquisition of knowledge or skill through study). Other readings are possible — say more about the context and I'll narrow it.",
+     "route": "compose",
+     "subject": "learning pivot",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "word lexicon"
+     ],
+     "used": [],
+     "latency_ms": 14,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 14
+  },
+  {
+   "id": 157,
+   "cat": "compose",
+   "question": "What is a growth engine?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is a growth engine?",
+     "output": "I don't hold “growth engine” as a fixed term, so here is what it has to mean from its parts. Engine: a machine or software component that converts input into useful work — a heat engine turns fuel into motion, a software engine turns data and rules into results. Growth: the process of increasing in size, amount or importance. Put together, a growth engine would be a machine or software component that converts input into useful work concerning growth (the process of increasing in size, amount or importance). Other readings are possible — say more about the context and I'll narrow it.",
+     "route": "compose",
+     "subject": "growth engine",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base",
+      "word lexicon"
+     ],
+     "used": [],
+     "latency_ms": 16,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 16
+  },
+  {
+   "id": 158,
+   "cat": "compose",
+   "question": "what is a teaching method",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is a teaching method",
+     "output": "I don't hold “teaching method” as a fixed term, so here is what it has to mean from its parts. Method: a particular procedure for accomplishing something. Teaching: the activity of helping someone learn. Put together, a teaching method would be a particular procedure for accomplishing something concerning teaching (the activity of helping someone learn). Other readings are possible — say more about the context and I'll narrow it.",
+     "route": "compose",
+     "subject": "teaching method",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "word lexicon"
+     ],
+     "used": [],
+     "latency_ms": 11,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 11
+  },
+  {
+   "id": 159,
+   "cat": "compose",
+   "question": "what is a design decision",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is a design decision",
+     "output": "I don't hold “design decision” as a fixed term, so here is what it has to mean from its parts. Decision: a conclusion reached after consideration. Design: the plan or intention behind how something is made. Put together, a design decision would be a conclusion reached after consideration that occurs in the course of design (the plan or intention behind how something is made). Other readings are possible — say more about the context and I'll narrow it.",
+     "route": "compose",
+     "subject": "design decision",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "word lexicon"
+     ],
+     "used": [],
+     "latency_ms": 16,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 16
+  },
+  {
+   "id": 160,
+   "cat": "compose",
+   "question": "what is a security problem",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is a security problem",
+     "output": "I don't hold “security problem” as a fixed term, so here is what it has to mean from its parts. Problem: a matter regarded as unwelcome and needing to be dealt with. Security: the state of being free from danger or threat. Put together, a security problem would be a matter regarded as unwelcome and needing to be dealt with concerning security (the state of being free from danger or threat).",
+     "route": "compose",
+     "subject": "security problem",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "word lexicon"
+     ],
+     "used": [],
+     "latency_ms": 16,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 16
+  },
+  {
+   "id": 161,
+   "cat": "compose",
+   "question": "what is a river bridge",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is a river bridge",
+     "output": "I don't hold “river bridge” as a fixed term, so here is what it has to mean from its parts. Bridge: a structure carrying a path over an obstacle. River: a large natural stream of water. Put together, a river bridge would be a structure carrying a path over an obstacle belonging to or found in a river (a large natural stream of water).",
+     "route": "compose",
+     "subject": "river bridge",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "word lexicon"
+     ],
+     "used": [],
+     "latency_ms": 19,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 19
+  },
+  {
+   "id": 162,
+   "cat": "compose",
+   "question": "What is machine learning?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is machine learning?",
+     "output": "Machine learning is the branch of computing where systems learn patterns from data instead of following rules written by hand. It is used for making predictions or decisions from data.",
+     "route": "knowledge",
+     "subject": "machine learning",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 6,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 6
+  },
+  {
+   "id": 163,
+   "cat": "compose",
+   "question": "What is quantum entanglement?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is quantum entanglement?",
+     "output": "Quantum entanglement is a correlation between particles whose joint state cannot be written as separate individual states, so measuring one immediately constrains the other. It is used for quantum cryptography, quantum computing, quantum teleportation and precision sensing.",
+     "route": "knowledge",
+     "subject": "quantum entanglement",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 7,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 7
+  },
+  {
+   "id": 164,
+   "cat": "qualifier",
+   "question": "What is the company meta?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the company meta?",
+     "output": "Meta Platforms is an American technology company that owns Facebook, Instagram and WhatsApp, renamed from Facebook, Inc. in 2021. It was created by Mark Zuckerberg.",
+     "route": "knowledge",
+     "subject": "Meta Platforms",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 13,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 13
+  },
+  {
+   "id": 165,
+   "cat": "qualifier",
+   "question": "What is the planet Mercury?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the planet Mercury?",
+     "output": "Mercury is the smallest planet in the Solar System and the closest to the Sun. It is in the Solar System.",
+     "route": "knowledge",
+     "subject": "Mercury (planet)",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 18,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 18
+  },
+  {
+   "id": 166,
+   "cat": "qualifier",
+   "question": "What is the element mercury?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the element mercury?",
+     "output": "Mercury is a chemical element with the symbol Hg and atomic number 80. It is the only metal that is liquid at room temperature.",
+     "route": "knowledge",
+     "subject": "mercury",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 17,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 17
+  },
+  {
+   "id": 167,
+   "cat": "qualifier",
+   "question": "what is the fruit orange",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is the fruit orange",
+     "output": "An orange is a round citrus fruit with a tough bright-coloured rind.",
+     "route": "knowledge",
+     "subject": "orange (fruit)",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 19,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 19
+  },
+  {
+   "id": 168,
+   "cat": "qualifier",
+   "question": "what is the company orange",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "what is the company orange",
+     "output": "Orange is a French telecommunications company.",
+     "route": "knowledge",
+     "subject": "Orange",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 19,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 19
+  },
+  {
+   "id": 169,
+   "cat": "reason",
+   "question": "If A is older than B, and C is older than B - what is the youngest?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "If A is older than B, and C is older than B - what is the youngest?",
+     "output": "B. The premises give A > B and C > B. A and C are not compared with each other, so the full order is not fixed — but B is below everything either way.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 18,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 18
+  },
+  {
+   "id": 170,
+   "cat": "reason",
+   "question": "If A is faster than B and C is faster than B, who is fastest?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "If A is faster than B and C is faster than B, who is fastest?",
+     "output": "The premises don't settle that. The premises give A > B and C > B. A and C are not compared with each other, so the full order is not fixed.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 19,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 19
+  },
+  {
+   "id": 171,
+   "cat": "reason",
+   "question": "If A is older than B and B is older than C, who is youngest?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "If A is older than B and B is older than C, who is youngest?",
+     "output": "C. Ordering the statements gives A > B > C.",
+     "route": "reason",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 17,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 17
+  },
+  {
+   "id": 172,
+   "cat": "relation",
+   "question": "Who founded Tesla?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Who founded Tesla?",
+     "output": "Tesla was created by Martin Eberhard and Marc Tarpenning, later led by Elon Musk. It dates to 2003.",
+     "route": "knowledge",
+     "subject": "Tesla",
+     "relation": "creator",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 173,
+   "cat": "relation",
+   "question": "Who invented the telephone?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Who invented the telephone?",
+     "output": "I don't have anything reliable on telephone. I couldn't confirm it from the public sources I can reach either. If you can point me at a more specific term or a source, I'll work from that.",
+     "route": "insufficient",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 27,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 27
+  },
+  {
+   "id": 174,
+   "cat": "relation",
+   "question": "Who created Python?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Who created Python?",
+     "output": "Python was created by Guido van Rossum. It dates to 1991.",
+     "route": "knowledge",
+     "subject": "Python",
+     "relation": "creator",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
+  },
+  {
+   "id": 175,
+   "cat": "robust",
+   "question": "Why does a metal spoon feel cold?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "Why does a metal spoon feel cold?",
+     "output": "Thermal conduction is heat transfer through direct contact, as faster-moving particles pass energy to slower neighbours. Metals conduct heat quickly because their free electrons carry energy through the material, so a metal object pulls heat out of your skin far faster than wood at the same temperature — which is why it feels colder even though both are at room temperature.",
+     "route": "explanation",
+     "subject": "thermal conduction",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 26,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 26
+  },
+  {
+   "id": 176,
+   "cat": "robust",
+   "question": "In one sentence, what is gravity?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "In one sentence, what is gravity?",
+     "output": "Gravity is the attraction between objects with mass; in general relativity it is the curvature of spacetime caused by mass and energy.",
+     "route": "knowledge",
+     "subject": "gravity",
+     "relation": "",
+     "web_used": false,
+     "sources": [
+      "local knowledge base"
+     ],
+     "used": [],
+     "latency_ms": 4,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 4
   }
  ]
 }

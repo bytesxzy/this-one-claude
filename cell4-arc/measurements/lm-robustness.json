@@ -1,10 +1,15 @@
 {
- "generated": "2026-09-19T21:18:19.958Z",
- "passed": 43,
- "total": 43,
+ "generated": "2026-09-20T01:58:48.887Z",
+ "passed": 45,
+ "total": 45,
  "results": [
   {
    "name": "syntax: c4-lm-code.js",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "syntax: c4-lm-compose.js",
    "ok": true,
    "detail": ""
   },
@@ -20,6 +25,11 @@
   },
   {
    "name": "syntax: c4-lm-kb.js",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "syntax: c4-lm-lexicon.js",
    "ok": true,
    "detail": ""
   },
@@ -61,7 +71,7 @@
   {
    "name": "knowledge base built",
    "ok": true,
-   "detail": "359"
+   "detail": "380"
   },
   {
    "name": "no artificial delay in page source",
@@ -106,12 +116,12 @@
   {
    "name": "edge input: html injection",
    "ok": true,
-   "detail": "The capital of France is Paris."
+   "detail": "The capital of France is Paris. It is in"
   },
   {
    "name": "edge input: sql-ish input",
    "ok": true,
-   "detail": "Table salt is sodium chloride, NaCl, an "
+   "detail": "I don't hold “drop table users” as a fix"
   },
   {
    "name": "edge input: regex metacharacters",
@@ -156,7 +166,7 @@
   {
    "name": "repeat is not slower",
    "ok": true,
-   "detail": "2 -> 2"
+   "detail": "3 -> 2"
   },
   {
    "name": "offline: local computation unaffected",
@@ -171,12 +181,12 @@
   {
    "name": "offline: current question degrades honestly",
    "ok": true,
-   "detail": "Bitcoin is a decentralised digital currency recorded on a pu"
+   "detail": "I don't hold “current bitcoin price” as a fixed term, so her"
   },
   {
    "name": "hanging source does not hang the answer",
    "ok": true,
-   "detail": "2518 ms"
+   "detail": "2521 ms"
   },
   {
    "name": "garbage source response handled",

@@ -40,7 +40,9 @@ RAW USER TEXT
 
 | file | what it owns |
 |---|---|
-| `c4-lm-core.js` | Normalisation, morphology, typo repair, the relation lexicon, and the immutable **QueryFrame**. The message is parsed once; everything downstream reads the frame. |
+| `c4-lm-core.js` | Normalisation, morphology, typo repair, the relation lexicon, type qualifiers, and the immutable **QueryFrame**. The message is parsed once; everything downstream reads the frame. |
+| `c4-lm-lexicon.js` | What WORDS mean, as distinct from what things are: senses, parts of speech and a semantic class per sense. Words it does not hold are fetched from keyless dictionaries at query time and learned. |
+| `c4-lm-compose.js` | **Compositional reading.** An unseen phrase is not matched, it is read: head and modifier are looked up, the relation between them is inferred from their semantic classes, and a meaning is composed. This is what makes "learning pivot" a pivot in learning rather than the nearest article with those letters in it. |
 | `c4-lm-kb.js` | The local knowledge base: entities with aliases, types, definitions, relational attributes, causal accounts, sense sets and contrast dimensions. Entity resolution is exact → alias → typo-tolerant → token-vote, and identity is never substring overlap. |
 | `c4-lm-reason.js` | The reasoning graph. Compact typed nodes (ENTITY, QUANTITY, CLAIM, ORDER, OPERATION, INFERENCE, TEMPORAL) for arithmetic, percentages, rates, unit and temperature conversion, averages, probability, categorical syllogisms, transitive ordering, sequence extrapolation, date arithmetic, loop diagnosis and classification. |
 | `c4-lm-retrieve.js` | Two-stage retrieval. A cheap BM25F sweep produces a shortlist; only the shortlist pays for ordered-phrase locks, identity tiers, topical concentration and relation compatibility. |
@@ -49,7 +51,7 @@ RAW USER TEXT
 | `c4-lm-code.js` | Code construction from a specification. Semantic operations, language backends, and execution of every emitted JavaScript program against its own example before it is offered. |
 | `c4-lm.js` | The orchestrator: discourse state, the System-1 decision head, adaptive depth, confidence assembly, ablation switches. |
 
-## The four distinctions the architecture is built on
+## The five distinctions the architecture is built on
 
 1. **Identity is not overlap.** A document that contains a phrase is not a
    document about it. `identityTier` scores position, not containment, and a
@@ -63,6 +65,10 @@ RAW USER TEXT
 4. **Evidence sufficiency, not a deadline.** The federation finishes when the
    evidence is good enough and aborts the rest. A slow endpoint can add
    information; it can never delay an answer that is already supported.
+5. **A word is not a thing.** "What is a pivot" is a question about a word and
+   goes to the lexicon; "what is Mercury" is a question about a thing and goes
+   to the knowledge base. A phrase that is neither — "learning pivot" — is
+   read from its parts, and the answer says plainly that it is a reading.
 
 ## Reproducing the measurements
 

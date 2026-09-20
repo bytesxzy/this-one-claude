@@ -19,6 +19,8 @@ var PORT = Number(arg("port", 8781));
    very slow straggler -- the shape that used to hold an answer for ten
    seconds. */
 var DELAYS = {
+  "api.dictionaryapi.dev": 110,
+  "en.wiktionary.org": 180,
   "www.wikidata.org": 60,
   "en.wikipedia.org": 220,
   "registry.npmjs.org": 90,
@@ -26,6 +28,24 @@ var DELAYS = {
   "api.coindesk.com": 140,
   "open.er-api.com": 3200,
   "api.crossref.org": 4200
+};
+
+/* A stand-in dictionary: the words are ordinary English, chosen to be ones
+   the shipped lexicon does NOT hold, so the "learn a word at query time"
+   path is what is being exercised. */
+var WORDS = {
+  retention: [{ pos: "noun", gloss: "the continued possession or keeping of something" }],
+  friction: [{ pos: "noun", gloss: "the resistance that one surface meets when moving over another" },
+             { pos: "noun", gloss: "conflict or disagreement between people" }],
+  cadence: [{ pos: "noun", gloss: "a rhythm or regular repeated pattern of activity" }],
+  bottleneck: [{ pos: "noun", gloss: "a point of congestion that limits the rate of a process" }],
+  onboarding: [{ pos: "noun", gloss: "the process of integrating a new employee or user" }],
+  churn: [{ pos: "noun", gloss: "the rate at which customers stop using a service" }],
+  latency: [{ pos: "noun", gloss: "the delay before a transfer of data begins following an instruction" }],
+  scaffold: [{ pos: "noun", gloss: "a temporary structure used to support work in progress" },
+             { pos: "verb", gloss: "to provide temporary support for something being built" }],
+  curve: [{ pos: "noun", gloss: "a line that deviates from being straight, or a graph of a relationship" }],
+  bottle: [{ pos: "noun", gloss: "a container with a narrow neck, used for holding liquids" }]
 };
 
 var ARTICLES = {
@@ -60,6 +80,23 @@ var server = http.createServer(function (req, res) {
     }, delay);
   }
 
+  if (host === "api.dictionaryapi.dev") {
+    var dw = decodeURIComponent((pathname.split("/").pop() || "")).toLowerCase();
+    var entry = WORDS[dw];
+    if (!entry) { return send([]); }
+    return send([{ word: dw, meanings: entry.map(function (e) {
+      return { partOfSpeech: e.pos, definitions: [{ definition: e.gloss }] };
+    }) }]);
+  }
+  if (host === "en.wiktionary.org") {
+    var ww = decodeURIComponent((pathname.split("/").pop() || "")).toLowerCase();
+    var we = WORDS[ww];
+    if (!we) return send({});
+    return send({ en: we.map(function (e) {
+      return { partOfSpeech: e.pos === "verb" ? "Verb" : "Noun",
+               definitions: [{ definition: "<span>" + e.gloss + "</span>" }] };
+    }) });
+  }
   if (host === "en.wikipedia.org") {
     var title = q.titles || q.gsrsearch || "";
     var art = articleFor(title);

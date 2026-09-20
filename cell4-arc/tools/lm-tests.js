@@ -357,7 +357,87 @@ var CASES = [
   T({ id: 149, cat: "code", q: "Explain what a REST API is.", expectAny: [/HTTP|resource|stateless|endpoint/i],
       reject: [/insufficient|couldn.t find/i] }),
   T({ id: 150, cat: "code", q: "Write a SQL query to find the top 5 highest paid employees.", web: false,
-      expectAll: [/select/i], expectAny: [/order by/i, /limit|top/i] })
+      expectAll: [/select/i], expectAny: [/order by/i, /limit|top/i] }),
+
+  /* ===================== LANGUAGE UNDERSTANDING (added after live testing)
+     Three defects showed up in live use: an unseen compound was matched to
+     the nearest article instead of being read; a name with a type qualifier
+     resolved to the wrong sense; and a partial order was reported as a total
+     one. These cases cover the general mechanisms built for them. */
+
+  /* word senses -- the system must know what ordinary words mean */
+  T({ id: 151, cat: "lexical", q: "What is a pivot?", route: "lexicon", web: false,
+      expectAny: [/turn|change of direction|central point/i],
+      reject: [/insufficient|couldn.t find|don.t have anything/i] }),
+  T({ id: 152, cat: "lexical", q: "what does pivot mean", web: false,
+      expectAny: [/turn|change of direction|central point/i],
+      reject: [/\bmean is the sum\b/i, /insufficient|couldn.t find/i] }),
+  T({ id: 153, cat: "lexical", q: "what is learning", web: false,
+      expectAny: [/acquisition|knowledge|skill/i], reject: [/machine learning/i] }),
+  T({ id: 154, cat: "lexical", q: "define strategy", web: false,
+      expectAny: [/plan|action|aim/i], reject: [/insufficient|couldn.t find/i] }),
+  T({ id: 155, cat: "lexical", q: "what does the word threshold mean", web: false,
+      expectAny: [/.{20,}/] }),
+
+  /* compositional reading of phrases nothing holds an entry for */
+  T({ id: 156, cat: "compose", q: "What is a learning pivot?", route: "compose", web: false,
+      expectAll: [/pivot/i, /learning/i],
+      expectAny: [/change of direction|change in direction|strategy|approach/i],
+      reject: [/television|network|TLC|insufficient|couldn.t find/i] }),
+  T({ id: 157, cat: "compose", q: "What is a growth engine?", web: false,
+      expectAll: [/growth/i], expectAny: [/machine|component|converts/i],
+      reject: [/insufficient|couldn.t find/i] }),
+  T({ id: 158, cat: "compose", q: "what is a teaching method", web: false,
+      expectAll: [/teaching/i], expectAny: [/procedure|way|method/i],
+      reject: [/JavaScript|function that returns/i] }),
+  T({ id: 159, cat: "compose", q: "what is a design decision", web: false,
+      expectAll: [/design/i], expectAny: [/conclusion|choice|decision/i] }),
+  T({ id: 160, cat: "compose", q: "what is a security problem", web: false,
+      expectAll: [/security/i], expectAny: [/matter|unwelcome|problem/i] }),
+  T({ id: 161, cat: "compose", q: "what is a river bridge", web: false,
+      expectAll: [/river/i], expectAny: [/structure|carrying|over/i] }),
+
+  /* a compound the knowledge base DOES hold must not be read compositionally */
+  T({ id: 162, cat: "compose", q: "What is machine learning?", web: false,
+      expectAny: [/branch of computing|patterns from data/i],
+      reject: [/don't hold|from its parts/i] }),
+  T({ id: 163, cat: "compose", q: "What is quantum entanglement?", web: false,
+      expectAny: [/correlation|particles/i], reject: [/don't hold|from its parts/i] }),
+
+  /* type qualifiers select the sense */
+  T({ id: 164, cat: "qualifier", q: "What is the company meta?", web: false,
+      expectAny: [/Facebook|Instagram|technology company/i],
+      reject: [/Canadian|scientific literature/i] }),
+  T({ id: 165, cat: "qualifier", q: "What is the planet Mercury?", web: false,
+      expectAny: [/smallest planet|closest to the Sun/i], reject: [/chemical element/i] }),
+  T({ id: 166, cat: "qualifier", q: "What is the element mercury?", web: false,
+      expectAny: [/chemical element|\bHg\b/i], reject: [/smallest planet/i] }),
+  T({ id: 167, cat: "qualifier", q: "what is the fruit orange", web: false,
+      expectAny: [/citrus|fruit/i], reject: [/telecommunications/i] }),
+  T({ id: 168, cat: "qualifier", q: "what is the company orange", web: false,
+      expectAny: [/telecommunications|French/i], reject: [/citrus/i] }),
+
+  /* partial orders must not be reported as total orders */
+  T({ id: 169, cat: "reason", q: "If A is older than B, and C is older than B - what is the youngest?",
+      web: false, expectAll: [/\bB\b/], reject: [/A > C > B|C > A > B/] }),
+  T({ id: 170, cat: "reason", q: "If A is faster than B and C is faster than B, who is fastest?",
+      web: false, expectAny: [/don.t settle|not compared|cannot tell|not fixed/i] }),
+  T({ id: 171, cat: "reason", q: "If A is older than B and B is older than C, who is youngest?",
+      web: false, expectAll: [/\bC\b/] }),
+
+  /* verb-to-relation mapping must not collide */
+  T({ id: 172, cat: "relation", q: "Who founded Tesla?", web: false,
+      expectAny: [/Eberhard|Tarpenning|Musk/i] }),
+  T({ id: 173, cat: "relation", q: "Who invented the telephone?", route: "any",
+      expectAny: [/.{15,}/] }),
+  T({ id: 174, cat: "relation", q: "Who created Python?", web: false, expectAny: [/Rossum/i] }),
+
+  /* the spell repair must not rewrite ordinary words */
+  T({ id: 175, cat: "robust", q: "Why does a metal spoon feel cold?", web: false,
+      expectAny: [/conduct|heat/i], reject: [/soon\b/] }),
+  T({ id: 176, cat: "robust", q: "In one sentence, what is gravity?", maxSentences: 1,
+      expectAny: [/attract|mass|spacetime|force/i] })
 ];
+
 
 module.exports = { CASES: CASES };

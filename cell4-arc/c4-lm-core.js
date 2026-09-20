@@ -253,8 +253,15 @@
   /* A word is "known" if the lexicon has it or has the form it inflects from.
      Without this, a regular plural looks one edit away from its own singular
      and the repair silently rewrites "United States" to "United State". */
+  /* Anything the word lexicon recognises -- in any inflected form -- is a
+     real word, not a typo. Without this the repair "corrects" ordinary verbs
+     into nearby nouns: "invented" became "inventor". */
+  var wordOracle = null;
+  function setWordOracle(fn) { wordOracle = typeof fn === "function" ? fn : null; repairCache = Object.create(null); }
+
   function knownWord(w) {
     if (VOCAB[w] || STOP[w]) return true;
+    if (wordOracle) { try { if (wordOracle(w)) return true; } catch (e) {} }
     if (VOCAB[stem(w)]) return true;
     var cuts = [/s$/, /es$/, /ed$/, /ing$/, /ly$/, /er$/, /est$/, /ies$/];
     for (var i = 0; i < cuts.length; i++) {
@@ -264,6 +271,14 @@
       }
     }
     return false;
+  }
+
+  /* Two words built from the same letters differ by a transposition, which
+     is what most miskeyings are: "Franec" for "France", "Brazli" for
+     "Brazil". Those are repairs even though the ending changed. */
+  function sameLetters(a, b) {
+    if (a.length !== b.length) return false;
+    return a.split("").sort().join("") === b.split("").sort().join("");
   }
 
   var INFLECTION = /^(?:s|es|d|ed|ing|ly|er|est|ies|y)$/;
@@ -313,9 +328,16 @@
     w = String(w).toLowerCase();
     if (TYPO_FIX[w]) return TYPO_FIX[w];
     if (proper) return w.length >= 4 ? repairProper(w) : w;
-    if (w.length < 5 || knownWord(w) || !/^[a-z]+$/.test(w)) return w;
+    /* Short words are too easily confusable to respell: "spoon" is one edit
+       from "soon" and rewriting it destroys the sentence. Six characters is
+       where an edit stops being plausible as a coincidence. */
+    /* A possessive is an inflection, not part of the spelling: repair the
+       base and put the clitic back. */
+    var poss = "";
+    if (/['’]s$/.test(w)) { poss = "'s"; w = w.replace(/['’]s$/, ""); }
+    if (w.length < 6 || knownWord(w) || !/^[a-z]+$/.test(w)) return w + poss;
     if (repairCache[w] !== undefined) return repairCache[w];
-    var budget = w.length >= 8 ? 2 : 1, best = "", bestD = budget + 1;
+    var budget = w.length >= 9 ? 2 : 1, best = "", bestD = budget + 1;
     for (var L = w.length - budget; L <= w.length + budget; L++) {
       var bucket = VOCAB_BY_LEN[L];
       if (!bucket) continue;
@@ -331,9 +353,18 @@
        misspelling of "releases", and a lexicon that happens to hold only one
        of the two must not rewrite the other. */
     if (best && inflectionOf(w, best)) best = "";
+    /* A plausible miskeying keeps the word's opening and its ending: a
+       candidate that differs at both ends is a different word. */
+    if (best && bestD === 1 && !sameLetters(best, w) &&
+        (best.charAt(0) !== w.charAt(0) || best.slice(-1) !== w.slice(-1)) &&
+        w.length < 8) best = "";
+    /* Two edits is a lot to attribute to typing. It is allowed only when the
+       word's opening survives intact -- otherwise "retention" is "corrected"
+       into "rejection", which is a different word, not a repair. */
+    if (best && bestD >= 2 && best.slice(0, 3) !== w.slice(0, 3)) best = "";
     var out = (best && bestD <= budget) ? best : w;
     repairCache[w] = out;
-    return out;
+    return out + poss;
   }
 
   /* --------------------------------------------------------- relation model
@@ -346,16 +377,24 @@
     { id: "currency",  heads: ["currency", "money"], answerType: "thing" },
     { id: "language",  heads: ["language", "official language", "languages"], answerType: "thing" },
     { id: "population",heads: ["population", "how many people"], answerType: "quantity" },
-    { id: "author",    heads: ["author", "writer"], verbs: ["write", "wrote", "written", "author"], answerType: "person" },
-    { id: "creator",   heads: ["creator", "inventor", "founder", "designer", "developer"],
-                       verbs: ["create", "invent", "found", "design", "develop", "make", "build"], answerType: "person" },
+    { id: "author",    heads: ["author", "writer"], verbs: ["write", "wrote", "written", "writes", "authored", "author"], answerType: "person" },
+    { id: "creator",   heads: ["creator", "inventor", "founder", "designer", "developer", "maker", "builder"],
+                       verbs: ["create", "created", "creates", "invent", "invented", "invents",
+                               "found", "founded", "founds", "establish", "established",
+                               "design", "designed", "develop", "developed", "make", "made",
+                               "build", "built", "start", "started", "launch", "launched"],
+                       answerType: "person" },
     { id: "artist",    heads: ["painter", "artist", "composer", "director"],
-                       verbs: ["paint", "compose", "direct"], answerType: "person" },
+                       verbs: ["paint", "painted", "paints", "compose", "composed", "direct", "directed", "sculpted"],
+                       answerType: "person" },
     { id: "symbol",    heads: ["symbol", "chemical symbol", "abbreviation", "sign"], answerType: "thing" },
     { id: "birth",     heads: ["birth", "birthday", "birthdate", "date of birth"],
                        verbs: ["born"], answerType: "time" },
     { id: "death",     heads: ["death", "date of death"], verbs: ["died", "die"], answerType: "time" },
-    { id: "location",  heads: ["location", "place"], verbs: ["located", "situated", "found"], answerType: "place" },
+    /* "found" is left out deliberately: "who founded X" is a creator question
+       and "X is found in Y" is a location one, and the surface form is what
+       tells them apart. The creator entry claims the active forms. */
+    { id: "location",  heads: ["location", "place"], verbs: ["located", "situated"], answerType: "place" },
     { id: "height",    heads: ["height", "how tall", "tall"], answerType: "quantity" },
     { id: "length",    heads: ["length", "how long"], answerType: "quantity" },
     { id: "distance",  heads: ["distance", "how far"], answerType: "quantity" },
@@ -380,8 +419,27 @@
   var RELATION_BY_VERB = Object.create(null);
   RELATIONS.forEach(function (r) {
     (r.heads || []).forEach(function (h) { RELATION_BY_HEAD[flatten(h)] = r.id; });
-    (r.verbs || []).forEach(function (v) { RELATION_BY_VERB[stem(v)] = r.id; });
+    /* Both the surface form and the stem are registered, surface first: a
+       stemmer collapses distinctions that the tense is carrying. */
+    (r.verbs || []).forEach(function (v) {
+      var lower = String(v).toLowerCase();
+      if (!RELATION_BY_VERB[lower]) RELATION_BY_VERB[lower] = r.id;
+      var st = stem(lower);
+      if (!RELATION_BY_VERB[st]) RELATION_BY_VERB[st] = r.id;
+      /* Only for words long enough that the stripped form is still a word:
+         "die" would otherwise register "di", and "did" then stems onto it. */
+      if (/e$/.test(lower) && lower.length >= 6 && !RELATION_BY_VERB[lower.slice(0, -1)]) {
+        RELATION_BY_VERB[lower.slice(0, -1)] = r.id;
+      }
+    });
   });
+  /* The words the relation lexicon is built from are, by construction, real
+     English words. Registering them keeps the repair away from them. */
+  RELATIONS.forEach(function (r) {
+    (r.heads || []).forEach(function (h) { words(h).forEach(learnWord); });
+    (r.verbs || []).forEach(function (v) { learnWord(v); });
+  });
+
   function relationForHead(phrase) {
     var f = flatten(phrase);
     if (RELATION_BY_HEAD[f]) return RELATION_BY_HEAD[f];
@@ -392,7 +450,20 @@
     }
     return "";
   }
-  function relationForVerb(v) { return RELATION_BY_VERB[stem(String(v).toLowerCase())] || ""; }
+  var AUXILIARY = /^(?:is|are|was|were|be|been|being|am|do|does|did|have|has|had|will|would|shall|should|can|could|may|might|must)$/;
+  function relationForVerb(v) {
+    var w = String(v).toLowerCase();
+    /* An auxiliary carries tense, not a relation. */
+    if (AUXILIARY.test(w)) return "";
+    if (RELATION_BY_VERB[w]) return RELATION_BY_VERB[w];
+    if (RELATION_BY_VERB[stem(w)]) return RELATION_BY_VERB[stem(w)];
+    if (w.length >= 5) {
+      var cut = w.replace(/(?:ed|es|s|d)$/, "");
+      if (cut.length >= 4 && RELATION_BY_VERB[cut]) return RELATION_BY_VERB[cut];
+      if (cut.length >= 4 && RELATION_BY_VERB[cut + "e"]) return RELATION_BY_VERB[cut + "e"];
+    }
+    return "";
+  }
 
   /* A syntax-free fragment ("capital France") only reads as a relation when
      the remainder actually names something. Without that test, any sentence
@@ -528,6 +599,10 @@
     { f: "compute",  re: /\b(?:calculate|compute|evaluate|solve|convert|how much is|what'?s? \d)\b/i },
     { f: "whatis",   re: /^what(?:'s|’s|s| is| are| was| were)\b/i },
     { f: "whatis",   re: /^(?:define|definition of|meaning of|describe)\b/i },
+    /* "what does X mean" and "what does X do" are definitional questions
+       whose interrogative is split across the clause. */
+    { f: "whatis",   re: /^what\s+(?:does|do|did)\b[\s\S]*\b(?:mean|means|stand for|refer to)\b/i },
+    { f: "whatis",   re: /^what\s+(?:does|do|did)\b[\s\S]*\b(?:do|does)\s*\??$/i },
     { f: "whois",    re: /^who(?:'s|’s|s| is| are| was| were)\b/i },
     { f: "whodid",   re: /^who\b/i },
     { f: "why",      re: /^why\b/i },
@@ -758,15 +833,6 @@
     body = body.replace(/^\s*(?:anyway|anyways|actually|never ?mind|forget (?:it|that)|moving on|on another note)\b[\s,.:;-]*/i, "").trim();
     if (!body) body = repairedText;
 
-    var tokens = words(body);
-    var stems = tokens.map(stem);
-    var content = [], contentStems = [];
-    for (var i = 0; i < tokens.length; i++) {
-      if (!STOP[tokens[i]] && !INTENT_WORDS[tokens[i]] && tokens[i].length > 1) {
-        content.push(tokens[i]); contentStems.push(stems[i]);
-      }
-    }
-
     /* The format request is metadata about the answer, not part of the
        subject. Strip it once, here, so no consumer has to know that
        "...in exactly three bullets" is not a topic. */
@@ -777,13 +843,40 @@
        something; the rest is politeness. Picking it here means no consumer
        has to know about preambles. */
     if (normalizationOn) body = extractRequest(body);
+    /* A format instruction can lead as easily as it can trail: "in one
+       sentence, what is gravity" is a question about gravity. */
+    var FORMAT_LEAD = /^(?:in|using|with|give me|answer in|reply in|respond in|summari[sz]e in)\s+(?:exactly\s+|about\s+|just\s+|only\s+)?(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(?:sentences?|words?|bullet points?|bullets?|lines?|paragraphs?|points?)\s*[,:;-]?\s*/i;
     var semantic = normalizationOn ?
-      (body.replace(FORMAT_TAIL, "").replace(SHORTNESS_TAIL, "").trim() || body) : body;
+      (body.replace(FORMAT_LEAD, "").replace(FORMAT_TAIL, "").replace(SHORTNESS_TAIL, "").trim() || body) : body;
+    /* A trailing "mean"/"means"/"do" belongs to the question, not to the
+       subject, and it must not survive into the content tokens either -- it
+       is how "what does pivot mean" ended up about the arithmetic mean. */
+    if (normalizationOn) semantic = semantic.replace(QUESTION_TAIL, "").trim() || semantic;
     semantic = semantic.replace(/^\s*(?:give me |show me |tell me )?only the (?:number|answer|value|name|word)\s*[:,-]?\s*/i, "").trim() || semantic;
     semantic = semantic.replace(/^\s*answer (?:with|in) (?:a |one |just )?(?:single word|one word|a number|the number)\s*[:,-]?\s*/i, "").trim() || semantic;
 
+    /* Tokens are taken from the SEMANTIC text -- after the preamble, the
+       format request and the question tail have gone -- so every consumer
+       sees the words the question is actually about. */
+    var tokens = words(semantic);
+    var stems = tokens.map(stem);
+    var content = [], contentStems = [];
+    for (var i = 0; i < tokens.length; i++) {
+      if (!STOP[tokens[i]] && !INTENT_WORDS[tokens[i]] && tokens[i].length > 1) {
+        content.push(tokens[i]); contentStems.push(stems[i]);
+      }
+    }
+
     var form = detectForm(body);
     var rel = extractRelational(semantic);
+    if (!rel) {
+      /* A polite wrapper leaves the question intact but moves it off the
+         front of the string: "tell me who wrote Hamlet" is still a
+         who-wrote question. Retry against the stem-stripped clause. */
+      var innerRe = /\b((?:who|what|which|when|where|how)\b[\s\S]*)$/i;
+      var im = semantic.match(innerRe);
+      if (im && im[1] && im[1].length < semantic.length) rel = extractRelational(im[1]);
+    }
     var titles = titleSpans(semantic);
     var fmt = normalizationOn ? parseFormat(normLower) :
       { format: "prose", length: 0, unit: "", tone: "", onlyValue: false };
@@ -872,6 +965,11 @@
          position the interrogative ended up in after a polite wrapper. */
       wantsPerson: /\bwho(?:'s|se|m)?\b/i.test(normLower) ||
                    /\b(?:person|people|man|woman|author|writer|inventor|founder|creator|president|painter|composer|scientist)\b/i.test(normLower),
+      /* "the company Meta", "Meta the company", "Mercury (planet)": a type
+         noun beside a name says WHICH thing is meant. Recorded here once so
+         every resolver can use it, rather than each one guessing. */
+      typeQualifier: "",
+      qualifiedName: "",
       pronouns: pronouns,
       continuationMarkers: contMarker,
       topicShift: shiftMatch,
@@ -908,6 +1006,22 @@
        truncated away by longer, noisier n-grams. Keep the whole ranked list
        (it is bounded by the message length anyway). */
     frame.subjectCandidates = cands.slice(0, 28);
+
+    /* Type qualifier. The frame only records the SHAPE; whether the word is
+       really a type noun is decided by whoever holds the type vocabulary. */
+    (function () {
+      var qm = semantic.match(/\b(?:the|a|an)\s+([a-z][a-z-]{2,20})\s+(?:called\s+|named\s+)?((?!of\b|for\b|in\b|on\b|to\b|with\b|from\b|at\b|by\b)[A-Za-z][\w.'-]*(?:\s+[A-Z][\w.'-]*)*)\s*\??$/);
+      if (qm && qm[1] && qm[2]) { frame.typeQualifier = qm[1].toLowerCase(); frame.qualifiedName = qm[2].trim(); return; }
+      qm = semantic.match(/\b([A-Za-z][\w.'-]*(?:\s+[A-Z][\w.'-]*)*),?\s+the\s+([a-z][a-z-]{2,20})\s*\??$/);
+      if (qm && qm[1] && qm[2]) { frame.typeQualifier = qm[2].toLowerCase(); frame.qualifiedName = qm[1].trim(); return; }
+      var bare = stripStem(semantic).replace(/[?.!]+\s*$/, "").trim();
+      qm = bare.match(/^\s*([a-z][a-z-]{2,20})\s+([A-Z][\w.'-]*(?:\s+[A-Z][\w.'-]*)*)\s*$/);
+      if (qm && qm[1] && qm[2]) { frame.typeQualifier = qm[1].toLowerCase(); frame.qualifiedName = qm[2].trim(); return; }
+      qm = semantic.match(/^\s*([a-z][a-z-]{2,20})\s+([A-Z][\w.'-]*(?:\s+[A-Z][\w.'-]*)*)\s*\??$/);
+      if (qm && qm[1] && qm[2]) { frame.typeQualifier = qm[1].toLowerCase(); frame.qualifiedName = qm[2].trim(); return; }
+      qm = semantic.match(/\b([A-Za-z][\w.'-]*)\s*\(\s*([a-z][a-z ]{2,24})\s*\)/);
+      if (qm && qm[1] && qm[2]) { frame.typeQualifier = qm[2].trim().toLowerCase(); frame.qualifiedName = qm[1].trim(); }
+    })();
 
     /* Comparison operands: "X vs Y", "difference between X and Y",
        "compare X and Y". One extractor, all three shapes. */
@@ -1000,6 +1114,7 @@
     relationForHead: relationForHead,
     setEntityOracle: setEntityOracle,
     setNormalization: setNormalization,
+    setWordOracle: setWordOracle,
     relationForVerb: relationForVerb,
     relations: RELATIONS,
     cleanEntity: cleanEntity,

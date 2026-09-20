@@ -627,12 +627,11 @@
   }
   person("Albert Einstein", "theoretical physicist", "14 March 1879", "18 April 1955",
     "best known for the theory of relativity and the mass–energy equivalence E = mc²",
-    ["einstein"], { creator: "the theory of relativity",
-      extra: "", location: "born in Ulm, Germany",
-      purpose: "" });
+    ["einstein"], { location: "born in Ulm, Germany" });
   ENTITIES[ENTITIES.length - 1].extra = {
     education: "Einstein studied at the Swiss Federal Polytechnic (ETH) in Zurich, graduating in 1900 with a teaching diploma in mathematics and physics, and took his doctorate at the University of Zurich in 1905.",
-    achievement: "He received the 1921 Nobel Prize in Physics for his explanation of the photoelectric effect."
+    achievement: "He received the 1921 Nobel Prize in Physics for his explanation of the photoelectric effect.",
+    work: "He published the special theory of relativity in 1905 and the general theory in 1915."
   };
   person("Isaac Newton", "mathematician and physicist", "4 January 1643", "31 March 1727",
     "who formulated the laws of motion and universal gravitation", ["newton"]);
@@ -803,6 +802,18 @@
       { entity: "Amazon River", gloss: "the river in South America", domain: "geography" },
       { entity: "Amazon (company)", gloss: "the technology and retail company", domain: "business" }
     ],
+    "meta": [
+      { entity: "Meta Platforms", gloss: "the technology company that owns Facebook and Instagram", domain: "business", dominant: true },
+      { entity: "meta (prefix)", gloss: "the prefix meaning about itself, as in metadata", domain: "everyday" }
+    ],
+    "orange": [
+      { entity: "orange (fruit)", gloss: "the citrus fruit", domain: "everyday", dominant: true },
+      { entity: "Orange", gloss: "the French telecommunications company", domain: "business" }
+    ],
+    "shell": [
+      { entity: "Shell", gloss: "the oil and gas company", domain: "business" },
+      { entity: "shell (computing)", gloss: "the command-line interpreter of an operating system", domain: "computing" }
+    ],
     "turkey": [
       { entity: "Turkey", gloss: "the country in Western Asia", domain: "geography" },
       { entity: "turkey (bird)", gloss: "the large bird", domain: "biology" }
@@ -827,7 +838,58 @@
     { creator: "Steve Jobs, Steve Wozniak and Ronald Wayne", time: "founded in 1976" }, []);
   E("Amazon (company)", "company", "Amazon is an American technology and retail company, also a major cloud provider through AWS.",
     { creator: "Jeff Bezos", time: "founded in 1994" }, []);
+  E("meta (prefix)", "concept", "Meta is a prefix meaning about itself or at a higher level of abstraction, as in metadata or metaphysics.",
+    { type: "prefix" }, []);
+  E("shell (computing)", "concept", "A shell is the command-line interpreter that lets a user run commands against an operating system.",
+    { type: "command-line interpreter" }, ["bash shell", "command shell"]);
   E("turkey (bird)", "animal", "The turkey is a large bird native to North America, widely farmed for meat.", {}, []);
+
+  /* ------------------------------------------------- organisations
+   * Well-known companies, several of which share a name with an ordinary
+   * word. They are here so a type qualifier ("the company X") has something
+   * to select, and so the sense sets below are not hypothetical. */
+  E("Meta Platforms", "company",
+    "Meta Platforms is an American technology company that owns Facebook, Instagram and WhatsApp, renamed from Facebook, Inc. in 2021.",
+    { creator: "Mark Zuckerberg", time: "founded in 2004, renamed Meta in 2021",
+      location: "Menlo Park, California", type: "technology company" },
+    ["meta", "facebook", "facebook inc"]);
+  E("Google", "company", "Google is an American technology company known for its search engine, Android and cloud services, owned by Alphabet Inc.",
+    { creator: "Larry Page and Sergey Brin", time: "founded in 1998", type: "technology company" }, ["alphabet"]);
+  E("Microsoft", "company", "Microsoft is an American technology company known for Windows, Office and Azure.",
+    { creator: "Bill Gates and Paul Allen", time: "founded in 1975", type: "technology company" }, []);
+  E("Tesla", "company", "Tesla is an American company that makes electric vehicles and energy storage systems.",
+    { creator: "Martin Eberhard and Marc Tarpenning, later led by Elon Musk", time: "founded in 2003", type: "car company" },
+    ["tesla inc"]);
+  E("Netflix", "company", "Netflix is an American streaming service and production company.",
+    { time: "founded in 1997", type: "streaming company" }, []);
+  E("IBM", "company", "IBM is an American technology company with a long history in computing hardware, software and research.",
+    { time: "founded in 1911", type: "technology company" }, ["international business machines"]);
+  E("Intel", "company", "Intel is an American company that designs and manufactures semiconductors.",
+    { time: "founded in 1968", type: "semiconductor company" }, []);
+  E("Nvidia", "company", "Nvidia is an American company that designs graphics processors and AI accelerators.",
+    { time: "founded in 1993", type: "semiconductor company" }, []);
+  E("Oracle", "company", "Oracle is an American company known for its database software and cloud services.",
+    { time: "founded in 1977", type: "software company" }, []);
+  E("Samsung", "company", "Samsung is a South Korean conglomerate best known for electronics and semiconductors.",
+    { time: "founded in 1938", type: "technology company", country: "South Korea" }, []);
+  E("Toyota", "company", "Toyota is a Japanese car manufacturer, among the largest in the world.",
+    { time: "founded in 1937", type: "car company", country: "Japan" }, []);
+  E("Shell", "company", "Shell is a British multinational oil and gas company.",
+    { type: "energy company" }, ["royal dutch shell"]);
+  E("Orange", "company", "Orange is a French telecommunications company.",
+    { type: "telecommunications company", country: "France" }, []);
+  E("orange (fruit)", "concept", "An orange is a round citrus fruit with a tough bright-coloured rind.", {}, []);
+  E("SpaceX", "company", "SpaceX is an American company that builds rockets and spacecraft.",
+    { creator: "Elon Musk", time: "founded in 2002", type: "aerospace company" }, []);
+  E("OpenAI", "company", "OpenAI is an American artificial-intelligence research and deployment company.",
+    { time: "founded in 2015", type: "artificial intelligence company" }, []);
+  E("Anthropic", "company", "Anthropic is an American artificial-intelligence safety and research company.",
+    { time: "founded in 2021", type: "artificial intelligence company" }, []);
+  E("United Nations", "organisation", "The United Nations is an intergovernmental organisation founded in 1945 to maintain international peace and cooperation.",
+    { time: "founded in 1945", type: "intergovernmental organisation" }, ["un"]);
+  E("NASA", "organisation", "NASA is the civilian space agency of the United States.",
+    { time: "founded in 1958", country: "United States", type: "space agency" },
+    ["national aeronautics and space administration"]);
 
   /* ==================================================== contrast knowledge
    * Explicit contrast dimensions for pairs people actually compare. The
@@ -975,10 +1037,22 @@
                      .replace(/ (?:language|protocol|theory|concept|system|process|model|notation|thing|stuff)$/, "");
       if (trimmed !== k && INDEX[trimmed]) INDEX[trimmed].forEach(function (h) { push(h, h.weight * 0.92, "trimmed"); });
     }
-    if (!out.length && C && k.length >= 5) {
+    /* A word the lexicon knows is that word, not a near-miss for a name.
+       Without this, "metal" resolves to Meta and "space" to SpaceX. */
+    var LX = root.C4LMLexicon;
+    var ordinary = LX && k.indexOf(" ") < 0 && LX.has(k);
+    if (!out.length && C && k.length >= 5 && !ordinary) {
       /* Typo tolerance over the whole registered name, multi-word included:
          "quantum entaglement" is one edit from a name we hold. */
-      var budget = k.length >= 12 ? 3 : k.length >= 8 ? 2 : 1;
+      /* Edit distance is a weak signal for identity: "friction" is two edits
+         from "function" and "curve" is two from "Curie", and neither is a
+         misspelling of the other. Two edits are only allowed for long words,
+         and a single-word query must agree on its opening. */
+      /* Short words are not fuzzy-matched at all: "curve" is one edit from
+         "Curie" and they are unrelated. Below seven characters, an edit is
+         as likely to be a different word as a misspelling. */
+      if (k.length < 7) return out;
+      var budget = k.length >= 10 ? 2 : 1;
       var keys = Object.keys(INDEX), bestD = budget + 1, bestKeys = [];
       var qHasDigit = /\d/.test(k);
       for (var i = 0; i < keys.length; i++) {
@@ -986,6 +1060,7 @@
         /* A digit is a distinguishing character, not a typo: "CELL4" is not a
            misspelling of "cell". */
         if (qHasDigit !== /\d/.test(keys[i])) continue;
+        if (k.indexOf(" ") < 0 && keys[i].slice(0, 3) !== k.slice(0, 3)) continue;
         var d = C.damerau(k, keys[i], budget);
         if (d < bestD) { bestD = d; bestKeys = [keys[i]]; }
         else if (d === bestD && d <= budget) bestKeys.push(keys[i]);
@@ -997,24 +1072,30 @@
       }
     }
     if (!out.length && !opts.strict) {
-      /* Token vote: the phrase's content words must cover most of a
-         registered name, not the other way round. This is what keeps
-         "machine reasoning" from resolving to any document about machines. */
-      var toks = k.split(" ").filter(function (t) { return t.length > 2 && !(C && C.STOP[t]); });
-      var votes = Object.create(null);
-      toks.forEach(function (t) {
-        var list = TOKEN_INDEX[t] || (C ? TOKEN_INDEX[C.stem(t)] : null) || [];
-        list.forEach(function (e) { votes[e.id] = (votes[e.id] || 0) + 1; });
-      });
-      var ids = Object.keys(votes);
-      for (var v = 0; v < ids.length; v++) {
-        var ent = byId(ids[v]);
-        if (!ent) continue;
-        var nameToks = key(ent.name).split(" ").filter(function (t) { return t.length > 2; });
-        var cover = votes[ids[v]] / Math.max(1, nameToks.length);
-        var qcover = votes[ids[v]] / Math.max(1, toks.length);
-        if (cover >= 0.999 && qcover >= 0.5) {
-          push({ ent: ent, weight: 1, surface: ent.name }, Math.min(0.8, 0.5 * qcover + 0.25), "tokens");
+      /* Token vote over REGISTERED SURFACES, not over entities. Coverage is
+         measured against the spelling that actually matched, so an entity
+         whose alias happens to be one common word cannot be selected by a
+         query that shares only that word. The caller still gets the surface,
+         and can reject a match that came through an ordinary word. */
+      var qt = k.split(" ").filter(function (t) { return t.length > 2 && !(C && C.STOP[t]); });
+      if (qt.length) {
+        var qset = Object.create(null);
+        qt.forEach(function (t) { qset[t] = 1; if (C) qset[C.stem(t)] = 1; });
+        var keys2 = Object.keys(INDEX);
+        for (var ki = 0; ki < keys2.length; ki++) {
+          var surf = keys2[ki];
+          var st = surf.split(" ").filter(function (t) { return t.length > 2; });
+          if (!st.length) continue;
+          var covered = 0;
+          for (var si = 0; si < st.length; si++) {
+            if (qset[st[si]] || (C && qset[C.stem(st[si])])) covered++;
+          }
+          if (covered !== st.length) continue;            /* the surface must be fully present */
+          var qcover = st.length / qt.length;
+          if (qcover < 0.5) continue;                     /* and account for most of the query */
+          INDEX[surf].forEach(function (h) {
+            push(h, Math.min(0.8, 0.45 * qcover + 0.25), "tokens");
+          });
         }
       }
     }
