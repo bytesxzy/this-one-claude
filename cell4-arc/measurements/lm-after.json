@@ -1,7 +1,7 @@
 {
  "summary": {
   "label": "after",
-  "generated": "2026-09-20T03:11:52.901Z",
+  "generated": "2026-09-20T03:19:41.265Z",
   "net": "off",
   "modules": [],
   "disabled": [],
@@ -15,16 +15,16 @@
   "timeouts": 0,
   "web_turns": 0,
   "latency": {
-   "p50": 9,
-   "p90": 26,
-   "p95": 31,
-   "p99": 45,
-   "mean": 12
+   "p50": 10,
+   "p90": 27,
+   "p95": 33,
+   "p99": 52,
+   "mean": 13
   },
   "local_latency": {
    "n": 197,
-   "p50": 9,
-   "p95": 31
+   "p50": 10,
+   "p95": 33
   },
   "web_latency": {
    "n": 0,
@@ -153,7 +153,7 @@
     "pass": 8
    }
   },
-  "wall_ms": 27532
+  "wall_ms": 29494
  },
  "records": [
   {
@@ -174,7 +174,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 49,
+     "latency_ms": 52,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -183,7 +183,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 49
+   "latency_ms": 52
   },
   {
    "id": 2,
@@ -232,7 +232,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -241,7 +241,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 6
   },
   {
    "id": 4,
@@ -290,7 +290,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -299,7 +299,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 6
   },
   {
    "id": 6,
@@ -319,7 +319,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -328,7 +328,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 4
   },
   {
    "id": 7,
@@ -406,7 +406,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -415,7 +415,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 7
   },
   {
    "id": 10,
@@ -435,7 +435,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 3,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -444,7 +444,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 3
+   "latency_ms": 4
   },
   {
    "id": 11,
@@ -464,7 +464,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 6,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -473,7 +473,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 6
+   "latency_ms": 5
   },
   {
    "id": 12,
@@ -551,7 +551,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 45,
+     "latency_ms": 46,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -560,7 +560,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 45
+   "latency_ms": 46
   },
   {
    "id": 15,
@@ -605,7 +605,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 10,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -614,7 +614,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 10
   },
   {
    "id": 17,
@@ -632,7 +632,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 2,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -641,7 +641,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 2
+   "latency_ms": 3
   },
   {
    "id": 18,
@@ -659,7 +659,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 21,
+     "latency_ms": 25,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -668,7 +668,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 21
+   "latency_ms": 25
   },
   {
    "id": 19,
@@ -686,7 +686,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 30,
+     "latency_ms": 34,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -695,7 +695,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 30
+   "latency_ms": 34
   },
   {
    "id": 20,
@@ -713,7 +713,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 31,
+     "latency_ms": 34,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -722,7 +722,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 31
+   "latency_ms": 34
   },
   {
    "id": 21,
@@ -740,7 +740,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 28,
+     "latency_ms": 30,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -749,7 +749,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 28
+   "latency_ms": 30
   },
   {
    "id": 22,
@@ -767,7 +767,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 14,
+     "latency_ms": 13,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -776,7 +776,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 14
+   "latency_ms": 13
   },
   {
    "id": 23,
@@ -823,7 +823,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 15,
+     "latency_ms": 20,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -832,7 +832,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 15
+   "latency_ms": 20
   },
   {
    "id": 25,
@@ -881,7 +881,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 21,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -890,7 +890,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 21
   },
   {
    "id": 27,
@@ -910,7 +910,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 12,
+     "latency_ms": 15,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -919,7 +919,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 12
+   "latency_ms": 15
   },
   {
    "id": 28,
@@ -937,7 +937,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 35,
+     "latency_ms": 41,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -946,7 +946,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 35
+   "latency_ms": 41
   },
   {
    "id": 29,
@@ -966,7 +966,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 13,
+     "latency_ms": 15,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -975,7 +975,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 13
+   "latency_ms": 15
   },
   {
    "id": 30,
@@ -993,7 +993,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 19,
+     "latency_ms": 23,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1002,7 +1002,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 19
+   "latency_ms": 23
   },
   {
    "id": 31,
@@ -1020,7 +1020,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 8,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1029,7 +1029,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 8
   },
   {
    "id": 32,
@@ -1049,7 +1049,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 20,
+     "latency_ms": 24,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1058,7 +1058,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 20
+   "latency_ms": 24
   },
   {
    "id": 33,
@@ -1078,7 +1078,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 6,
+     "latency_ms": 8,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1087,7 +1087,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 6
+   "latency_ms": 8
   },
   {
    "id": 34,
@@ -1108,7 +1108,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 21,
+     "latency_ms": 23,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1117,7 +1117,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 21
+   "latency_ms": 23
   },
   {
    "id": 35,
@@ -1128,14 +1128,14 @@
    "turns": [
     {
      "question": "What time is it right now?",
-     "output": "It is 03:11 AM on Sunday, September 20, 2026, by this device's clock.",
+     "output": "It is 03:19 AM on Sunday, September 20, 2026, by this device's clock.",
      "route": "compute",
      "subject": "",
      "relation": "",
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 27,
+     "latency_ms": 54,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1144,7 +1144,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 27
+   "latency_ms": 54
   },
   {
    "id": 36,
@@ -1189,7 +1189,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 3,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1198,7 +1198,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 3
+   "latency_ms": 4
   },
   {
    "id": 38,
@@ -1245,7 +1245,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1254,7 +1254,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 6
   },
   {
    "id": 40,
@@ -1272,7 +1272,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 16,
+     "latency_ms": 18,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1281,7 +1281,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 16
+   "latency_ms": 18
   },
   {
    "id": 41,
@@ -1301,7 +1301,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1348,7 +1348,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 10
+   "latency_ms": 11
   },
   {
    "id": 42,
@@ -1368,7 +1368,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1387,7 +1387,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 3,
+     "latency_ms": 2,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1416,7 +1416,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 3,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1435,7 +1435,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 2,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1444,7 +1444,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 7
   },
   {
    "id": 44,
@@ -1464,7 +1464,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1483,7 +1483,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1492,7 +1492,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 11
   },
   {
    "id": 45,
@@ -1597,7 +1597,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 54,
+     "latency_ms": 52,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1606,7 +1606,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 54
+   "latency_ms": 52
   },
   {
    "id": 49,
@@ -1624,7 +1624,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 2,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1633,7 +1633,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 2
+   "latency_ms": 3
   },
   {
    "id": 50,
@@ -1653,7 +1653,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 13,
+     "latency_ms": 15,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1662,7 +1662,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 13
+   "latency_ms": 15
   },
   {
    "id": 51,
@@ -1682,7 +1682,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1691,7 +1691,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 3
   },
   {
    "id": 52,
@@ -1740,7 +1740,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 8,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1749,7 +1749,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 8
   },
   {
    "id": 54,
@@ -1769,7 +1769,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1778,7 +1778,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 7
   },
   {
    "id": 55,
@@ -1856,7 +1856,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 2,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1865,7 +1865,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 2
+   "latency_ms": 7
   },
   {
    "id": 58,
@@ -1885,7 +1885,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1894,7 +1894,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 4
   },
   {
    "id": 59,
@@ -1914,7 +1914,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1923,7 +1923,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 3
   },
   {
    "id": 60,
@@ -1972,7 +1972,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -1981,7 +1981,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 7
   },
   {
    "id": 62,
@@ -2059,7 +2059,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 16,
+     "latency_ms": 26,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2068,7 +2068,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 16
+   "latency_ms": 26
   },
   {
    "id": 65,
@@ -2088,7 +2088,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 15,
+     "latency_ms": 18,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2097,7 +2097,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 15
+   "latency_ms": 18
   },
   {
    "id": 66,
@@ -2115,7 +2115,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 8,
+     "latency_ms": 10,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2124,7 +2124,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 10
   },
   {
    "id": 67,
@@ -2142,7 +2142,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 18,
+     "latency_ms": 22,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2151,7 +2151,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 18
+   "latency_ms": 22
   },
   {
    "id": 68,
@@ -2169,7 +2169,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 18,
+     "latency_ms": 15,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2178,7 +2178,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 18
+   "latency_ms": 15
   },
   {
    "id": 69,
@@ -2196,7 +2196,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 8,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2205,7 +2205,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 7
   },
   {
    "id": 70,
@@ -2223,7 +2223,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 30,
+     "latency_ms": 29,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2232,7 +2232,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 30
+   "latency_ms": 29
   },
   {
    "id": 71,
@@ -2277,7 +2277,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 13,
+     "latency_ms": 12,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2286,7 +2286,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 13
+   "latency_ms": 12
   },
   {
    "id": 73,
@@ -2298,33 +2298,6 @@
     {
      "question": "How many minutes are in 3.5 hours?",
      "output": "That is 210 minutes.",
-     "route": "compute",
-     "subject": "",
-     "relation": "",
-     "web_used": false,
-     "sources": [],
-     "used": [],
-     "latency_ms": 13,
-     "correct": true,
-     "issues": [],
-     "synthesis_defects": [],
-     "hallucination": false,
-     "timed_out": false,
-     "error": ""
-    }
-   ],
-   "latency_ms": 13
-  },
-  {
-   "id": 74,
-   "cat": "compute",
-   "question": "What is the average of 4, 8, 15, 16, 23, 42?",
-   "dialogue": false,
-   "pass": true,
-   "turns": [
-    {
-     "question": "What is the average of 4, 8, 15, 16, 23, 42?",
-     "output": "The average is 18.",
      "route": "compute",
      "subject": "",
      "relation": "",
@@ -2343,6 +2316,33 @@
    "latency_ms": 11
   },
   {
+   "id": 74,
+   "cat": "compute",
+   "question": "What is the average of 4, 8, 15, 16, 23, 42?",
+   "dialogue": false,
+   "pass": true,
+   "turns": [
+    {
+     "question": "What is the average of 4, 8, 15, 16, 23, 42?",
+     "output": "The average is 18.",
+     "route": "compute",
+     "subject": "",
+     "relation": "",
+     "web_used": false,
+     "sources": [],
+     "used": [],
+     "latency_ms": 10,
+     "correct": true,
+     "issues": [],
+     "synthesis_defects": [],
+     "hallucination": false,
+     "timed_out": false,
+     "error": ""
+    }
+   ],
+   "latency_ms": 10
+  },
+  {
    "id": 75,
    "cat": "compute",
    "question": "What is 20 degrees Celsius in Fahrenheit?",
@@ -2358,7 +2358,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 19,
+     "latency_ms": 20,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2367,7 +2367,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 19
+   "latency_ms": 20
   },
   {
    "id": 76,
@@ -2385,7 +2385,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 29,
+     "latency_ms": 30,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2394,7 +2394,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 29
+   "latency_ms": 30
   },
   {
    "id": 77,
@@ -2439,7 +2439,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 33,
+     "latency_ms": 43,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2448,7 +2448,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 33
+   "latency_ms": 43
   },
   {
    "id": 79,
@@ -2466,7 +2466,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 27,
+     "latency_ms": 31,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2475,7 +2475,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 27
+   "latency_ms": 31
   },
   {
    "id": 80,
@@ -2493,7 +2493,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 14,
+     "latency_ms": 15,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2502,7 +2502,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 14
+   "latency_ms": 15
   },
   {
    "id": 81,
@@ -2574,7 +2574,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 34,
+     "latency_ms": 36,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2583,7 +2583,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 34
+   "latency_ms": 36
   },
   {
    "id": 84,
@@ -2601,7 +2601,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 19,
+     "latency_ms": 22,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2610,7 +2610,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 19
+   "latency_ms": 22
   },
   {
    "id": 85,
@@ -2628,7 +2628,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 31,
+     "latency_ms": 33,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2637,7 +2637,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 31
+   "latency_ms": 33
   },
   {
    "id": 86,
@@ -2657,7 +2657,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 8,
+     "latency_ms": 9,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2666,7 +2666,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 9
   },
   {
    "id": 87,
@@ -2802,7 +2802,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2811,7 +2811,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 7
   },
   {
    "id": 92,
@@ -2889,7 +2889,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 3,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2898,7 +2898,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 3
+   "latency_ms": 7
   },
   {
    "id": 95,
@@ -2918,7 +2918,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2927,7 +2927,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 3
   },
   {
    "id": 96,
@@ -2947,7 +2947,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 12,
+     "latency_ms": 11,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2956,7 +2956,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 12
+   "latency_ms": 11
   },
   {
    "id": 97,
@@ -2976,7 +2976,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 26,
+     "latency_ms": 29,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -2985,7 +2985,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 26
+   "latency_ms": 29
   },
   {
    "id": 98,
@@ -3005,7 +3005,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 22,
+     "latency_ms": 26,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3014,7 +3014,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 22
+   "latency_ms": 26
   },
   {
    "id": 99,
@@ -3034,7 +3034,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 13,
+     "latency_ms": 14,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3043,7 +3043,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 13
+   "latency_ms": 14
   },
   {
    "id": 100,
@@ -3063,7 +3063,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 10,
+     "latency_ms": 11,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3072,7 +3072,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 10
+   "latency_ms": 11
   },
   {
    "id": 101,
@@ -3150,7 +3150,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 18,
+     "latency_ms": 19,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3159,7 +3159,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 18
+   "latency_ms": 19
   },
   {
    "id": 104,
@@ -3179,7 +3179,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 19,
+     "latency_ms": 31,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3188,7 +3188,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 19
+   "latency_ms": 31
   },
   {
    "id": 105,
@@ -3227,7 +3227,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 2,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3255,7 +3255,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 9
+   "latency_ms": 10
   },
   {
    "id": 106,
@@ -3275,7 +3275,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3294,7 +3294,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 2,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3323,7 +3323,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 15,
+     "latency_ms": 16,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3342,7 +3342,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 10,
+     "latency_ms": 9,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3419,7 +3419,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3447,7 +3447,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 6
   },
   {
    "id": 110,
@@ -3467,7 +3467,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 32,
+     "latency_ms": 9,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3512,7 +3512,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 44
+   "latency_ms": 21
   },
   {
    "id": 111,
@@ -3532,7 +3532,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 15,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3541,7 +3541,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 15
   },
   {
    "id": 112,
@@ -3561,7 +3561,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 8,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3570,7 +3570,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 7
   },
   {
    "id": 113,
@@ -3617,7 +3617,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 3,
+     "latency_ms": 2,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3626,7 +3626,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 3
+   "latency_ms": 2
   },
   {
    "id": 115,
@@ -3729,7 +3729,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 19,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3738,7 +3738,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 19
   },
   {
    "id": 119,
@@ -3758,7 +3758,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3767,7 +3767,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 6
   },
   {
    "id": 120,
@@ -3787,7 +3787,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3796,7 +3796,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 4
   },
   {
    "id": 121,
@@ -3816,7 +3816,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3825,7 +3825,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 5
   },
   {
    "id": 122,
@@ -3870,7 +3870,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 16,
+     "latency_ms": 14,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3879,7 +3879,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 16
+   "latency_ms": 14
   },
   {
    "id": 124,
@@ -3897,7 +3897,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 15,
+     "latency_ms": 13,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3906,7 +3906,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 15
+   "latency_ms": 13
   },
   {
    "id": 125,
@@ -3924,7 +3924,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3933,7 +3933,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 3
   },
   {
    "id": 126,
@@ -3951,7 +3951,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 27,
+     "latency_ms": 24,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -3960,7 +3960,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 27
+   "latency_ms": 24
   },
   {
    "id": 127,
@@ -4005,7 +4005,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 3,
+     "latency_ms": 2,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4014,7 +4014,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 3
+   "latency_ms": 2
   },
   {
    "id": 129,
@@ -4061,7 +4061,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 33,
+     "latency_ms": 34,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4070,7 +4070,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 33
+   "latency_ms": 34
   },
   {
    "id": 131,
@@ -4092,7 +4092,7 @@
      "used": [
       "this site"
      ],
-     "latency_ms": 9,
+     "latency_ms": 8,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4101,7 +4101,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 9
+   "latency_ms": 8
   },
   {
    "id": 132,
@@ -4119,7 +4119,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 8,
+     "latency_ms": 9,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4128,7 +4128,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 8
+   "latency_ms": 9
   },
   {
    "id": 133,
@@ -4148,7 +4148,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 7,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4157,7 +4157,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 7
+   "latency_ms": 6
   },
   {
    "id": 134,
@@ -4206,7 +4206,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4215,7 +4215,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 3
   },
   {
    "id": 136,
@@ -4293,7 +4293,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 23,
+     "latency_ms": 25,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4302,7 +4302,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 23
+   "latency_ms": 25
   },
   {
    "id": 139,
@@ -4322,7 +4322,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 9,
+     "latency_ms": 7,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4331,7 +4331,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 9
+   "latency_ms": 7
   },
   {
    "id": 140,
@@ -4380,7 +4380,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 4,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4389,7 +4389,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 4
   },
   {
    "id": 142,
@@ -4438,7 +4438,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4447,7 +4447,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 5
   },
   {
    "id": 144,
@@ -4467,7 +4467,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 8,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4476,7 +4476,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 8
   },
   {
    "id": 145,
@@ -4496,7 +4496,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 5,
+     "latency_ms": 6,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4505,7 +4505,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 5
+   "latency_ms": 6
   },
   {
    "id": 146,
@@ -4523,7 +4523,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 18,
+     "latency_ms": 23,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4532,7 +4532,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 18
+   "latency_ms": 23
   },
   {
    "id": 147,
@@ -4550,7 +4550,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 25,
+     "latency_ms": 27,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4559,7 +4559,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 25
+   "latency_ms": 27
   },
   {
    "id": 148,
@@ -4577,7 +4577,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 14,
+     "latency_ms": 11,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4586,7 +4586,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 14
+   "latency_ms": 11
   },
   {
    "id": 149,
@@ -4606,7 +4606,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 16,
+     "latency_ms": 18,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4615,7 +4615,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 16
+   "latency_ms": 18
   },
   {
    "id": 150,
@@ -4633,7 +4633,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 16,
+     "latency_ms": 15,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4642,7 +4642,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 16
+   "latency_ms": 15
   },
   {
    "id": 151,
@@ -4691,7 +4691,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 5,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4700,7 +4700,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 5
   },
   {
    "id": 153,
@@ -4749,7 +4749,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 9,
+     "latency_ms": 10,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4758,7 +4758,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 9
+   "latency_ms": 10
   },
   {
    "id": 155,
@@ -4776,7 +4776,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 21,
+     "latency_ms": 19,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4785,7 +4785,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 21
+   "latency_ms": 19
   },
   {
    "id": 156,
@@ -4805,7 +4805,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 21,
+     "latency_ms": 18,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4814,7 +4814,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 21
+   "latency_ms": 18
   },
   {
    "id": 157,
@@ -4835,7 +4835,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 22,
+     "latency_ms": 19,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4844,7 +4844,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 22
+   "latency_ms": 19
   },
   {
    "id": 158,
@@ -4864,7 +4864,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 15,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4873,7 +4873,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 15
   },
   {
    "id": 159,
@@ -4922,7 +4922,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 16,
+     "latency_ms": 17,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4931,7 +4931,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 16
+   "latency_ms": 17
   },
   {
    "id": 161,
@@ -4951,7 +4951,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 15,
+     "latency_ms": 16,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -4960,7 +4960,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 15
+   "latency_ms": 16
   },
   {
    "id": 162,
@@ -5154,7 +5154,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 18,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5163,7 +5163,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 18
   },
   {
    "id": 169,
@@ -5181,7 +5181,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 19,
+     "latency_ms": 21,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5190,7 +5190,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 19
+   "latency_ms": 21
   },
   {
    "id": 170,
@@ -5208,7 +5208,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 22,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5217,7 +5217,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 22
   },
   {
    "id": 171,
@@ -5235,7 +5235,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 19,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5244,7 +5244,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 19
   },
   {
    "id": 172,
@@ -5264,7 +5264,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 2,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5273,7 +5273,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 2
   },
   {
    "id": 173,
@@ -5291,7 +5291,7 @@
      "web_used": false,
      "sources": [],
      "used": [],
-     "latency_ms": 26,
+     "latency_ms": 28,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5300,7 +5300,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 26
+   "latency_ms": 28
   },
   {
    "id": 174,
@@ -5320,7 +5320,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 4,
+     "latency_ms": 3,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5329,7 +5329,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 4
+   "latency_ms": 3
   },
   {
    "id": 175,
@@ -5349,7 +5349,7 @@
       "local knowledge base"
      ],
      "used": [],
-     "latency_ms": 24,
+     "latency_ms": 26,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5358,7 +5358,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 24
+   "latency_ms": 26
   },
   {
    "id": 176,
@@ -5407,7 +5407,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 18,
+     "latency_ms": 20,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5416,7 +5416,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 18
+   "latency_ms": 20
   },
   {
    "id": 178,
@@ -5436,7 +5436,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 22,
+     "latency_ms": 24,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5445,7 +5445,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 22
+   "latency_ms": 24
   },
   {
    "id": 179,
@@ -5465,7 +5465,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 22,
+     "latency_ms": 23,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5474,7 +5474,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 22
+   "latency_ms": 23
   },
   {
    "id": 180,
@@ -5523,7 +5523,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 16,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5532,7 +5532,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 16
   },
   {
    "id": 182,
@@ -5553,7 +5553,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 22,
+     "latency_ms": 23,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5562,7 +5562,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 22
+   "latency_ms": 23
   },
   {
    "id": 183,
@@ -5582,7 +5582,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 17,
+     "latency_ms": 20,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5591,7 +5591,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 17
+   "latency_ms": 20
   },
   {
    "id": 184,
@@ -5611,7 +5611,7 @@
       "word lexicon"
      ],
      "used": [],
-     "latency_ms": 15,
+     "latency_ms": 16,
      "correct": true,
      "issues": [],
      "synthesis_defects": [],
@@ -5620,7 +5620,7 @@
      "error": ""
     }
    ],
-   "latency_ms": 15
+   "latency_ms": 16
   }
  ]
 }

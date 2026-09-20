@@ -365,7 +365,7 @@ document.addEventListener('keydown', function (event) {
 <script src="c4-arc-tasks.js"></script>
 <script src="c4-arc-policy.js"></script>
 <script src="c4-arc.js"></script>
-<script>window.ROBOTS_CONFIG={greeting:"Heavy Testing, v1.13",sources:["./c4-mini-source/cell4mini-claude-gabriel-text-bridge-tprusb/astron/xyz/"]};
+<script>window.ROBOTS_CONFIG={greeting:"Heavy Testing, v1.13",sourceLinks:false,sources:["./c4-mini-source/cell4mini-claude-gabriel-text-bridge-tprusb/astron/xyz/"]};
 /* Public databases robots.html can query with no key and no server.
  *
  * Every source here is (a) free, (b) keyless, and (c) chosen because it
@@ -4806,7 +4806,11 @@ document.addEventListener('keydown', function (event) {
       });
       m.appendChild(via);
     }
-    if (a.sources && a.sources.length) {
+    /* The clickable source chips are off by default. Retrieval, the public
+       databases and the evidence checks all run exactly as before -- this
+       only decides whether the URLs are rendered as links underneath the
+       answer. Set sourceLinks:true in ROBOTS_CONFIG to show them again. */
+    if (CFG.sourceLinks && a.sources && a.sources.length) {
       var meta = el("div", "meta");
       (a.sources || []).filter(function (s, i, arr) { return s && arr.indexOf(s) === i; })
         .slice(0, 5).forEach(function (s, i) {

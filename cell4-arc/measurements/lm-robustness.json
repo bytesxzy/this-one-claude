@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20T03:11:57.060Z",
+ "generated": "2026-09-20T03:19:45.518Z",
  "passed": 45,
  "total": 45,
  "results": [
@@ -186,7 +186,7 @@
   {
    "name": "hanging source does not hang the answer",
    "ok": true,
-   "detail": "2520 ms"
+   "detail": "2522 ms"
   },
   {
    "name": "garbage source response handled",
