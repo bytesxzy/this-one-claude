@@ -69,7 +69,9 @@
 
     { mod: ["ARTIFACT"], head: ["ACTIVITY", "PROCESS", "EVENT"], score: 2.2,
       rel: "instrument", phrase: "carried out with" },
-    { mod: ["ARTIFACT"], head: ["ARTIFACT", "PERSON", "ABSTRACT"], score: 2.0,
+    { mod: ["ARTIFACT", "ORGANISM", "BODY"], head: ["ARTIFACT"], score: 2.4,
+      rel: "onfor", phrase: "used on" },
+    { mod: ["ARTIFACT"], head: ["PERSON", "ABSTRACT"], score: 2.0,
       rel: "about", phrase: "associated with" },
 
     { mod: ["ABSTRACT", "COMMUNICATION", "STATE"], head: ["EVENT", "PROCESS", "ACTIVITY"], score: 2.2,
@@ -83,8 +85,45 @@
       rel: "of", phrase: "of" },
 
     { mod: ["QUALITY"], head: [], score: 2.6, rel: "adj", phrase: "" },
-    { mod: ["ACTION"], head: [], score: 1.8, rel: "about", phrase: "relating to" }
+    /* A verb modifying a sign, a message or a control is an instruction:
+       a stop sign tells you to stop. Modifying anything else it is a
+       purpose: a cutting tool is for cutting. */
+    { mod: ["ACTION"], head: ["COMMUNICATION"], score: 2.8, rel: "instruct", phrase: "telling you to" },
+    { mod: ["ACTION"], head: ["ARTIFACT", "PLACE"], score: 2.5, rel: "purpose", phrase: "for" },
+    { mod: ["ACTION"], head: ["EVENT", "PROCESS", "ACTIVITY", "ABSTRACT", "STATE", "MEASURE"], score: 2.2,
+      rel: "purpose", phrase: "for" }
   ];
+
+  /* Gloss-sensitive refinement. The head's own definition often says what
+     kind of relation it takes -- a definition containing "container ... for
+     holding liquids" tells you that a substance modifying it is the CONTENTS,
+     not the material. Reading the definition beats guessing from the class
+     pair, and it is general: it applies to any head whose definition says the
+     same thing, with no list of head words anywhere. */
+  var GLOSS_CUES = [
+    /* The cue must describe what the head IS, so it is anchored to the
+       opening noun phrase of the definition. An anchor's gloss mentions a
+       vessel, but an anchor is not one. */
+    { head: /^(?:a |an |the )?(?:\w+ ){0,2}(?:container|vessel|holder|receptacle|bottle|box|bag|jar|tank|can|case)\b/i,
+      mod: ["SUBSTANCE", "ORGANISM", "ARTIFACT"], rel: "holds", phrase: "for holding", score: 3.2 },
+    { head: /^(?:a |an |the )?(?:\w+ ){0,2}(?:notice|board|sign|display|screen|panel)\b/i,
+      mod: ["ACTION"], rel: "instruct", phrase: "telling you to", score: 3.2 },
+    { head: /^(?:a |an |the )?(?:\w+ ){0,2}(?:tool|device|implement|instrument|machine|apparatus)\b/i,
+      mod: ["ACTION", "ACTIVITY", "PROCESS"], rel: "purpose", phrase: "for", score: 3.1 },
+    { head: /^(?:a |an |the )?(?:\w+ ){0,2}(?:device|light|lamp|alarm|bell|horn|indicator)\b/i,
+      mod: ["COMMUNICATION", "STATE", "EVENT"], rel: "signals", phrase: "used to give", score: 3.0 },
+    { head: /^(?:a |an |the )?(?:\w+ ){0,2}(?:person|someone|worker|official)\b|^one who\b/i,
+      mod: ["ACTIVITY", "FIELD", "ARTIFACT", "PROCESS"], rel: "agent", phrase: "whose work is", score: 3.0 }
+  ];
+  function glossRelation(headGloss, modCls) {
+    for (var i = 0; i < GLOSS_CUES.length; i++) {
+      var c = GLOSS_CUES[i];
+      if (c.mod.indexOf(modCls) < 0) continue;
+      if (!c.head.test(String(headGloss || ""))) continue;
+      return { rel: c.rel, phrase: c.phrase, score: c.score };
+    }
+    return null;
+  }
 
   function relationFor(modCls, headCls) {
     var best = null;
@@ -192,7 +231,7 @@
     for (var h = 0; h < headSenses.length; h++) {
       for (var m = 0; m < modSenses.length; m++) {
         var hs = headSenses[h], ms = modSenses[m];
-        var rel = relationFor(ms.cls, hs.cls);
+        var rel = glossRelation(hs.gloss, ms.cls) || relationFor(ms.cls, hs.cls);
         var score = rel.score
           + (hs.from === "knowledge" ? 0.5 : 0)
           + (ms.from === "knowledge" ? 0.3 : 0)
@@ -228,29 +267,25 @@
   /* Realise the reading as English. The wording says plainly that this is a
      reading built from the parts, not a definition of a fixed term -- which
      is the honest thing to say and also the thing a reader needs to know. */
+  /* One sentence. "Would be" carries the fact that this is a reading built
+     from the parts rather than a definition of a fixed term -- saying so at
+     length was noise, and the reader can already see it. */
   function explain(reading, style) {
     if (!reading) return "";
-    var head = reading.head, mod = reading.modifier, rel = reading.relation;
-    var headName = head.word, modName = mod.word;
-    var lead;
-
-    if (rel.rel === "adj") {
-      lead = "“" + reading.phrase + "” is not a fixed term I hold, but it reads straightforwardly: " +
-        indefinite(headName) + " " + headName + " is " + head.gloss + ", and " + modName +
-        " means " + mod.gloss + ". So " + indefinite(reading.phrase) + " " + reading.phrase +
-        " is " + article(head.gloss) + head.gloss + " that is " + mod.gloss + ".";
-      return lead;
+    var phrase = reading.phrase;
+    var body;
+    if (reading.relation.rel === "adj") {
+      var hg = headCore(reading.head.gloss).replace(/^(?:a|an|the)\s+/i, "");
+      body = article(hg) + hg + " that is " + clipGloss(reading.modifier.gloss);
+    } else {
+      body = composedGloss(reading);
     }
-
-    var composed = composedGloss(reading);
-    lead = "I don't hold “" + reading.phrase + "” as a fixed term, so here is what it has to mean from its parts. " +
-      RZcap(headName) + ": " + head.gloss + ". " +
-      RZcap(modName) + ": " + mod.gloss + ". " +
-      "Put together, " + indefinite(reading.phrase) + " " + reading.phrase + " would be " + composed + ".";
-    if (reading.alternatives > 0 && style !== "brief") {
-      lead += " Other readings are possible — say more about the context and I'll narrow it.";
+    var out = RZcap(indefinite(phrase)) + " " + phrase + " would be " + lower1(body) + ".";
+    /* Only a genuinely weak reading earns a second clause. */
+    if (reading.confidence < 0.5 && style !== "brief") {
+      out += " Tell me the context and I can be more exact.";
     }
-    return lead;
+    return out;
   }
 
   /* The leading clause of a gloss is the definition; what follows it is
@@ -261,42 +296,98 @@
     return t.replace(/\.$/, "");
   }
 
+  /* A composed sentence carries the head's definition AND the modifier
+     clause, so a head gloss with its own relative clause makes the result
+     unreadable. Past about sixty characters the defining phrase alone is
+     what the reader needs. */
+  function headCore(g, replacingPurpose) {
+    var t = clipGloss(g);
+    /* The composed clause is about to state the purpose, so the head's own
+       purpose clause would be said twice. */
+    if (replacingPurpose) {
+      var p = t.split(/\s+(?:for|used for|used to|designed to|intended to|displaying|giving|that|which|who)\s+/)[0];
+      /* The head noun on its own is enough here -- the composed clause
+         supplies the purpose that was cut away. */
+      if (p.length >= 6) t = p;
+    }
+    if (t.length <= 60) return t;
+    var cut = t.split(/\s+(?:that|which|who|used|designed|intended)\s+/)[0];
+    if (cut.length >= 12 && cut.length < t.length) return cut;
+    cut = t.split(/,\s+/)[0];
+    return cut.length >= 12 ? cut : t;
+  }
+
+  /* A modifier clause hung off a long definition needs a breath before it. */
+  function join(hg, clause) {
+    /* A restrictive "that" clause never takes a comma. */
+    var comma = hg.length > 45 && !/^that\b/.test(clause);
+    return hg + (comma ? ", " : " ") + clause;
+  }
+
   function composedGloss(reading) {
     var head = reading.head, mod = reading.modifier, rel = reading.relation;
-    var hg = clipGloss(head.gloss).replace(/^(?:a|an|the)\s+/i, "");
+    var statesPurpose = rel.rel === "holds" || rel.rel === "purpose" ||
+                        rel.rel === "instruct" || rel.rel === "signals" || rel.rel === "onfor";
+    var hg = headCore(head.gloss, statesPurpose).replace(/^(?:a|an|the)\s+/i, "");
     switch (rel.rel) {
-      case "in":    return article(hg) + hg + " that occurs in the course of " + shortGloss(mod);
-      case "about": return article(hg) + hg + " " + rel.phrase + " " + shortGloss(mod);
-      case "for":   return article(hg) + hg + " used for " + shortGloss(mod);
-      case "agent": return article(hg) + hg + " whose work is " + shortGloss(mod);
-      case "of":    return article(hg) + hg + " made of or consisting of " + shortGloss(mod);
-      case "at":    return article(hg) + hg + " belonging to or found in " + shortGloss(mod);
-      case "poss":  return article(hg) + hg + " belonging to " + shortGloss(mod);
-      case "when":  return article(hg) + hg + " measured over " + shortGloss(mod);
-      case "attr":  return article(hg) + hg + " defined in terms of " + shortGloss(mod);
-      case "instrument": return article(hg) + hg + " carried out with " + shortGloss(mod);
-      default:      return article(hg) + hg + " relating to " + shortGloss(mod);
+      case "in":    return article(hg) + join(hg, "that occurs in the course of " + shortGloss(mod));
+      case "about": return article(hg) + join(hg, rel.phrase + " " + shortGloss(mod));
+      case "for":   return article(hg) + join(hg, "used for " + shortGloss(mod));
+      case "agent": return article(hg) + join(hg, "whose work is " + shortGloss(mod));
+      case "of":    return article(hg) + join(hg, "made of " + shortGloss(mod));
+      case "at":    return article(hg) + join(hg, "belonging to or found in " + shortGloss(mod));
+      case "poss":  return article(hg) + join(hg, "belonging to " + shortGloss(mod));
+      case "when":  return article(hg) + join(hg, "measured over " + shortGloss(mod));
+      case "attr":  return article(hg) + join(hg, "defined in terms of " + shortGloss(mod));
+      case "instrument": return article(hg) + join(hg, "carried out with " + shortGloss(mod));
+      case "instruct": return article(hg) + join(hg, "telling you to " + baseVerb(mod));
+      case "purpose": return article(hg) + join(hg, "for " + (mod.pos === "v" ? gerund(mod) : shortGloss(mod)));
+      case "onfor": return article(hg) + join(hg, "used on " + shortGloss(mod));
+      case "holds": return article(hg) + join(hg, "for holding " + shortGloss(mod));
+      case "signals": return article(hg) + join(hg, "used to give " + shortGloss(mod));
+      default:      return article(hg) + join(hg, "relating to " + shortGloss(mod));
     }
   }
 
   /* The modifier is named by its word where the word is plain, and by its
      gloss where the word is technical -- a reader needs whichever is
      clearer. */
+  /* The modifier is named, not re-defined: repeating its dictionary entry
+     inside the composed clause doubled the length and said nothing the
+     sentence did not already say. */
   function shortGloss(sense) {
-    var g = clipGloss(sense.gloss || "");
     var w = String(sense.word || "");
-    /* A common noun needs a determiner to read as a phrase; a proper name
-       and a mass noun do not. */
-    var name = /^[A-Z]/.test(w) || sense.from === "knowledge" ? w :
-               (MASS.test(w) || /s$/.test(w) ? w : indefinite(w) + " " + w);
-    if (g.length <= 56) return name + " (" + g + ")";
-    var firstClause = g.split(/[,;]/)[0];
-    if (firstClause.length <= 64) return name + " (" + firstClause + ")";
-    return name;
+    if (/^[A-Z]/.test(w) || sense.from === "knowledge") return w;
+    if (MASS.test(w) || /s$/.test(w)) return w;
+    return indefinite(w) + " " + w;
   }
   var MASS = /^(?:water|air|fire|earth|time|money|work|energy|information|data|knowledge|learning|teaching|training|research|design|growth|progress|music|art|science|security|privacy|health|weather|news|software|hardware|engineering|marketing|finance|education|history|space|light|heat|power|speed|evidence|advice|help|food|blood|oil|gas|wood|glass|metal|paper|plastic|stone|culture|behaviour|behavior)$/i;
 
   /* A plural or mass gloss takes no article at all. */
+  /* A verb sense is stored in its base form; these put it back into the
+     shape the surrounding clause needs. */
+  function baseVerb(sense) {
+    return String(sense.word || "").replace(/^to\s+/, "");
+  }
+  function gerund(sense) {
+    var w = baseVerb(sense);
+    if (/e$/.test(w) && !/ee$/.test(w)) return w.slice(0, -1) + "ing";
+    if (/^[a-z]*[aeiou][bdgklmnprt]$/.test(w) && w.length <= 5) return w + w.slice(-1) + "ing";
+    return w + "ing";
+  }
+
+  function lower1(s) {
+    /* Dictionary glosses arrive capitalised; inside a sentence they are not
+       at its start. A proper noun keeps its capital. */
+    var t = String(s || "");
+    if (!t) return t;
+    var first = t.split(/\s+/)[0].replace(/[^A-Za-z]/g, "");
+    if (first.length > 1 && first === first.toUpperCase()) return t;   /* acronym */
+    if (/^[A-Z][a-z]+$/.test(first) && PROPERISH.test(first)) return t;
+    return t.charAt(0).toLowerCase() + t.slice(1);
+  }
+  var PROPERISH = /^(?:[A-Z][a-z]+)$/;
+
   function article(g) {
     var first = (String(g).trim().split(/\s+/)[0] || "").replace(/[^A-Za-z]/g, "");
     if (/(?:[^s]s|ies|people|data|ideas|customs)$/i.test(first) && !/(?:ss|us|is)$/i.test(first)) return "";

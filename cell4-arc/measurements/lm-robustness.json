@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20T01:58:48.887Z",
+ "generated": "2026-09-20T02:54:08.261Z",
  "passed": 45,
  "total": 45,
  "results": [
@@ -121,7 +121,7 @@
   {
    "name": "edge input: sql-ish input",
    "ok": true,
-   "detail": "I don't hold “drop table users” as a fix"
+   "detail": "A drop table users would be a person who"
   },
   {
    "name": "edge input: regex metacharacters",
@@ -181,7 +181,7 @@
   {
    "name": "offline: current question degrades honestly",
    "ok": true,
-   "detail": "I don't hold “current bitcoin price” as a fixed term, so her"
+   "detail": "A current bitcoin price would be an amount of money expected"
   },
   {
    "name": "hanging source does not hang the answer",
