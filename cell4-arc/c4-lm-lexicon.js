@@ -57,9 +57,14 @@
       var rest = seg.slice(c + 1);
       var t = rest.lastIndexOf("~");
       var gloss = (t < 0 ? rest : rest.slice(0, t)).trim();
-      var cls = t < 0 ? "ABSTRACT" : rest.slice(t + 1).trim();
+      var tail = t < 0 ? "ABSTRACT" : rest.slice(t + 1).trim();
+      /* A sense may name the field it belongs to: "~ARTIFACT/computing".
+         The field is what lets a question's context choose between senses. */
+      var slash = tail.indexOf("/");
+      var cls = slash < 0 ? tail : tail.slice(0, slash);
+      var domain = slash < 0 ? "" : tail.slice(slash + 1).trim();
       if (!gloss) continue;
-      senses.push({ pos: pos, gloss: gloss, cls: CLASSES[cls] ? cls : "ABSTRACT" });
+      senses.push({ pos: pos, gloss: gloss, cls: CLASSES[cls] ? cls : "ABSTRACT", domain: domain });
     }
     if (!senses.length) return;
     if (LEX[word]) LEX[word] = LEX[word].concat(senses);
@@ -464,6 +469,52 @@
     "privacy|n:the state of being free from public attention~STATE"
   ]);
 
+  /* Words whose everyday sense and whose computing sense are both current.
+     These are where a question's context does the most work: a bookmark on a
+     shelf and a bookmark in an app are the same word and different things. */
+  define([
+    "bookmark|n:a strip of card or fabric used to mark a place in a book~ARTIFACT|n:a saved link, post or page kept so it can be returned to later~ABSTRACT/computing|v:to save something so it can be found again later~ACTION/computing",
+    "feed|n:a stream of updates shown in an app or site, newest first~COMMUNICATION/computing|n:food given to animals~SUBSTANCE|v:to give food to~ACTION",
+    "thread|n:a series of connected posts or messages on one topic~COMMUNICATION/computing|n:a thin strand of cotton or other fibre~ARTIFACT|n:a single sequence of execution in a program~ABSTRACT/computing",
+    "post|n:a message published on a site or app~COMMUNICATION/computing|n:an upright piece of timber or metal set in the ground~ARTIFACT|v:to publish a message online~ACTION/computing",
+    "tag|n:a label attached to a post so it can be found~COMMUNICATION/computing|n:a small label attached to an object~ARTIFACT",
+    "story|n:a short post that disappears after a set time~COMMUNICATION/computing|n:an account of events, real or imagined~COMMUNICATION",
+    "wall|n:a page on a profile where posts appear~COMMUNICATION/computing|n:a vertical structure enclosing or dividing an area~ARTIFACT",
+    "timeline|n:the ordered list of posts a person sees~COMMUNICATION/computing|n:a display of events in the order they happened~COMMUNICATION",
+    "profile|n:the page describing an account holder~COMMUNICATION/computing|n:an outline of a person seen from the side~ABSTRACT",
+    "handle|n:the name an account goes by~COMMUNICATION/computing|n:the part of an object designed to be held~ARTIFACT",
+    "follower|n:an account that subscribes to another's posts~PERSON/computing|n:a person who supports someone~PERSON",
+    "share|n:the act of reposting something to one's own audience~ACTION/computing|n:a portion of something divided among several~ABSTRACT",
+    "stream|n:a continuous transmission of audio or video~COMMUNICATION/computing|n:a small narrow river~PLACE",
+    "cloud|n:remote servers used for storage and computing~ARTIFACT/computing|n:a visible mass of water droplets in the sky~SUBSTANCE",
+    "virus|n:a program that copies itself into other programs to do harm~ARTIFACT/computing|n:an infectious agent that replicates inside living cells~ORGANISM/biology",
+    "window|n:a framed area on a screen showing one program~ARTIFACT/computing|n:an opening in a wall fitted with glass~ARTIFACT",
+    "folder|n:a named container holding files on a computer~ARTIFACT/computing|n:a cardboard cover for holding papers~ARTIFACT",
+    "desktop|n:the main screen of a computer, or a computer that sits on a desk~ARTIFACT/computing",
+    "mouse|n:a hand-held device for moving a pointer on a screen~ARTIFACT/computing|n:a small rodent with a long tail~ORGANISM/biology",
+    "web|n:the system of linked pages reached over the internet~ARTIFACT/computing|n:a network of threads spun by a spider~ARTIFACT",
+    "link|n:a reference that takes you to another page when followed~ABSTRACT/computing|n:a connection between two things~ABSTRACT",
+    "page|n:a single document on the web~COMMUNICATION/computing|n:one side of a sheet of paper~ARTIFACT",
+    "board|n:a shared space where posts are collected~COMMUNICATION/computing|n:a group of people who run an organisation~GROUP|n:a flat piece of material~ARTIFACT",
+    "pin|n:a saved item attached to a board~ABSTRACT/computing|n:a short thin piece of metal with a point~ARTIFACT",
+    "filter|n:a rule that hides or alters what is shown~ABSTRACT/computing|n:a device that removes unwanted matter from a liquid or gas~ARTIFACT",
+    "media|n:the main means of mass communication, taken collectively~COMMUNICATION|n:the materials or channels through which something is carried~ABSTRACT",
+    "social media|n:sites and apps on which people publish and share content with each other~ARTIFACT/computing",
+    "account|n:a registered identity on a site or service~ABSTRACT/computing|n:a record of money received and paid out~ABSTRACT/finance|n:a description of events~COMMUNICATION",
+    "client|n:a program that connects to a server~ARTIFACT/computing|n:a person or organisation using a professional service~PERSON",
+    "server|n:a computer that provides a service to other computers~ARTIFACT/computing",
+    "package|n:a distributable unit of code with its metadata~ARTIFACT/computing|n:an object wrapped for carrying or posting~ARTIFACT",
+    "library|n:a collection of code that programs can call~ARTIFACT/computing|n:a building or room containing books~PLACE",
+    "bug|n:a fault in a program that makes it behave wrongly~ABSTRACT/computing|n:a small insect~ORGANISM/biology",
+    "patch|n:a small change released to fix a program~ARTIFACT/computing|n:a piece of material used to mend a hole~ARTIFACT",
+    "port|n:a numbered endpoint a network service listens on~ABSTRACT/computing|n:a town with a harbour~PLACE",
+    "key|n:a value used to look something up, or to encrypt and decrypt~ABSTRACT/computing|n:a shaped piece of metal for opening a lock~ARTIFACT",
+    "cell|n:a single box in a spreadsheet or table~ABSTRACT/computing|n:the smallest structural unit of a living organism~BODY/biology",
+    "driver|n:a program that lets an operating system use a device~ARTIFACT/computing|n:a person who drives a vehicle~PERSON",
+    "mirror|n:a copy of a site or repository kept elsewhere~ARTIFACT/computing|n:a surface that reflects light~ARTIFACT",
+    "root|n:the top directory of a file system, or full administrative access~ABSTRACT/computing|n:the part of a plant that grows underground~BODY/biology"
+  ]);
+
   /* Verbs and modifiers. Verbs matter because a gerund is the commonest
      modifier in an English compound; adjectives matter because they are the
      other one. */
@@ -685,7 +736,8 @@
       var w = String(word || "").toLowerCase();
       if (!w || !senses || !senses.length) return;
       LEX[w] = (LEX[w] || []).concat(senses.map(function (s) {
-        return { pos: s.pos || "n", gloss: s.gloss, cls: CLASSES[s.cls] ? s.cls : "ABSTRACT", learned: true };
+        return { pos: s.pos || "n", gloss: s.gloss, cls: CLASSES[s.cls] ? s.cls : "ABSTRACT",
+                 domain: s.domain || "", learned: true };
       }));
     }
   };

@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20T02:54:08.261Z",
+ "generated": "2026-09-20T03:11:57.060Z",
  "passed": 45,
  "total": 45,
  "results": [
@@ -166,7 +166,7 @@
   {
    "name": "repeat is not slower",
    "ok": true,
-   "detail": "3 -> 2"
+   "detail": "2 -> 2"
   },
   {
    "name": "offline: local computation unaffected",
@@ -186,7 +186,7 @@
   {
    "name": "hanging source does not hang the answer",
    "ok": true,
-   "detail": "2521 ms"
+   "detail": "2520 ms"
   },
   {
    "name": "garbage source response handled",

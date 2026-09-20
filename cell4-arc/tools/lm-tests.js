@@ -436,7 +436,32 @@ var CASES = [
   T({ id: 175, cat: "robust", q: "Why does a metal spoon feel cold?", web: false,
       expectAny: [/conduct|heat/i], reject: [/soon\b/] }),
   T({ id: 176, cat: "robust", q: "In one sentence, what is gravity?", maxSentences: 1,
-      expectAny: [/attract|mass|spacetime|force/i] })
+      expectAny: [/attract|mass|spacetime|force/i] }),
+
+  /* ============ PHRASE STRUCTURE AND SENSE SELECTION (added after live use)
+     "a bookmark on social media" was read as a compound whose head was
+     "media", and an anatomical sense of that word became the answer. A
+     prepositional phrase is not a compound, and a named field selects between
+     a word's senses. */
+  T({ id: 177, cat: "context", q: "what is a bookmark on social media?", web: false,
+      expectAll: [/bookmark/i], expectAny: [/saved|post|link|return/i],
+      reject: [/blood vessel|lymph|card or fabric|tunica/i] }),
+  T({ id: 178, cat: "context", q: "what is a thread on twitter", web: false,
+      expectAny: [/posts?|messages?/i], reject: [/cotton|fibre|fiber/i] }),
+  T({ id: 179, cat: "context", q: "what is a virus in computing", web: false,
+      expectAny: [/program|copies/i], reject: [/infectious agent|living cells/i] }),
+  T({ id: 180, cat: "context", q: "what is a bookmark in a book", web: false,
+      expectAny: [/card|fabric|mark a place/i], reject: [/saved link/i] }),
+  T({ id: 181, cat: "context", q: "what is a software bug", web: false,
+      expectAny: [/fault|program/i], reject: [/insect/i] }),
+  T({ id: 182, cat: "context", q: "what is a cell in biology", web: false,
+      expectAny: [/organism|living|structural/i], reject: [/spreadsheet/i] }),
+  T({ id: 183, cat: "context", q: "what is a mouse in computing", web: false,
+      expectAny: [/pointer|screen|device/i], reject: [/rodent/i] }),
+  /* a plain compound must still be read compositionally, not treated as a
+     field selection */
+  T({ id: 184, cat: "context", q: "What is a learning pivot?", web: false,
+      expectAll: [/pivot/i, /learning/i], expectAny: [/change of direction|strategy|approach/i] })
 ];
 
 

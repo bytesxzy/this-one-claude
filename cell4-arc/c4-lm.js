@@ -125,9 +125,13 @@
          typing "learning" after a question about Mercury is a change of
          subject. Only an explicit continuation marker, a pronoun or an
          unattached relation carries the previous subject forward. */
+      /* One content word that names something is enough to make this a new
+         topic: "mouse computing" after a question about viruses is a change
+         of subject, not a continuation of it. */
       var namesSomething = frame.contentTokens.length >= 1 &&
         ((KB && KB.resolve(frame.body.replace(/[?.!]+$/, "").trim(), { strict: true }).length > 0) ||
-         (root.C4LMLexicon && frame.contentTokens.every(function (t) { return root.C4LMLexicon.has(t); })));
+         (root.C4LMLexicon && frame.contentTokens.some(function (t) { return root.C4LMLexicon.has(t); })) ||
+         (KB && frame.contentTokens.some(function (t) { return KB.resolve(t, { strict: true }).length > 0; })));
       if (frame.leadMarker === "and" || frame.leadMarker === "but" ||
           /^(?:and|what about|how about|why|how|when|where|what else|more|and what of)\b/i.test(frame.body) ||
           (frame.relation && !frame.subject) ||
@@ -442,7 +446,12 @@
       if (askedPhrase && entName && askedPhrase !== entName) {
         var askedWords = askedPhrase.split(" ").filter(function (w) { return !C.STOP[w]; });
         var entWords = entName.split(" ");
-        if (askedWords.length >= 2 && entWords.length < askedWords.length &&
+        /* If the asked phrase is itself one of the entry's names, the entry
+           IS about the phrase, whatever its primary name happens to be:
+           "REST API" is an alias of REST. */
+        var aliasHit = KB.resolve(askedPhrase, { strict: true })[0];
+        var phraseIsThisEntry = aliasHit && aliasHit.entity === entity;
+        if (!phraseIsThisEntry && askedWords.length >= 2 && entWords.length < askedWords.length &&
             entWords.every(function (w) { return askedWords.indexOf(w) >= 0; })) {
           /* Step aside only if the compositional reader can actually read the
              phrase. If it cannot, defining the head is still the best answer
@@ -1349,6 +1358,17 @@
            answerLocal(frame, decision);
   }
 
+  /* Does any word in the message name something the system knows? */
+  function namesAnything(frame) {
+    var LX = root.C4LMLexicon;
+    for (var i = 0; i < frame.contentTokens.length; i++) {
+      var t = frame.contentTokens[i];
+      if (LX && LX.has(t)) return true;
+      if (KB && KB.resolve(t, { strict: true }).length) return true;
+    }
+    return false;
+  }
+
   function hasUnknownWord(frame) {
     var LX = root.C4LMLexicon;
     if (!LX || !KB) return false;
@@ -1367,6 +1387,10 @@
 
   function isDefinitional(frame) {
     if (frame.queryForm === "whatis" || frame.queryForm === "topic") return true;
+    /* A polite wrapper moves the interrogative off the front of the string
+       without changing what is being asked: "tell me what is X" is still a
+       definitional question. */
+    if (/\b(?:what(?:'s| is| are)|which is)\s+(?:a |an |the )?[\w-]/i.test(frame.body)) return true;
     if (/\b(?:mean|means|meaning|define|definition)\b/i.test(frame.lower)) return true;
     if (frame.queryForm === "whois" && !frame.wantsPerson) return true;
     /* A bare noun phrase typed into a box is a request for what it is.
@@ -1452,10 +1476,13 @@
        is never small talk. */
     var reasoned = timed("reason", function () { return answerReason(frame, decision); });
     if (reasoned) return Promise.resolve(finish(frame, reasoned, t0, decision));
-    if (!off("depth")) {
-      /* With adaptive depth off, every resolver is attempted in a fixed order
-         whatever the router said -- the shape the pipeline had before the
-         decision head chose a branch. */
+    /* A bare noun phrase is a question, whatever its conversational shape:
+       "bookmark social media" is not small talk. It only falls through to
+       conversation if nothing can actually answer it. */
+    if (!off("depth") && decision.route === "conversation" && !decision.features.social &&
+        isDefinitional(frame) && namesAnything(frame)) {
+      var asPhrase = timed("local-chain", function () { return localResolvers(frame, decision); });
+      if (asPhrase) return Promise.resolve(finish(frame, asPhrase, t0, decision));
     }
     if (!off("depth") && decision.route === "conversation" &&
         (decision.features.social || decision.features.remark)) {

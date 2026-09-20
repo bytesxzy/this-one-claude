@@ -148,7 +148,13 @@
       var hit = L.lookup(word);
       if (hit) {
         hit.senses.forEach(function (s) {
-          out.push({ word: hit.word, form: hit.form, pos: s.pos, gloss: s.gloss, cls: s.cls, from: s.learned ? "dictionary" : "lexicon" });
+          out.push({
+            word: hit.word, form: hit.form, pos: s.pos, gloss: s.gloss, cls: s.cls,
+            /* The declared field, or the one its own wording implies. Without
+               this the question's context has nothing to select against. */
+            domain: s.domain || domainOf(s.gloss),
+            from: s.learned ? "dictionary" : "lexicon"
+          });
         });
       }
     }
@@ -165,7 +171,8 @@
         var e = ents[0].entity;
         out.unshift({
           word: e.name, form: "entity", pos: "n", gloss: stripSubject(e.defn, e.name),
-          cls: classOfEntity(e), from: "knowledge", entity: e
+          cls: classOfEntity(e), domain: domainOf(e.type + " " + e.defn),
+          from: "knowledge", entity: e
         });
       }
     }
@@ -192,18 +199,144 @@
   };
   function classOfEntity(e) { return ENTITY_CLASS[e.type] || "ABSTRACT"; }
 
+  /* ------------------------------------------------------ domain context
+   * A question often names the field it is about -- "on social media", "in
+   * medicine", "for a database". That field selects between senses: a
+   * bookmark on social media is the saved-post sense, not the strip of card.
+   * The cue table is over ordinary field vocabulary, so any question that
+   * names a field gets the same treatment. */
+  var DOMAIN_CUES = {
+    computing: ["software", "hardware", "computer", "computing", "app", "apps", "application",
+      "web", "website", "internet", "online", "browser", "digital", "code", "programming",
+      "program", "database", "server", "network", "social media", "media platform", "platform",
+      "phone", "mobile", "screen", "file", "operating system", "api", "site", "feed", "tech",
+      "technology", "cloud", "device", "twitter", "facebook", "instagram", "reddit",
+      "youtube", "tiktok", "linkedin", "discord", "slack", "github", "whatsapp",
+      "telegram", "snapchat", "pinterest", "chrome", "firefox", "safari", "android",
+      "ios", "windows", "linux", "macos"],
+    biology: ["biology", "anatomy", "body", "cell", "organism", "plant", "animal", "medical",
+      "medicine", "health", "clinical", "patient", "hospital", "disease", "blood", "tissue"],
+    finance: ["finance", "financial", "money", "bank", "banking", "market", "markets", "trading",
+      "investment", "investing", "accounting", "economics", "economy", "business", "commerce"],
+    law: ["law", "legal", "court", "contract", "statute", "litigation", "regulation"],
+    music: ["music", "musical", "song", "band", "orchestra", "instrument"],
+    sport: ["sport", "sports", "football", "basketball", "tennis", "game", "match", "team"],
+    physics: ["physics", "mechanics", "quantum", "particle", "thermodynamics"],
+    chemistry: ["chemistry", "chemical", "compound", "reaction", "molecule"],
+    education: ["education", "school", "teaching", "learning", "classroom", "student", "university"],
+    military: ["military", "army", "navy", "war", "combat", "defence", "defense"],
+    sailing: ["sailing", "ship", "boat", "vessel", "nautical", "maritime", "harbour", "harbor"]
+  };
+
+  /* A field name is not a thing. "computing" and "twitter" label a field;
+     "API" names something the knowledge base holds, so in "REST API" the API
+     is the head, not the context. */
+  function namesAnEntity(phrase) {
+    var K = kb();
+    if (!K) return false;
+    var hits = K.resolve(phrase, { strict: true });
+    return hits.length > 0 && hits[0].score >= 0.85;
+  }
+
+  function domainOf(text) {
+    var t = " " + String(text || "").toLowerCase() + " ";
+    var best = "", bestHits = 0;
+    for (var d in DOMAIN_CUES) {
+      var hits = 0;
+      for (var i = 0; i < DOMAIN_CUES[d].length; i++) {
+        var cue = DOMAIN_CUES[d][i];
+        if (t.indexOf(" " + cue + " ") >= 0 || t.indexOf(" " + cue + "s ") >= 0) hits++;
+      }
+      if (hits > bestHits) { bestHits = hits; best = d; }
+    }
+    return bestHits ? best : "";
+  }
+
+  /* How well does this sense fit the field the question named? A sense that
+     declares the same field wins; one that declares a different field is
+     pushed down; one that declares none is neutral. */
+  function domainFit(sense, contextDomain) {
+    if (!contextDomain) return 0;
+    if (!sense.domain) return 0;
+    return sense.domain === contextDomain ? 1.6 : -1.4;
+  }
+  function glossFit(sense, contextTokens) {
+    if (!contextTokens || !contextTokens.length) return 0;
+    var g = " " + String(sense.gloss || "").toLowerCase() + " ";
+    var hits = 0;
+    for (var i = 0; i < contextTokens.length; i++) {
+      if (contextTokens[i].length > 3 && g.indexOf(contextTokens[i]) >= 0) hits++;
+    }
+    return Math.min(1.0, hits * 0.5);
+  }
+
+  function rankSenses(senses, contextDomain, contextTokens) {
+    return senses.map(function (sn, i) {
+      return { sense: sn, score: -i * 0.15 + domainFit(sn, contextDomain) + glossFit(sn, contextTokens) };
+    }).sort(function (a, b) { return b.score - a.score; }).map(function (x) { return x.sense; });
+  }
+
   /* ---------------------------------------------------------- the reader */
 
   var DETERMINER = /^(?:the|a|an|this|that|these|those|some|any|my|your|his|her|its|our|their)$/i;
 
   /* Read a phrase compositionally. Returns null when there is nothing to
      compose -- a single known word, or a phrase whose words are all unknown. */
+  /* A prepositional phrase is not a compound. In "a bookmark on social
+     media" the head is BOOKMARK and "social media" names the field it is
+     being asked about; treating the last word as the head is how an
+     anatomical sense of "media" became the answer. */
+  var PREPOSITION = /^(?:on|in|at|for|of|with|within|about|during|under|over|from|into|across|among|regarding|concerning)$/;
+
   function read(phrase, opts) {
     opts = opts || {};
     var L = lex();
     if (!L || !C) return null;
     var words = C.words(phrase).filter(function (w) { return !DETERMINER.test(w); });
-    if (words.length < 2 || words.length > 5) return null;
+    if (words.length < 2 || words.length > 6) return null;
+
+    /* Split at the first preposition: what comes before it is the thing, what
+       comes after names the context. */
+    var prepAt = -1;
+    for (var pi = 1; pi < words.length - 1; pi++) {
+      if (PREPOSITION.test(words[pi])) { prepAt = pi; break; }
+    }
+    if (prepAt > 0) {
+      /* Display the context the way it was written, determiner and all:
+         "in a book", not "in book". */
+      var raw = C.normalizeUnicode(phrase).replace(/[?.!]+\s*$/, "");
+      var cut = raw.toLowerCase().indexOf(" " + words[prepAt] + " ");
+      var rawContext = cut >= 0 ? raw.slice(cut + words[prepAt].length + 2).trim() : "";
+      return readInContext(words.slice(0, prepAt), words[prepAt], words.slice(prepAt + 1),
+                           phrase, opts, rawContext);
+    }
+
+    /* A fragment typed without its preposition loses the cue that marks the
+       head: "virus computing" is a virus in computing, not a computing of
+       viruses. When the LAST word names a field and an earlier word has a
+       sense in that field, the field word is the context. */
+    var tailDomain = domainOf(words[words.length - 1]);
+    if (tailDomain && words.length >= 2 && !namesAnEntity(words[words.length - 1])) {
+      var candidate = words.slice(0, -1);
+      var candSenses = sensesFor(candidate[candidate.length - 1]);
+      var inField = candSenses.some(function (sn) { return sn.domain === tailDomain; });
+      if (inField) {
+        return readInContext(candidate, "in", words.slice(-1), phrase, opts, words[words.length - 1]);
+      }
+    }
+    /* Likewise a two-word field name at the end: "bookmark social media". */
+    if (words.length >= 3) {
+      var tail2 = words.slice(-2).join(" ");
+      if (domainOf(tail2) && !namesAnEntity(tail2)) {
+        var head2 = words.slice(0, -2);
+        if (head2.length) {
+          var s2 = sensesFor(head2[head2.length - 1]);
+          if (s2.some(function (sn) { return sn.domain === domainOf(tail2); })) {
+            return readInContext(head2, "on", words.slice(-2), phrase, opts, tail2);
+          }
+        }
+      }
+    }
 
     /* The head of an English noun phrase is its last noun. Everything before
        it modifies it. */
@@ -212,6 +345,24 @@
 
     var headSenses = sensesFor(headWord).filter(function (s) { return s.pos === "n" || s.from === "knowledge"; });
     if (!headSenses.length) return null;
+    /* The modifier is itself a context: "software bug" is the computing
+       sense of bug, not the insect. */
+    var compoundDomain = domainOf(modWords.join(" ")) || (opts.contextDomain || "");
+    headSenses = rankSenses(headSenses, compoundDomain, modWords);
+    /* "software bug", "social media bookmark": the modifier names a field and
+       the head has a sense belonging to it. That is not a compound to be
+       composed from two definitions -- it is one definition, selected. */
+    if (compoundDomain && headSenses[0].domain === compoundDomain) {
+      return {
+        kind: "sense", phrase: words.join(" "), headWord: headWord,
+        modifierWord: modWords.join(" "), head: headSenses[0],
+        modifier: { word: modWords.join(" "), gloss: "", cls: "ABSTRACT" },
+        contextDomain: compoundDomain, fitted: true,
+        relation: { rel: "sense", phrase: "", score: 3 },
+        confidence: 0.72, alternatives: headSenses.length - 1,
+        sources: sourceList({ head: headSenses[0], mod: { from: "lexicon" } })
+      };
+    }
 
     /* A multi-word modifier may itself be a known thing ("machine learning
        model"). Try the longest modifier span first. */
@@ -254,6 +405,42 @@
       sources: sourceList(best)
     };
   }
+  /* "X in/on Y": give the sense of X that belongs to Y, and say so. */
+  function readInContext(headWords, prep, contextWords, phrase, opts, rawContext) {
+    var headWord = headWords[headWords.length - 1];
+    var contextPhrase = contextWords.join(" ");
+    var contextShown = rawContext || contextPhrase;
+    var contextDomain = domainOf(contextPhrase);
+
+    /* The context may itself be a known thing, which sharpens the domain. */
+    var ctxSenses = sensesFor(contextPhrase);
+    if (!contextDomain && ctxSenses.length) {
+      contextDomain = ctxSenses[0].domain || domainOf(ctxSenses[0].gloss);
+    }
+
+    var senses = sensesFor(headWord).filter(function (s) { return s.pos === "n" || s.from === "knowledge"; });
+    if (!senses.length) return null;
+    var ranked = rankSenses(senses, contextDomain, contextWords.concat(ctxSenses.length ? C.words(ctxSenses[0].gloss) : []));
+    var pick = ranked[0];
+
+    /* If nothing in the head's senses belongs to that field, say so rather
+       than dressing a general sense up as a specialist one. */
+    var fitted = !!(contextDomain && pick.domain === contextDomain) ||
+                 glossFit(pick, contextWords) > 0;
+
+    return {
+      kind: "context", phrase: C.normalizeUnicode(phrase).replace(/^(?:a|an|the)\s+/i, ""),
+      headWord: headWord, modifierWord: contextPhrase, contextShown: contextShown,
+      preposition: prep,
+      head: pick, modifier: ctxSenses[0] || { word: contextPhrase, gloss: "", cls: "ABSTRACT" },
+      contextDomain: contextDomain, fitted: fitted,
+      relation: { rel: "context", phrase: prep, score: 2.5 },
+      confidence: fitted ? 0.7 : 0.45,
+      alternatives: ranked.length - 1,
+      sources: sourceList({ head: pick, mod: ctxSenses[0] || { from: "lexicon" } })
+    };
+  }
+
   function sourceList(best) {
     var out = [];
     [best.head, best.mod].forEach(function (s) {
@@ -274,6 +461,21 @@
     if (!reading) return "";
     var phrase = reading.phrase;
     var body;
+
+    if (reading.kind === "sense") {
+      return RZcap(indefinite(reading.phrase)) + " " + reading.phrase + " is " +
+        lower1(clipGloss(reading.head.gloss)) + ".";
+    }
+    if (reading.kind === "context") {
+      var g = clipGloss(reading.head.gloss);
+      var lead = RZcap(reading.preposition) + " " + (reading.contextShown || reading.modifierWord) + ", " +
+        indefiniteFor(reading.headWord) + reading.headWord + " is " + lower1(g) + ".";
+      if (!reading.fitted && style !== "brief") {
+        lead += " That is the general sense of the word — I don't hold a separate " +
+          reading.modifierWord + " meaning for it.";
+      }
+      return lead;
+    }
     if (reading.relation.rel === "adj") {
       var hg = headCore(reading.head.gloss).replace(/^(?:a|an|the)\s+/i, "");
       body = article(hg) + hg + " that is " + clipGloss(reading.modifier.gloss);
@@ -394,6 +596,11 @@
     return /^[aeiou]/i.test(g) ? "an " : "a ";
   }
   function indefinite(word) { return /^[aeiou]/i.test(String(word)) ? "an" : "a"; }
+  /* A mass noun takes no article: "In medicine, privacy is ...". */
+  function indefiniteFor(word) {
+    if (MASS.test(String(word))) return "";
+    return indefinite(word) + " ";
+  }
   function RZcap(s) { return String(s).charAt(0).toUpperCase() + String(s).slice(1); }
 
   /* A single word with no entity behind it is a dictionary question, and is
